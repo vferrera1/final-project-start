@@ -10,6 +10,7 @@
 *Who are you?*  
 
 Hello I am an Aesthetic Gardener, the most important thing to me is that my garden is the talk of the town. 
+
 *What is your main goal?*
 
 I want an application that can help me maximize the ammount of space used in my garden so i dont have any holes in my presentation. I also want to make sure this year's planned color pallet looks just as good in my yard as it does in my head. 

@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { Garden } from "./interfaces/garden";
 import { Plant } from "./interfaces/plant";
 
 function App(): JSX.Element {
@@ -18,6 +19,11 @@ function App(): JSX.Element {
         insectFood: true, //Verify that insects like this plant
         birdFood: false,
         animalFood: false // Verify that animals don't like this plant
+    };
+
+    const firstGarden: Garden = {
+        sizeX: 100,
+        sizeY: 200
     };
     return (
         <div className="App">

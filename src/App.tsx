@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
-import { Garden } from "./interfaces/garden";
-import { Plant } from "./interfaces/plant";
+//import { Garden } from "./interfaces/garden";
+//import { Plant } from "./interfaces/plant";
 
 function App(): JSX.Element {
-    const firstPlant: Plant = {
+    /*const firstPlant: Plant = {
         species: "tomato",
         topImage: "",
         sideImage: "",
@@ -25,6 +25,7 @@ function App(): JSX.Element {
         sizeX: 100,
         sizeY: 200
     };
+    */
     return (
         <div className="App">
             <header className="App-header">

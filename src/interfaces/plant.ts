@@ -1,4 +1,17 @@
 // A representation of a singular plant
+
+/* Describes the amount of shade (i.e. amount of sun) required for plant care. 
+ * Values range from None (no shade/full sun) to Dense (Dense shade).
+ * For more information on the categories, see the following site:
+ * https://www.johnson.k-state.edu/lawn-garden/agent-articles/miscellaneous/defining-sun-requirements-for-plants.html
+ */
+enum shadeRequirement {
+    None = 0,
+    Light,
+    Partial,
+    Full,
+    Dense
+}
 export interface Plant {
     // The species/name of the plant (can be used as plant ID)
     species: string;
@@ -14,7 +27,8 @@ export interface Plant {
      *     and the value of that requirement?
      * For now, I am listing each requirement separately below
      */
-    lightRequirement: string; //Enumeration (e.g.) {0-No light, 1-Little light, 2-Some light, 3-Direct light}
+    shadeConditions: shadeRequirement[];
+    /* COMMENTED OUT ATTRIBUTES OF PLANT: WILL ADD TO PLANT ONCE THEY BECOME MORE DEFINED
     waterRequirement: string;
     soilRequirement: string; //Could also be called nutrient requirement
     temperatureRequirement: string;
@@ -27,4 +41,5 @@ export interface Plant {
     insectFood: boolean;
     birdFood: boolean;
     animalFood: boolean;
+    */
 }

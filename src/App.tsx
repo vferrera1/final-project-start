@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./App.css";
 //import { Garden } from "./interfaces/garden";
 //import { Plant } from "./interfaces/plant";
@@ -26,17 +26,25 @@ function App(): JSX.Element {
         sizeY: 200
     };
     */
+    const boxRef = useRef<HTMLDivElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!boxRef.current || !containerRef.current) return;
+
+        const box = boxRef.current;
+        const container = containerRef.current;
+        box.addEventListener("mousedown", () => {
+            console.log("clicked");
+        });
+    }, []);
+
     return (
-        <div className="App">
-            <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
-            </header>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
-            <p>Hello, world!</p>
-        </div>
+        <main>
+            <div ref={containerRef} className="container">
+                <div ref={boxRef} className="box"></div>
+            </div>
+        </main>
     );
 }
 

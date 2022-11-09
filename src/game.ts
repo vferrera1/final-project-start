@@ -1,11 +1,11 @@
-let picPosition = [0, 0];
-let observer: ((arg0: number[]) => void) | null = null;
+let picPosition: [number, number] = [0, 0];
+let observer: ((arg0: [number, number]) => void) | null = null;
 
 const emitChange = () => {
     observer && observer(picPosition);
 };
 
-export const observe = (o: any) => {
+export const observe = (o: (position: [number, number]) => void) => {
     if (observer) {
         throw new Error("Multiple observers not implemented.");
     }
@@ -19,8 +19,8 @@ export const movePic = (toX: number, toY: number) => {
     emitChange();
 };
 
-export const canMovePic = (toX: number, toY: number) => {
-    const [x, y] = picPosition;
+export const canMovePic = (toX: number) => {
+    const x = picPosition[0];
     const dx = toX - x;
 
     return Math.abs(dx) === 1;

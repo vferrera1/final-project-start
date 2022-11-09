@@ -15,7 +15,7 @@ const BoardSquare: React.FC<BoardSquareProps> = (props) => {
     const black = false; /*(x + y) % 2 === 1;*/
     const [{ isOver, canDrop }, drop] = useDrop({
         accept: ItemTypes.PIC,
-        canDrop: () => canMovePic(x, y),
+        canDrop: () => canMovePic(x),
         drop: () => movePic(x, y),
         collect: (monitor) => ({
             isOver: !!monitor.isOver(),

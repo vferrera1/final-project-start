@@ -37,3 +37,11 @@
         transform: rotate(360deg);
     }
 }
+
+.Plant-describer {
+    height: 300px;
+    width: 300px;
+    padding: 50px;
+    border: 15px solid green;
+    margin: 20px;
+}

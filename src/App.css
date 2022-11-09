@@ -37,11 +37,11 @@
         transform: rotate(360deg);
     }
 }
-
+/* This is what will hold a plant's description (when user hovers over a plant)*/
 .Plant-describer {
     height: 300px;
     width: 300px;
-    padding: 50px;
+    padding: 30px;
     border: 15px solid green;
-    margin: 20px;
+    margin: auto;
 }

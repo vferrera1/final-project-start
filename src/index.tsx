@@ -6,13 +6,15 @@ import "./index.css";
 import { observe } from "./game";
 import reportWebVitals from "./reportWebVitals";
 
-/*ReactDOM.render(
+/*
+ReactDOM.render(
     <React.StrictMode>
         <App />
     </React.StrictMode>,
     document.getElementById("root")
 );
 */
+
 observe((picPosition: [number, number]) => {
     ReactDOM.render(
         <React.StrictMode>

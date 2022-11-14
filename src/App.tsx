@@ -50,18 +50,20 @@ function App(): JSX.Element {
             {/* eslint-disable-next-line no-extra-parens*/}
             {descriptionVisible && (
                 <div className="Plant-describer">
-                    <h6>Plant Name: {firstPlant.species}</h6>
-                    <ul>
-                        <li>Size: {firstPlant.size} ft</li>
-                        <li>
-                            Shade Conditions:
-                            {firstPlant.shadeConditions.map(
-                                (shade: shadeLevel): string =>
-                                    `${shade.toString()},`
-                            )}
-                        </li>
-                        <li>Flowering Period: {firstPlant.floweringPeriod}</li>
-                    </ul>
+                    <h6>{firstPlant.species}</h6>
+                    <p className="Plant-attribute">
+                        <b>Size</b>: {firstPlant.size} ft
+                    </p>
+                    <p className="Plant-attribute">
+                        <b>Shade Conditions</b>:{" "}
+                        {firstPlant.shadeConditions.map(
+                            (shade: shadeLevel): string =>
+                                `${shade.toString()},`
+                        )}
+                    </p>
+                    <p className="Plant-attribute">
+                        <b>Flowering Period</b>: {firstPlant.floweringPeriod}
+                    </p>
                 </div>
             )}
         </div>

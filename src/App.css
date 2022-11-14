@@ -45,3 +45,9 @@
     border: 15px solid green;
     margin: auto;
 }
+.Plant-header {
+    text-align: center;
+}
+.Plant-attribute {
+    text-align: left;
+}

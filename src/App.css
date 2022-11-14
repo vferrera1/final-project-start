@@ -22,3 +22,11 @@ main {
     width: 60px;
     cursor: pointer;
 }
+/* This is what will hold a plant's description (when user hovers over a plant)*/
+.Plant-describer {
+    height: 300px;
+    width: 300px;
+    padding: 30px;
+    border: 15px solid green;
+    margin: auto;
+}

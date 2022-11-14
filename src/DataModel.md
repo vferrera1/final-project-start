@@ -14,11 +14,14 @@
     - I.e., does this plant provide food for insects/birds?
 - Etc. (Other attributes that we may think of in the future)
 
+See Mt Cuba website for plant list
+
 ### A Current Garden View (2D Top View)
 Renders a garden object which stores the position of every plant & special feature on it. It also has
 - A size (dimensions of garden)
 - A shape? (If the shape is regular e.g. rectangle, circle, etc.)
     - If irregular shape, a drawing has been given
+- Place on the screen where you're dragging/dropping plants
 ### An Array of Gardens?
 That is updated when the user saves a garden design
 ## An Options Bar containing Controllers for the Garden Designer

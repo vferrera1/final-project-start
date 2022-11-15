@@ -34,25 +34,29 @@ function App(): JSX.Element {
         </div>
     };*/
     // This is the State (Model)
-    const [size, setSize] = useState<number>(100);
+    const [size, setSize] = useState<string>("100");
 
     // This is the Control
     function updateSize(event: React.ChangeEvent<HTMLInputElement>) {
-        setSize(event.target.valueAsNumber);
+        setSize(event.target.value);
     }
 
     // This is the View
     return (
         <div>
-            <Form.Group controlId="formMovieName">
+            <Form.Group controlId="formGardenSize">
                 <Form.Label>Size of Garden:</Form.Label>
-                <Form.Control value={size} onChange={updateSize} />
+                <Form.Control
+                    type="number"
+                    value={size}
+                    onChange={updateSize}
+                />
             </Form.Group>
             <div
                 style={{
                     border: "5px solid purple",
-                    height: "{ size }px",
-                    width: "{ size }px"
+                    height: `${size}px`,
+                    width: `${size}px`
                 }}
             ></div>
         </div>

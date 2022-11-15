@@ -1,11 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./App.css";
 //import { Garden } from "./interfaces/garden";
 import { Plant } from "./interfaces/plant";
+import { PlantView } from "./PlantView";
 import { shadeLevel } from "./interfaces/shadeLevel";
 import Serviceberry from "./images/Amelanchier_x_grandifolia_Autumn_Brilliance_1.jpg";
 
 function App(): JSX.Element {
+    /* So, in Quizzer, there is an initial list of quizzes given by "sample",
+     * which imports a list of quizzes from a file called "quizzes.json" in a special "data" directory.
+     */
     const firstPlant: Plant = {
         species: "Autumn Brilliance Serviceberry",
         topImage: Serviceberry,
@@ -28,8 +32,6 @@ function App(): JSX.Element {
     */
     //Lines 30-32 are states related to the plant (and plant description)
     //const [plants, setPlants] = useState<Plant[]>([firstPlant]);
-    const [descriptionVisible, setDescriptionVisible] =
-        useState<boolean>(false);
 
     // Lines 35-95 is the DnD (Drag and Drop) implementation for our application
     const containerRef = useRef<HTMLDivElement>(null);
@@ -103,33 +105,7 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
-            <img
-                src={firstPlant.topImage}
-                alt={firstPlant.species}
-                width={`${firstPlant.size * 10}`}
-                height={`${firstPlant.size * 10}`}
-                onMouseOver={() => setDescriptionVisible(!descriptionVisible)}
-                onMouseOut={() => setDescriptionVisible(!descriptionVisible)}
-            />
-            {/* eslint-disable-next-line no-extra-parens*/}
-            {descriptionVisible && (
-                <div className="Plant-describer">
-                    <h6>{firstPlant.species}</h6>
-                    <p className="Plant-attribute">
-                        <b>Size</b>: {firstPlant.size} ft
-                    </p>
-                    <p className="Plant-attribute">
-                        <b>Shade Conditions</b>:{" "}
-                        {firstPlant.shadeConditions.map(
-                            (shade: shadeLevel): string =>
-                                `${shade.toString()},`
-                        )}
-                    </p>
-                    <p className="Plant-attribute">
-                        <b>Flowering Period</b>: {firstPlant.floweringPeriod}
-                    </p>
-                </div>
-            )}
+            <PlantView plant={firstPlant}></PlantView>
         </div>
     );
 }

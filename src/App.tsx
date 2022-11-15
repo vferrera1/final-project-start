@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { Container, Form } from "react-bootstrap";
 import "./App.css";
+
 //import { Garden } from "./interfaces/garden";
 //import { Plant } from "./interfaces/plant";
 
@@ -19,23 +21,40 @@ function App(): JSX.Element {
         insectFood: true, //Verify that insects like this plant
         birdFood: false,
         animalFood: false // Verify that animals don't like this plant
-    };
-
-    const firstGarden: Garden = {
-        sizeX: 100,
-        sizeY: 200
-    };
-    */
-    return (
         <div className="App">
-            <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
-            </header>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
-            <p>Hello, world!</p>
+            <Container>
+                <div
+                    style={{
+                        border: "5px solid purple",
+                        height: "{px",
+                        width: firstGarden.sizeX + "px"
+                    }}
+                ></div>
+            </Container>
+        </div>
+    };*/
+    // This is the State (Model)
+    const [size, setSize] = useState<number>(100);
+
+    // This is the Control
+    function updateSize(event: React.ChangeEvent<HTMLInputElement>) {
+        setSize(event.target.valueAsNumber);
+    }
+
+    // This is the View
+    return (
+        <div>
+            <Form.Group controlId="formMovieName">
+                <Form.Label>Size of Garden:</Form.Label>
+                <Form.Control value={size} onChange={updateSize} />
+            </Form.Group>
+            <div
+                style={{
+                    border: "5px solid purple",
+                    height: "{ size }px",
+                    width: "{ size }px"
+                }}
+            ></div>
         </div>
     );
 }

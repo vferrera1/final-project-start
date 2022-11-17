@@ -11,6 +11,7 @@ function App(): JSX.Element {
      * which imports a list of quizzes from a file called "quizzes.json" in a special "data" directory.
      */
     const firstPlant: Plant = {
+        id: 1,
         species: "Autumn Brilliance Serviceberry",
         topImage: Serviceberry,
         sideImage: "",

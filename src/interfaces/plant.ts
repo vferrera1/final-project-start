@@ -3,7 +3,9 @@
 import { shadeLevel } from "./shadeLevel";
 
 export interface Plant {
-    // The species/name of the plant (can be used as plant ID)
+    // A unique plant ID (number)
+    id: number;
+    // The species/name of the plant
     species: string;
     // A URL/filepath of the top view of the plant
     topImage: string;

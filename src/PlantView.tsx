@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./PlantView.css";
 import { Plant } from "./interfaces/plant";
 import { PlantDescriber } from "./PlantDescriber";
 
@@ -6,7 +7,7 @@ export function PlantView({ plant }: { plant: Plant }): JSX.Element {
     const [descriptionVisible, setDescriptionVisible] =
         useState<boolean>(false);
     return (
-        <div>
+        <div className="Plant">
             <img
                 src={plant.topImage}
                 alt={plant.species}

@@ -1,0 +1,7 @@
+.Plant {
+    height: 300px;
+    width: 300px;
+    padding: 30 px;
+    border: 10px solid green;
+    margin: auto;
+}

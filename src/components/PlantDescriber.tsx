@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { Plant } from "./interfaces/plant";
-import { shadeLevel } from "./interfaces/shadeLevel";
+import { Plant } from "../interfaces/plant";
+import { shadeLevel } from "../interfaces/shadeLevel";
 import { PlantEditor } from "./PlantEditor";
 
 export function PlantDescriber({ plant }: { plant: Plant }): JSX.Element {

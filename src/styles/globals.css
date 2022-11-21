@@ -1,22 +1,60 @@
-.wrapper {
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+main {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
     position: relative;
+    border: 1px solid black;
+    height: 800px;
+    width: 800px;
+    overflow: hidden;
 }
 
-ul {
-    width: 200px;
-    max-height: 250px;
-
-    overflow-x: hidden;
-    overflow-y: auto;
+.box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hotpink;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+}
+/* This is what will hold a plant's description (when user hovers over a plant)*/
+.Plant-describer {
+    height: 300px;
+    width: 300px;
+    padding: 30px;
+    border: 15px solid green;
+    margin: auto;
+}
+.Plant-header {
+    text-align: center;
+}
+.Plant-attribute {
+    text-align: left;
 }
 
-li {
-    position: static;
-}
-
-ul {
-    margin: 1em;
-    color: white;
-    font-family: sans-serif;
-    font-size: 16px;
+.Plant {
+    height: 300px;
+    width: 300px;
+    padding: 30 px;
+    border: 10px solid green;
+    margin: auto;
 }

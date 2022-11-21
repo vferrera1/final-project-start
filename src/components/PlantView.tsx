@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./PlantView.css";
-import { Plant } from "./interfaces/plant";
+("./styles/globals.css");
+import { Plant } from "../interfaces/plant";
 import { PlantDescriber } from "./PlantDescriber";
 
 export function PlantView({ plant }: { plant: Plant }): JSX.Element {

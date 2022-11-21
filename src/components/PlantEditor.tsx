@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import { Plant } from "./interfaces/plant";
+import { Plant } from "../interfaces/plant";
 //import { shadeLevel } from "./interfaces/shadeLevel";
 
 export function PlantEditor({

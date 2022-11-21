@@ -1,8 +1,8 @@
 import React from "react";
-import "./App.css";
+import "./styles/globals.css";
 //import { Garden } from "./interfaces/garden";
 import { Plant } from "./interfaces/plant";
-import { PlantView } from "./PlantView";
+import { PlantView } from "./components/PlantView";
 import { shadeLevel } from "./interfaces/shadeLevel";
 import Serviceberry from "./images/Amelanchier_x_grandifolia_Autumn_Brilliance_1.jpg";
 import Garden from "./components/Garden";

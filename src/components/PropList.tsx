@@ -1,13 +1,7 @@
 import React from "react";
 
 function PropList() {
-    const myArray = [
-        "Plant1",
-        "Orange Tree",
-        "Plant2",
-        "Orange Tree2",
-        "Orange Tree3"
-    ];
+    const myArray = ["Plant1", "Plant2", "Plant3", "Plant4", "Plant5"];
 
     return (
         <ul>

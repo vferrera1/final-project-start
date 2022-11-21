@@ -1,0 +1,22 @@
+.wrapper {
+    position: relative;
+}
+
+ul {
+    width: 200px;
+    max-height: 250px;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+li {
+    position: static;
+}
+
+ul {
+    margin: 1em;
+    color: white;
+    font-family: sans-serif;
+    font-size: 16px;
+}

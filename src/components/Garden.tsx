@@ -1,18 +1,10 @@
 import React, { createRef, useEffect, useRef } from "react";
 
 function Garden() {
-    const Refarr: React.RefObject<HTMLDivElement>[] = [];
-    const addRef = () => {
-        const newRef = createRef<HTMLDivElement>();
-        Refarr.push(newRef);
-        console.log(Refarr);
-    };
     const containerRef = useRef<HTMLDivElement>(null);
-    const boxRef = createRef<HTMLDivElement>();
-
-    const isClicked = useRef<boolean>(false);
-
-    const coords = useRef<{
+    let boxRef = createRef<HTMLDivElement>();
+    const Refarr: React.RefObject<HTMLDivElement>[] = [];
+    let coords = useRef<{
         startX: number;
         startY: number;
         lastX: number;
@@ -23,6 +15,39 @@ function Garden() {
         lastX: 0,
         lastY: 0
     });
+    const CoordsArr: any = [];
+    let Refindex = 0;
+
+    const SwitchRef = () => {
+        const CoordsCopy = [...CoordsArr];
+        const RefCopy = [...Refarr];
+        coords = CoordsCopy[Refindex];
+        boxRef = RefCopy[Refindex];
+    };
+
+    const addRef = () => {
+        const newRef = createRef<HTMLDivElement>();
+        const newCoords = createRef<{
+            startX: 0;
+            startY: 0;
+            lastX: 0;
+            lastY: 0;
+        }>();
+        console.log(newCoords);
+        const CoordsCopy = [...CoordsArr];
+        const RefCopy = [...Refarr];
+        CoordsCopy.push(newCoords);
+        RefCopy.push(newRef);
+        Refindex++;
+        console.log(CoordsArr[Refindex]);
+        console.log(Refarr[Refindex]);
+        console.log(Refarr);
+        console.log(CoordsArr);
+        console.log(Refindex);
+        SwitchRef();
+    };
+
+    const isClicked = useRef<boolean>(false);
 
     useEffect(() => {
         if (!boxRef.current || !containerRef.current) return;
@@ -68,7 +93,6 @@ function Garden() {
 
         return cleanup;
     }, []);
-
     return (
         <main>
             <div ref={containerRef} className="container">

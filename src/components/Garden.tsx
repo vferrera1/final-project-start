@@ -22,6 +22,7 @@ function Garden() {
         CoordsArr.push({ ...coords.current });
         Refarr.push(newRef);
         console.log(CoordsArr, "CoordsArr");
+        console.log(Refarr, "RefArr");
         console.log(newRef, "newRef");
         console.log(boxRef, "boxRef");
         return <div ref={newRef} className="box"></div>;

@@ -11,7 +11,7 @@ function PropList() {
     ]);
 
     function generateList(prop: string[]) {
-        return prop.map((o) => <li key={o}>{o}</li>);
+        return prop.map((prop) => <li key={prop}>{prop}</li>);
     }
     function alphabeticalOrder() {
         setProp(prop.sort((a: string, b: string) => (a < b ? -1 : 1)));

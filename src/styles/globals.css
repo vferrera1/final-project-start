@@ -52,11 +52,10 @@ img {
     height: 100px;
     object-fit: scale-down;
     flex: auto;
-    position: sticky;
 }
 
 .scroll-bar {
-    height: 108px;
+    height: 216px;
     width: 250px;
     border: 1px solid grey;
     font-family: "GestaRegular", Arial, Helvetica, sans-serif;

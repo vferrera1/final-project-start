@@ -37,9 +37,9 @@ function PropList() {
     }
 
     return (
-        <div className="scroll-bar">
+        <div>
             <strong>Prop List</strong>
-            <ul>{generateList(proplist)}</ul>
+            <ul className="scroll-bar">{generateList(proplist)}</ul>
             <Button onClick={() => setProplist(alphabeticalOrder())}>
                 Alphabetical Order
             </Button>

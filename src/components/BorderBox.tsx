@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-export const COLORS = ["green", "blue", "gray"];
+export const COLORS = ["green", "blue", "brown"];
 const DEFAULT_COLOR_INDEX = 0;
 
 interface ChangeBorderBox {

@@ -3,11 +3,11 @@ import { Button } from "react-bootstrap";
 
 function PropList() {
     const [prop, setProp] = useState<string[]>([
-        "BPlant1",
-        "APlant2",
-        "ZPlant3",
-        "CPlant4",
-        "TPlant5"
+        "Catus",
+        "Bonsai",
+        "Rose Bush",
+        "Sunflower",
+        "Path Corner"
     ]);
 
     function generateList(prop: string[]) {
@@ -27,7 +27,7 @@ function PropList() {
     }
 
     return (
-        <div className="prop_list">
+        <div className="scroll-bar">
             <strong>Prop List</strong>
             <ul>{generateList(prop)}</ul>
             <Button onClick={() => setProp(alphabeticalOrder())}>

@@ -1,39 +1,49 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { Plant } from "../interfaces/plant";
+import { PropListArr } from "../interfaces/PropList";
 
 function PropList() {
-    const [prop, setProp] = useState<string[]>([
-        "Catus",
-        "Tomato Plant",
-        "Rose Bush",
-        "Sunflower",
-        "Path Corner"
-    ]);
+    const [proplist, setProplist] = useState<Plant[]>(PropListArr);
 
-    function generateList(prop: string[]) {
+    function generateList(prop: Plant[]) {
         console.log(prop, "Generated");
-        return prop.map((prop) => <li key={prop}>{prop}</li>);
+        return prop.map((prop) => (
+            <li key={prop.species}>
+                {prop.species}
+                <img src={prop.species} />
+            </li>
+        ));
     }
     function alphabeticalOrder() {
-        setProp(prop.sort((a: string, b: string) => (a < b ? -1 : 1)));
-        console.log(prop, "Test Alpha");
-        generateList(prop);
-        return prop;
+        setProplist(
+            proplist.sort((a: Plant, b: Plant) =>
+                a.species < b.species ? -1 : 1
+            )
+        );
+        console.log(proplist, "Test Alpha");
+        generateList(proplist);
+        return proplist;
     }
     function ReversealphabeticalOrder() {
-        setProp(prop.sort((a: string, b: string) => (a > b ? -1 : 1)));
-        console.log(prop, "Test Rev Alpha");
-        return prop;
+        setProplist(
+            proplist.sort((a: Plant, b: Plant) =>
+                a.species > b.species ? -1 : 1
+            )
+        );
+        console.log(proplist, "Test Alpha");
+        generateList(proplist);
+        return proplist;
     }
 
     return (
         <div className="scroll-bar">
             <strong>Prop List</strong>
-            <ul>{generateList(prop)}</ul>
-            <Button onClick={() => setProp(alphabeticalOrder())}>
+            <ul>{generateList(proplist)}</ul>
+            <Button onClick={() => setProplist(alphabeticalOrder())}>
                 Alphabetical Order
             </Button>
-            <Button onClick={() => setProp(ReversealphabeticalOrder())}>
+            <Button onClick={() => setProplist(ReversealphabeticalOrder())}>
                 Reverse Alphabetical Order
             </Button>
         </div>

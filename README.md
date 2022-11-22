@@ -1,7 +1,3 @@
-# React DND TypeScript Starter Repo for CISC275 Fall 2022
+# Go Garden!
 
-Hello! This repository has been pre-configured with eslint and gh-pages to automatically deploy your app when you push to the main branch.
-
-Fork, and execute necessary setup steps.
-
-Watch this space for additional project requirements.
+This is "Garden on the Go!", the newest browser game that lets you simulate a garden. Choose from dozens of props and create the Garden of your dreams...on the Go!

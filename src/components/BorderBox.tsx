@@ -9,19 +9,6 @@ interface ChangeBorderBox {
     borderIndex: number;
 }
 
-function ChangeBorder({
-    setBorderIndex,
-    borderIndex
-}: ChangeBorderBox): JSX.Element {
-    return (
-        <Button
-            onClick={() => setBorderIndex((1 + borderIndex) % COLORS.length)}
-        >
-            Next Color
-        </Button>
-    );
-}
-
 function BorderPreview({
     setBorderIndex,
     borderIndex
@@ -47,11 +34,9 @@ export function BorderBox(): JSX.Element {
         <div>
             <h3>Border Box</h3>
             <span>The current color is: {COLORS[colorIndex]}</span>
-            <div>
-                <ChangeBorder
-                    setBorderIndex={setColorIndex}
-                    borderIndex={colorIndex}
-                ></ChangeBorder>
+            <div
+                onClick={() => setColorIndex((1 + colorIndex) % COLORS.length)}
+            >
                 <BorderPreview
                     setBorderIndex={setColorIndex}
                     borderIndex={colorIndex}

@@ -11,6 +11,7 @@ function PropList() {
     ]);
 
     function generateList(prop: string[]) {
+        console.log(prop, "Generated");
         return prop.map((prop) => <li key={prop}>{prop}</li>);
     }
     function alphabeticalOrder() {
@@ -26,7 +27,7 @@ function PropList() {
     }
 
     return (
-        <div>
+        <div className="prop_list">
             <strong>Prop List</strong>
             <ul>{generateList(prop)}</ul>
             <Button onClick={() => setProp(alphabeticalOrder())}>

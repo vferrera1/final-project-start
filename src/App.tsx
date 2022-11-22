@@ -7,6 +7,7 @@ import { shadeLevel } from "./interfaces/shadeLevel";
 import Serviceberry from "./images/Amelanchier_x_grandifolia_Autumn_Brilliance_1.jpg";
 import Garden from "./components/Garden";
 import PropList from "./components/PropList";
+import { BorderBox } from "./components/BorderBox";
 
 function App(): JSX.Element {
     /* So, in Quizzer, there is an initial list of quizzes given by "sample",
@@ -50,6 +51,7 @@ function App(): JSX.Element {
             <PlantView plant={firstPlant}></PlantView>
             <Garden></Garden>
             <PropList></PropList>
+            <BorderBox></BorderBox>
         </div>
     );
 }

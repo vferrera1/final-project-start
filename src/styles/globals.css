@@ -36,6 +36,10 @@ main {
     width: 60px;
     cursor: pointer;
 }
+.plant_list {
+    position: absolute;
+    right: 0;
+}
 /* This is what will hold a plant's description (when user hovers over a plant)*/
 .Plant-describer {
     height: 300px;

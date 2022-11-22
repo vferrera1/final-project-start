@@ -4,7 +4,7 @@ import "./styles/globals.css";
 import { Plant } from "./interfaces/plant";
 import { PlantView } from "./components/PlantView";
 import { shadeLevel } from "./interfaces/shadeLevel";
-import Serviceberry from "./images/Amelanchier_x_grandifolia_Autumn_Brilliance_1.jpg";
+import Cactus from "/Users/robertperez/Code/final-project-start/src/images/Cactus.png";
 import Garden from "./components/Garden";
 import PropList from "./components/PropList";
 import { BorderBox } from "./components/BorderBox";
@@ -16,7 +16,7 @@ function App(): JSX.Element {
     const firstPlant: Plant = {
         id: 1,
         species: "Autumn Brilliance Serviceberry",
-        topImage: Serviceberry,
+        topImage: Cactus,
         sideImage: "",
         // Current size listed below is given in feet (at full size)
         size: 20, // Some number / garden.size

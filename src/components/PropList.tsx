@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 function PropList() {
     const [prop, setProp] = useState<string[]>([
         "Catus",
-        "Bonsai",
+        "Tomato Plant",
         "Rose Bush",
         "Sunflower",
         "Path Corner"

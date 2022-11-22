@@ -37,6 +37,7 @@ export function BorderBox(): JSX.Element {
             <div
                 onClick={() => setColorIndex((1 + colorIndex) % COLORS.length)}
             >
+                <p>Lawn</p>
                 <BorderPreview
                     setBorderIndex={setColorIndex}
                     borderIndex={colorIndex}

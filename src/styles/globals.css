@@ -26,7 +26,17 @@ main {
     width: 800px;
     overflow: hidden;
 }
-
+.propcontainer {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 .box {
     position: absolute;
     top: 0;
@@ -35,6 +45,14 @@ main {
     height: 60px;
     width: 60px;
     cursor: pointer;
+}
+img {
+    float: none;
+    width: 100px;
+    height: 100px;
+    object-fit: scale-down;
+    flex: auto;
+    position: sticky;
 }
 
 .scroll-bar {

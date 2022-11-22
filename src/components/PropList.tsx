@@ -9,10 +9,10 @@ function PropList() {
     function generateList(prop: Plant[]) {
         console.log(prop, "Generated");
         return prop.map((prop) => (
-            <li key={prop.species}>
-                {prop.species}
+            <div key={prop.species} className="propcontainer">
+                <li>{prop.species}</li>
                 <img src={prop.sideImage} />
-            </li>
+            </div>
         ));
     }
     function alphabeticalOrder() {

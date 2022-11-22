@@ -1,14 +1,22 @@
-import React, { useState } from "react";
-import "./App.css";
+import React from "react";
+import "./styles/globals.css";
 //import { Garden } from "./interfaces/garden";
 import { Plant } from "./interfaces/plant";
+import { PlantView } from "./components/PlantView";
 import { shadeLevel } from "./interfaces/shadeLevel";
-import Serviceberry from "./images/Amelanchier_x_grandifolia_Autumn_Brilliance_1.jpg";
+import cactus from "./images/CactusTopDown.png";
+import Garden from "./components/Garden";
+import PropList from "./components/PropList";
+import { BorderBox } from "./components/BorderBox";
 
 function App(): JSX.Element {
+    /* So, in Quizzer, there is an initial list of quizzes given by "sample",
+     * which imports a list of quizzes from a file called "quizzes.json" in a special "data" directory.
+     */
     const firstPlant: Plant = {
+        id: 1,
         species: "Autumn Brilliance Serviceberry",
-        topImage: Serviceberry,
+        topImage: cactus,
         sideImage: "",
         // Current size listed below is given in feet (at full size)
         size: 20, // Some number / garden.size
@@ -26,44 +34,21 @@ function App(): JSX.Element {
         sizeY: 200
     };
     */
+    //Lines 30-32 are states related to the plant (and plant description)
     //const [plants, setPlants] = useState<Plant[]>([firstPlant]);
-    const [descriptionVisible, setDescriptionVisible] =
-        useState<boolean>(false);
+
+    // Lines 35-95 is the DnD (Drag and Drop) implementation for our application
 
     return (
         <div className="App">
-            <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
-            </header>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
-            <img
-                src={firstPlant.topImage}
-                alt={firstPlant.species}
-                width={`${firstPlant.size * 10}`}
-                height={`${firstPlant.size * 10}`}
-                onMouseOver={() => setDescriptionVisible(!descriptionVisible)}
-                onMouseOut={() => setDescriptionVisible(!descriptionVisible)}
-            />
-            {/* eslint-disable-next-line no-extra-parens*/}
-            {descriptionVisible && (
-                <div className="Plant-describer">
-                    <h6>Plant Name: {firstPlant.species}</h6>
-                    <ul>
-                        <li>Size: {firstPlant.size} ft</li>
-                        <li>
-                            Shade Conditions:
-                            {firstPlant.shadeConditions.map(
-                                (shade: shadeLevel): string =>
-                                    `${shade.toString()},`
-                            )}
-                        </li>
-                        <li>Flowering Period: {firstPlant.floweringPeriod}</li>
-                    </ul>
-                </div>
-            )}
+            <header className="App-header">Garden on the Go!</header>
+            <PlantView plant={firstPlant}></PlantView>
+            <Garden></Garden>
+            <PropList></PropList>
+            <BorderBox></BorderBox>
+            <BorderBox></BorderBox>
+            <BorderBox></BorderBox>
+            <BorderBox></BorderBox>
         </div>
     );
 }

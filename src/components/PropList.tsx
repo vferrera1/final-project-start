@@ -11,7 +11,7 @@ function PropList() {
         return prop.map((prop) => (
             <li key={prop.species}>
                 {prop.species}
-                <img src={prop.species} />
+                <img src={prop.sideImage} />
             </li>
         ));
     }

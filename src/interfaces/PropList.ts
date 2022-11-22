@@ -1,44 +1,45 @@
 import { Plant } from "./plant";
 import { shadeLevel } from "./shadeLevel";
-import cactus from "/Users/robertperez/Code/final-project-start/src/images/Cactus.png";
-import tomato from "/Users/robertperez/Code/final-project-start/src/images/TomatoPlant.png";
-import redroses from "/Users/robertperez/Code/final-project-start/src/images/RedRoseBush.png";
-import yellowroses from "/Users/robertperez/Code/final-project-start/src/images/YellowRoseBush.png";
-import sunflower from "/Users/robertperez/Code/final-project-start/src/images/Sunflower.png";
-import path from "/Users/robertperez/Code/final-project-start/src/images/Path.png";
+import cactusTD from "../images/CactusTopDown.png";
+import cactusSV from "../images/CactusSide.png";
+import tomatoSV from "../images/TomatoPlantSide.png";
+import redrosesSV from "../images/RedRoseBushSide.png";
+import yellowrosesSV from "../images/YellowRoseBushSide.png";
+import sunflowerSV from "../images/SunflowerSide.png";
+import pathTD from "../images/Path.png";
 
 const Cactus: Plant = {
     id: 1,
     species: "Cactus",
-    topImage: cactus,
-    sideImage: "",
+    topImage: cactusTD,
+    sideImage: cactusSV,
     size: 20,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring"
 };
 const Tomato: Plant = {
     id: 2,
-    species: "Tomato_Plant",
-    topImage: tomato,
-    sideImage: "",
+    species: "Tomato Plant",
+    topImage: "",
+    sideImage: tomatoSV,
     size: 20,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring"
 };
 const RedRoses: Plant = {
     id: 3,
-    species: "Red_Roses",
-    topImage: redroses,
-    sideImage: "",
+    species: "Red Roses",
+    topImage: "",
+    sideImage: redrosesSV,
     size: 20,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring"
 };
 const YellowRoses: Plant = {
     id: 4,
-    species: "Yellow_Roses",
-    topImage: yellowroses,
-    sideImage: "",
+    species: "Yellow Roses",
+    topImage: "",
+    sideImage: yellowrosesSV,
     size: 20,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring"
@@ -46,8 +47,8 @@ const YellowRoses: Plant = {
 const Sunflower: Plant = {
     id: 5,
     species: "Sunflower",
-    topImage: sunflower,
-    sideImage: "",
+    topImage: "",
+    sideImage: sunflowerSV,
     size: 20,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring"
@@ -55,8 +56,8 @@ const Sunflower: Plant = {
 const Path: Plant = {
     id: 30,
     species: "Path",
-    topImage: path,
-    sideImage: "",
+    topImage: pathTD,
+    sideImage: pathTD,
     size: 20,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring"

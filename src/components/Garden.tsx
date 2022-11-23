@@ -78,6 +78,7 @@ function Garden() {
         <main>
             <div ref={containerRef} className="container">
                 <div onClick={addRef} ref={boxRef} className="box"></div>
+                <div onClick={addRef} ref={boxRef} className="box"></div>
             </div>
         </main>
     );

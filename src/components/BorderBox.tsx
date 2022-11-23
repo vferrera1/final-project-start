@@ -8,10 +8,7 @@ interface ChangeBorderBox {
     borderIndex: number;
 }
 
-function BorderPreview({
-    setBorderIndex,
-    borderIndex
-}: ChangeBorderBox): JSX.Element {
+function BorderPreview({ borderIndex }: ChangeBorderBox): JSX.Element {
     return (
         <div
             data-testid="colored-box"

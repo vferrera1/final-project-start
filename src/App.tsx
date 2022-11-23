@@ -1,10 +1,7 @@
 import React from "react";
 import "./styles/globals.css";
 //import { Garden } from "./interfaces/garden";
-import { Plant } from "./interfaces/plant";
 import { PlantView } from "./components/PlantView";
-import { shadeLevel } from "./interfaces/shadeLevel";
-import cactus from "./images/CactusTopDown.png";
 import Garden from "./components/Garden";
 import PropList from "./components/PropList";
 import { BorderBox } from "./components/BorderBox";

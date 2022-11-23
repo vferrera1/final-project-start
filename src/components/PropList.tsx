@@ -11,13 +11,7 @@ function PropList() {
     function generateList(prop: Plant[]) {
         console.log(prop, "Generated");
         return prop.map((prop) => (
-            <div
-                key={prop.species}
-                onClick={() => {
-                    return <PlantView plant={prop} />; //why doesn't this work?
-                }}
-                className="propcontainer"
-            >
+            <div key={prop.species} className="propcontainer">
                 <li>{prop.species}</li>
                 <img src={prop.sideImage} />
             </div>

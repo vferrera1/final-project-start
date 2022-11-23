@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Plant } from "../interfaces/plant";
 import { PropListArr } from "../interfaces/PropList";
+/*import { PlantDescriber } from "./PlantDescriber";*/
+import { PlantView } from "./PlantView";
 
 function PropList() {
     const [proplist, setProplist] = useState<Plant[]>(PropListArr);
@@ -9,7 +11,13 @@ function PropList() {
     function generateList(prop: Plant[]) {
         console.log(prop, "Generated");
         return prop.map((prop) => (
-            <div key={prop.species} className="propcontainer">
+            <div
+                key={prop.species}
+                onClick={() => {
+                    return <PlantView plant={prop} />; //why doesn't this work?
+                }}
+                className="propcontainer"
+            >
                 <li>{prop.species}</li>
                 <img src={prop.sideImage} />
             </div>

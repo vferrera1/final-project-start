@@ -12,9 +12,7 @@ function App(): JSX.Element {
         <div className="App">
             <header className="App-header">Garden on the Go!</header>
             <PlantView plant={PropListArr[0]}></PlantView>
-            <div className="borderbox">
-                <Garden></Garden>
-            </div>
+            <Garden></Garden>
             <PropList></PropList>
             <BorderBox></BorderBox>
             <BorderBox></BorderBox>

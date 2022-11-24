@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export const COLORS = ["green", "blue", "brown"];
+export const BORDERS = ["Lawn", "Water", "Wood"];
 const DEFAULT_COLOR_INDEX = 0;
 
 interface ChangeBorderBox {
@@ -33,7 +34,7 @@ export function BorderBox(): JSX.Element {
             <div
                 onClick={() => setColorIndex((1 + colorIndex) % COLORS.length)}
             >
-                <p>Lawn</p>
+                <p>{BORDERS[colorIndex]}</p>
                 <BorderPreview
                     setBorderIndex={setColorIndex}
                     borderIndex={colorIndex}

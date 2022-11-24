@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Plant } from "../interfaces/plant";
 import { PropListArr } from "../interfaces/PropList";
-/*import { PlantDescriber } from "./PlantDescriber";*/
-import { PlantView } from "./PlantView";
 
 function PropList() {
     const [proplist, setProplist] = useState<Plant[]>(PropListArr);

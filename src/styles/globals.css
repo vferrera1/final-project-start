@@ -20,11 +20,12 @@ main {
 }
 
 .borderbox {
-    place-items: left;
+    margin: auto;
 }
 
 .boxcontainer {
     display: flex;
+    justify-content: center;
 }
 
 .container {

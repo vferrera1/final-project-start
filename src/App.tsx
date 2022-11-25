@@ -11,14 +11,15 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">Garden on the Go!</header>
-            <PlantView plant={PropListArr[0]}></PlantView>
+            <div>
+                <BorderBox></BorderBox>
+            </div>
             <div className="boxcontainer">
                 <PropList></PropList>
                 <BorderBox></BorderBox>
                 <Garden></Garden>
                 <BorderBox></BorderBox>
             </div>
-            <BorderBox></BorderBox>
             <BorderBox></BorderBox>
         </div>
     );

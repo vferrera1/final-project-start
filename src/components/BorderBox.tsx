@@ -28,7 +28,7 @@ function BorderPreview({ borderIndex }: ChangeBorderBox): JSX.Element {
 export function BorderBox(): JSX.Element {
     const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
     return (
-        <div>
+        <div className="borderbox">
             <h3>Border Box</h3>
             <span>The current color is: {COLORS[colorIndex]}</span>
             <div

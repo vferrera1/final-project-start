@@ -20,7 +20,15 @@ main {
 }
 
 .borderbox {
-    place-items: left;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+}
+
+.boxcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {

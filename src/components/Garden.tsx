@@ -1,87 +1,94 @@
-import React, { createRef, useEffect, useRef } from "react";
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-direct-mutation-state */
+import React from "react";
+import ReactDOM from "react-dom";
+import Draggable from "react-draggable";
+import cactusTD from "./images/CactusTopDown.png";
 
-function Garden() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const boxRef = createRef<HTMLDivElement>();
-    const Refarr: React.RefObject<HTMLDivElement>[] = [];
-    const coords = useRef<{
-        startX: number;
-        startY: number;
-        lastX: number;
-        lastY: number;
-    }>({
-        startX: 0,
-        startY: 0,
-        lastX: 0,
-        lastY: 0
-    });
-    const CoordsArr: any = [];
-
-    const addRef = () => {
-        const newRef = boxRef;
-        CoordsArr.push({ ...coords.current });
-        Refarr.push(newRef);
-        console.log(CoordsArr, "CoordsArr");
-        console.log(Refarr, "RefArr");
-        console.log(newRef, "newRef");
-        console.log(boxRef, "boxRef");
-        return <div ref={newRef} className="box"></div>;
+class Garden extends React.Component {
+    state = {
+        activeDrags: 0,
+        deltaPosition: {
+            x: 0,
+            y: 0
+        },
+        controlledPosition: {
+            x: -400,
+            y: 200
+        }
     };
 
-    const isClicked = useRef<boolean>(false);
+    handleDrag = (e: any, ui: any) => {
+        const { x, y } = this.state.deltaPosition;
+        this.setState({
+            deltaPosition: {
+                x: x + ui.deltaX,
+                y: y + ui.deltaY
+            }
+        });
+    };
 
-    useEffect(() => {
-        if (!boxRef.current || !containerRef.current) return;
+    onStart = () => {
+        this.setState({ activeDrags: ++this.state.activeDrags });
+    };
 
-        const box = boxRef.current;
-        const container = containerRef.current;
+    onStop = () => {
+        this.setState({ activeDrags: --this.state.activeDrags });
+    };
 
-        const onMouseDown = (e: MouseEvent) => {
-            isClicked.current = true;
-            coords.current.startX = e.clientX;
-            coords.current.startY = e.clientY;
-        };
+    // For controlled component
+    adjustXPos = (e: {
+        preventDefault: () => void;
+        stopPropagation: () => void;
+    }) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const { x, y } = this.state.controlledPosition;
+        this.setState({ controlledPosition: { x: x - 10, y } });
+    };
 
-        const onMouseUp = (e: MouseEvent) => {
-            isClicked.current = false;
-            coords.current.lastX = box.offsetLeft;
-            coords.current.lastY = box.offsetTop;
-        };
+    adjustYPos = (e: {
+        preventDefault: () => void;
+        stopPropagation: () => void;
+    }) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const { controlledPosition } = this.state;
+        const { x, y } = controlledPosition;
+        this.setState({ controlledPosition: { x, y: y - 10 } });
+    };
 
-        const onMouseMove = (e: MouseEvent) => {
-            if (!isClicked.current) return;
+    onControlledDrag = (e: any, position: { x: any; y: any }) => {
+        const { x, y } = position;
+        this.setState({ controlledPosition: { x, y } });
+    };
 
-            const nextX =
-                e.clientX - coords.current.startX + coords.current.lastX;
-            const nextY =
-                e.clientY - coords.current.startY + coords.current.lastY;
+    onControlledDragStop = (e: any, position: { x: any; y: any }) => {
+        this.onControlledDrag(e, position);
+        this.onStop();
+    };
 
-            box.style.top = `${nextY}px`;
-            box.style.left = `${nextX}px`;
-        };
-
-        box.addEventListener("mousedown", onMouseDown);
-        box.addEventListener("mouseup", onMouseUp);
-        container.addEventListener("mousemove", onMouseMove);
-        container.addEventListener("mouseleave", onMouseUp);
-
-        const cleanup = () => {
-            box.removeEventListener("mousedown", onMouseDown);
-            box.removeEventListener("mouseup", onMouseUp);
-            container.removeEventListener("mousemove", onMouseMove);
-            container.removeEventListener("mouseleave", onMouseUp);
-        };
-
-        return cleanup;
-    }, [coords]);
-    return (
-        <main>
-            <div ref={containerRef} className="container">
-                <div onClick={addRef} ref={boxRef} className="box"></div>
-                <div onClick={addRef} ref={boxRef} className="box"></div>
+    render() {
+        const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
+        const { deltaPosition, controlledPosition } = this.state;
+        return (
+            <div className="container">
+                <Draggable bounds="parent" {...dragHandlers}>
+                    <div className="box">
+                        I can only be moved within my offsetParent.
+                        <br />
+                        <br />
+                        Both parent padding and child margin work properly.
+                    </div>
+                </Draggable>
+                <Draggable bounds="parent" {...dragHandlers}>
+                    <div className="box">
+                        <img src="../images/CactusTopDown.png"></img>
+                    </div>
+                </Draggable>
             </div>
-        </main>
-    );
+        );
+    }
 }
 
 export default Garden;

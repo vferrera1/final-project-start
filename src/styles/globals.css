@@ -49,15 +49,7 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: hotpink;
-    height: 60px;
-    width: 60px;
-    cursor: pointer;
-}
+
 img {
     float: none;
     width: 100px;

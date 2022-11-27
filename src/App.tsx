@@ -6,28 +6,32 @@ import Garden from "./components/Garden";
 import PropList from "./components/PropList";
 import { BorderBox } from "./components/BorderBox";
 import { PropListArr } from "./interfaces/PropList";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App(): JSX.Element {
     return (
-        <div className="App">
-            <header className="App-header">Garden on the Go!</header>
-            <div className="borderbox">
-                <BorderBox></BorderBox>
-            </div>
-            <div className="boxcontainer">
-                <PropList></PropList>
+        <DndProvider backend={HTML5Backend}>
+            <div className="App">
+                <header className="App-header">Garden on the Go!</header>
                 <div className="borderbox">
                     <BorderBox></BorderBox>
                 </div>
-                <Garden></Garden>
+                <div className="boxcontainer">
+                    <PropList></PropList>
+                    <div className="borderbox">
+                        <BorderBox></BorderBox>
+                    </div>
+                    <Garden></Garden>
+                    <div className="borderbox">
+                        <BorderBox></BorderBox>
+                    </div>
+                </div>
                 <div className="borderbox">
                     <BorderBox></BorderBox>
                 </div>
             </div>
-            <div className="borderbox">
-                <BorderBox></BorderBox>
-            </div>
-        </div>
+        </DndProvider>
     );
 }
 

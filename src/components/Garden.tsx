@@ -1,11 +1,24 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/jsx-key */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-direct-mutation-state */
-import React from "react";
+import React, { useState } from "react";
+import { useDrop } from "react-dnd";
 import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
-import cactusTD from "./images/CactusTopDown.png";
+import { ItemTypes } from "../DnD-demo/constants";
+import { PropListArr } from "../interfaces/PropList";
+import Prop from "./Prop";
 
 class Garden extends React.Component {
+    boardstate = { boardprops: PropListArr };
+
+    addImageToBoard = (id: any) => {
+        const propList = PropListArr.filter((picture) => id === picture.id);
+        this.boardstate.boardprops.push(propList[0]);
+    };
+
     state = {
         activeDrags: 0,
         deltaPosition: {
@@ -71,21 +84,18 @@ class Garden extends React.Component {
     render() {
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
         const { deltaPosition, controlledPosition } = this.state;
+
         return (
             <div className="container">
-                <Draggable bounds="parent" {...dragHandlers}>
-                    <div className="box">
-                        I can only be moved within my offsetParent.
-                        <br />
-                        <br />
-                        Both parent padding and child margin work properly.
-                    </div>
-                </Draggable>
-                <Draggable bounds="parent" {...dragHandlers}>
-                    <div className="box">
-                        <img src="../images/CactusTopDown.png"></img>
-                    </div>
-                </Draggable>
+                {this.boardstate.boardprops.map((prop) => {
+                    return (
+                        <Draggable bounds="parent" {...dragHandlers}>
+                            <div className="box">
+                                <Prop plant={prop} />
+                            </div>
+                        </Draggable>
+                    );
+                })}
             </div>
         );
     }

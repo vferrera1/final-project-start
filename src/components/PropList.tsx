@@ -6,6 +6,9 @@ import { useDrag } from "react-dnd";
 import { ItemTypes } from "../DnD-demo/constants";
 import Prop from "./Prop";
 
+import "../styles/PropList.css";
+import { idText } from "typescript";
+
 function PropList() {
     const [proplist, setProplist] = useState<Plant[]>(PropListArr);
 
@@ -18,35 +21,42 @@ function PropList() {
             </div>
         ));
     }
+    function deepCloneProps(gardenProps: Plant[]): Plant[] {
+        return gardenProps.map(
+            (prop: Plant): Plant => ({
+                ...prop,
+                shadeConditions: [...prop.shadeConditions]
+            })
+        );
+    }
     function alphabeticalOrder() {
+        //Might need to do a deep copy of the propList
+        const newPropList = deepCloneProps(proplist);
         setProplist(
-            proplist.sort((a: Plant, b: Plant) =>
+            newPropList.sort((a: Plant, b: Plant) =>
                 a.species < b.species ? -1 : 1
             )
         );
-        console.log(proplist, "Test Alpha");
-        generateList(proplist);
-        return proplist;
+        console.log(newPropList, "Test Alpha");
     }
     function ReversealphabeticalOrder() {
+        const newPropList = deepCloneProps(proplist);
         setProplist(
-            proplist.sort((a: Plant, b: Plant) =>
+            newPropList.sort((a: Plant, b: Plant) =>
                 a.species > b.species ? -1 : 1
             )
         );
-        console.log(proplist, "Test Alpha");
-        generateList(proplist);
-        return proplist;
+        console.log(newPropList, "Test Alpha");
     }
 
     return (
         <div>
             <strong>Prop List</strong>
             <ul className="scroll-bar">{generateList(proplist)}</ul>
-            <Button onClick={() => setProplist(alphabeticalOrder())}>
+            <Button onClick={() => alphabeticalOrder()}>
                 Alphabetical Order
             </Button>
-            <Button onClick={() => setProplist(ReversealphabeticalOrder())}>
+            <Button onClick={() => ReversealphabeticalOrder()}>
                 Reverse Alphabetical Order
             </Button>
         </div>

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import "../styles/BorderBox.css";
 
-export const COLORS = ["green", "blue", "brown"];
-export const BORDERS = ["Lawn", "Water", "Wood"];
+// If I took out the "export" in COLORS, would it not update?
+const COLORS = ["green", "blue", "brown"];
+const BORDERS = ["Lawn", "Water", "Wood"];
 const DEFAULT_COLOR_INDEX = 0;
 
 interface ChangeBorderBox {

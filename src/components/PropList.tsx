@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Plant } from "../interfaces/plant";
 import { PropListArr } from "../interfaces/PropList";
+import { useDrag } from "react-dnd";
+import { ItemTypes } from "../DnD-demo/constants";
+import Prop from "./Prop";
 
 function PropList() {
     const [proplist, setProplist] = useState<Plant[]>(PropListArr);
@@ -11,7 +14,7 @@ function PropList() {
         return prop.map((prop) => (
             <div key={prop.species} className="propcontainer">
                 <li>{prop.species}</li>
-                <img src={prop.sideImage} />
+                <Prop plant={prop} />
             </div>
         ));
     }

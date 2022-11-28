@@ -1,87 +1,104 @@
-import React, { createRef, useEffect, useRef } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/jsx-key */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-direct-mutation-state */
+import React, { useState } from "react";
+import { useDrop } from "react-dnd";
+import ReactDOM from "react-dom";
+import Draggable from "react-draggable";
+import { ItemTypes } from "../DnD-demo/constants";
+import { PropListArr } from "../interfaces/PropList";
+import Prop from "./Prop";
 
-function Garden() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const boxRef = createRef<HTMLDivElement>();
-    const Refarr: React.RefObject<HTMLDivElement>[] = [];
-    const coords = useRef<{
-        startX: number;
-        startY: number;
-        lastX: number;
-        lastY: number;
-    }>({
-        startX: 0,
-        startY: 0,
-        lastX: 0,
-        lastY: 0
-    });
-    const CoordsArr: any = [];
+class Garden extends React.Component {
+    boardstate = { boardprops: PropListArr };
 
-    const addRef = () => {
-        const newRef = boxRef;
-        CoordsArr.push({ ...coords.current });
-        Refarr.push(newRef);
-        console.log(CoordsArr, "CoordsArr");
-        console.log(Refarr, "RefArr");
-        console.log(newRef, "newRef");
-        console.log(boxRef, "boxRef");
-        return <div ref={newRef} className="box"></div>;
+    addImageToBoard = (id: any) => {
+        const propList = PropListArr.filter((picture) => id === picture.id);
+        this.boardstate.boardprops.push(propList[0]);
     };
 
-    const isClicked = useRef<boolean>(false);
+    state = {
+        activeDrags: 0,
+        deltaPosition: {
+            x: 0,
+            y: 0
+        },
+        controlledPosition: {
+            x: -400,
+            y: 200
+        }
+    };
 
-    useEffect(() => {
-        if (!boxRef.current || !containerRef.current) return;
+    handleDrag = (e: any, ui: any) => {
+        const { x, y } = this.state.deltaPosition;
+        this.setState({
+            deltaPosition: {
+                x: x + ui.deltaX,
+                y: y + ui.deltaY
+            }
+        });
+    };
 
-        const box = boxRef.current;
-        const container = containerRef.current;
+    onStart = () => {
+        this.setState({ activeDrags: ++this.state.activeDrags });
+    };
 
-        const onMouseDown = (e: MouseEvent) => {
-            isClicked.current = true;
-            coords.current.startX = e.clientX;
-            coords.current.startY = e.clientY;
-        };
+    onStop = () => {
+        this.setState({ activeDrags: --this.state.activeDrags });
+    };
 
-        const onMouseUp = (e: MouseEvent) => {
-            isClicked.current = false;
-            coords.current.lastX = box.offsetLeft;
-            coords.current.lastY = box.offsetTop;
-        };
+    // For controlled component
+    adjustXPos = (e: {
+        preventDefault: () => void;
+        stopPropagation: () => void;
+    }) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const { x, y } = this.state.controlledPosition;
+        this.setState({ controlledPosition: { x: x - 10, y } });
+    };
 
-        const onMouseMove = (e: MouseEvent) => {
-            if (!isClicked.current) return;
+    adjustYPos = (e: {
+        preventDefault: () => void;
+        stopPropagation: () => void;
+    }) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const { controlledPosition } = this.state;
+        const { x, y } = controlledPosition;
+        this.setState({ controlledPosition: { x, y: y - 10 } });
+    };
 
-            const nextX =
-                e.clientX - coords.current.startX + coords.current.lastX;
-            const nextY =
-                e.clientY - coords.current.startY + coords.current.lastY;
+    onControlledDrag = (e: any, position: { x: any; y: any }) => {
+        const { x, y } = position;
+        this.setState({ controlledPosition: { x, y } });
+    };
 
-            box.style.top = `${nextY}px`;
-            box.style.left = `${nextX}px`;
-        };
+    onControlledDragStop = (e: any, position: { x: any; y: any }) => {
+        this.onControlledDrag(e, position);
+        this.onStop();
+    };
 
-        box.addEventListener("mousedown", onMouseDown);
-        box.addEventListener("mouseup", onMouseUp);
-        container.addEventListener("mousemove", onMouseMove);
-        container.addEventListener("mouseleave", onMouseUp);
+    render() {
+        const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
+        const { deltaPosition, controlledPosition } = this.state;
 
-        const cleanup = () => {
-            box.removeEventListener("mousedown", onMouseDown);
-            box.removeEventListener("mouseup", onMouseUp);
-            container.removeEventListener("mousemove", onMouseMove);
-            container.removeEventListener("mouseleave", onMouseUp);
-        };
-
-        return cleanup;
-    }, [coords]);
-    return (
-        <main>
-            <div ref={containerRef} className="container">
-                <div onClick={addRef} ref={boxRef} className="box"></div>
-                <div onClick={addRef} ref={boxRef} className="box"></div>
+        return (
+            <div className="container">
+                {this.boardstate.boardprops.map((prop) => {
+                    return (
+                        <Draggable bounds="parent" {...dragHandlers}>
+                            <div className="box">
+                                <Prop plant={prop} />
+                            </div>
+                        </Draggable>
+                    );
+                })}
             </div>
-        </main>
-    );
+        );
+    }
 }
 
 export default Garden;

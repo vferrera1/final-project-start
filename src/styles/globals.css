@@ -1,3 +1,11 @@
+aligntextcenter {
+    text-align: center;
+}
+
+alignborderboxup {
+    padding-left: 150px;
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -23,6 +31,16 @@ main {
     height: 200px;
     width: 200px;
     margin: auto;
+}
+
+.borderboxup {
+    height: 130px;
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 380px;
 }
 
 .boxcontainer {

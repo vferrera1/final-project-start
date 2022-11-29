@@ -14,29 +14,25 @@ function BorderPreview({ borderIndex }: ChangeBorderBox): JSX.Element {
         <div
             data-testid="colored-box"
             style={{
-                width: "50px",
+                width: "750px",
                 height: "50px",
                 backgroundColor: COLORS[borderIndex],
                 display: "inline-block",
-                verticalAlign: "bottom",
-                marginLeft: "5px"
+                verticalAlign: "bottom"
             }}
         ></div>
     );
 }
 
-export function BorderBox(): JSX.Element {
+export function BorderBoxUp(): JSX.Element {
     const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
     return (
-        <div className="borderbox">
-            <div className="centered">
-                <h3>Border Box</h3>
-            </div>
-            <span>The current color is: {COLORS[colorIndex]}</span>
+        <div className="borderboxup">
+            <h3>Border Box</h3>
+            <span>The current border is: {BORDERS[colorIndex]}</span>
             <div
                 onClick={() => setColorIndex((1 + colorIndex) % COLORS.length)}
             >
-                <p>{BORDERS[colorIndex]}</p>
                 <BorderPreview
                     setBorderIndex={setColorIndex}
                     borderIndex={colorIndex}

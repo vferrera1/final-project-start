@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import "./styles/globals.css";
 //import { Garden } from "./interfaces/garden";
@@ -6,8 +7,9 @@ import Garden from "./components/Garden";
 import PropList from "./components/PropList";
 import { BorderBox } from "./components/BorderBox";
 import { PropListArr } from "./interfaces/PropList";
-import { DndProvider } from "react-dnd";
+import { DndProvider, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { ItemTypes } from "./DnD-demo/constants";
 
 function App(): JSX.Element {
     return (

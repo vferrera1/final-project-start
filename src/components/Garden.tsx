@@ -4,20 +4,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-direct-mutation-state */
 import React, { useState } from "react";
-import { useDrop } from "react-dnd";
 import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
-import { ItemTypes } from "../DnD-demo/constants";
-import { PropListArr } from "../interfaces/PropList";
+import { Boardarr } from "./BoardProps";
 import Prop from "./Prop";
 
 class Garden extends React.Component {
-    boardstate = { boardprops: PropListArr };
-
-    addImageToBoard = (id: any) => {
-        const propList = PropListArr.filter((picture) => id === picture.id);
-        this.boardstate.boardprops.push(propList[0]);
-    };
+    boardstate = { boardprops: Boardarr };
 
     state = {
         activeDrags: 0,

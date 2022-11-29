@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Plant } from "../interfaces/plant";
 import { PropListArr } from "../interfaces/PropList";
-import { useDrag } from "react-dnd";
-import { ItemTypes } from "../DnD-demo/constants";
 import Prop from "./Prop";
 
 function PropList() {

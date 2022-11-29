@@ -7,7 +7,7 @@ import { Plant } from "../interfaces/plant";
 
 function Prop({ plant }: { plant: Plant }): JSX.Element {
     const [{ isDragging }, drag] = useDrag({
-        item: { type: ItemTypes.PROP, id: plant.id },
+        item: { type: ItemTypes.PROP, id: plant },
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging()
         })

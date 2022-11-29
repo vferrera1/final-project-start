@@ -29,9 +29,7 @@ export function BorderBox(): JSX.Element {
     const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
     return (
         <div className="borderbox">
-            <div className="centered">
-                <h3>Border Box</h3>
-            </div>
+            <h3>Border Box</h3>
             <span>The current color is: {COLORS[colorIndex]}</span>
             <div
                 onClick={() => setColorIndex((1 + colorIndex) % COLORS.length)}

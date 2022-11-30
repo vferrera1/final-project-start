@@ -5,29 +5,456 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-PASS src/App.test.tsx
-  ✓ renders the course name somewhere (33 ms)
+  console.log
+    [
+      {
+        id: 1,
+        species: 'Cactus',
+        topImage: 'CactusTopDown.png',
+        sideImage: 'CactusSide.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 2,
+        species: 'Tomato Plant',
+        topImage: '',
+        sideImage: 'TomatoPlantSide.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 3,
+        species: 'Red Roses',
+        topImage: '',
+        sideImage: 'RedRoseBushSide.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 4,
+        species: 'Yellow Roses',
+        topImage: '',
+        sideImage: 'YellowRoseBushSide.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 5,
+        species: 'Sunflower',
+        topImage: '',
+        sideImage: 'SunflowerSide.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 6,
+        species: 'Lilac',
+        topImage: 'LilacTV.png',
+        sideImage: 'LilacSV.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 7,
+        species: 'Chrysanthemum',
+        topImage: 'ChrisTD.png',
+        sideImage: 'ChrisSV.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 8,
+        species: 'Siberian Bugloss',
+        topImage: 'SBTD.png',
+        sideImage: 'SBSV.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 9,
+        species: 'Bamboo',
+        topImage: 'BambooTD.png',
+        sideImage: 'BambooSV.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 10,
+        species: 'Cabbage',
+        topImage: 'CabbageTD.png',
+        sideImage: 'CabbageSV.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 11,
+        species: 'Corn',
+        topImage: 'CornTD.png',
+        sideImage: 'CornSV.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 12,
+        species: 'Potato Plant',
+        topImage: 'PotatoTD.png',
+        sideImage: 'PotatoSV.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 13,
+        species: 'Aloe',
+        topImage: 'SuccTD.png',
+        sideImage: 'SuccSV.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 14,
+        species: 'Succulent',
+        topImage: 'SuccRTD.png',
+        sideImage: 'SuccRSV.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 27,
+        species: 'Lemon Tree',
+        topImage: 'LemonTD.png',
+        sideImage: 'LemonSV.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 28,
+        species: 'Red Maple',
+        topImage: 'RedMapleTD.png',
+        sideImage: 'RedMapleSV.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 29,
+        species: 'Bush',
+        topImage: 'BushTD.png',
+        sideImage: 'BushSV.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      },
+      {
+        id: 30,
+        species: 'Path',
+        topImage: 'Path.png',
+        sideImage: 'Path.png',
+        size: 20,
+        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
+        floweringPeriod: 'Mid-Spring'
+      }
+    ] Generated
 
-------------------|---------|----------|---------|---------|-------------------
-File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-------------------|---------|----------|---------|---------|-------------------
-All files         |    5.45 |        4 |    5.26 |    5.55 |                   
- src              |    5.45 |        4 |    5.26 |    5.55 |                   
-  App.tsx         |      50 |       50 |      25 |      50 | 47-60             
-  Board.tsx       |       0 |        0 |       0 |       0 | 7-36              
-  BoardSquare.tsx |       0 |        0 |       0 |       0 | 13-26             
-  Overlay.tsx     |       0 |      100 |       0 |       0 | 7-8               
-  Pic.tsx         |       0 |        0 |       0 |       0 | 5-13              
-  Square.tsx      |       0 |        0 |       0 |       0 | 7-11              
-  constants.ts    |       0 |      100 |     100 |       0 | 1                 
-  game.ts         |       0 |        0 |       0 |       0 | 1-26              
- src/interfaces   |       0 |        0 |       0 |       0 |                   
-  garden.ts       |       0 |        0 |       0 |       0 |                   
-  plant.ts        |       0 |        0 |       0 |       0 |                   
-  shadeLevel.ts   |       0 |        0 |       0 |       0 |                   
-------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
+      at generateList (src/components/PropList.tsx:14:17)
+
+  console.error
+    Warning: Each child in a list should have a unique "key" prop.
+    
+    Check the render method of `Garden`. See https://reactjs.org/link/warning-keys for more information.
+        at Draggable (/home/runner/work/final-project-start/final-project-start/node_modules/react-draggable/build/cjs/Draggable.js:99:5)
+        at Garden (/home/runner/work/final-project-start/final-project-start/src/components/Garden.tsx:13:38)
+        at div
+        at div
+        at /home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/common/DndProvider.js:40:23
+        at App
+
+      81 |
+      82 |         return (
+    > 83 |             <div className="container">
+         |             ^
+      84 |                 {this.boardstate.boardprops.map((prop) => {
+      85 |                     return (
+      86 |                         <Draggable bounds="parent" {...dragHandlers}>
+
+      at printWarning (node_modules/react/cjs/react-jsx-dev-runtime.development.js:117:30)
+      at error (node_modules/react/cjs/react-jsx-dev-runtime.development.js:93:5)
+      at validateExplicitKey (node_modules/react/cjs/react-jsx-dev-runtime.development.js:986:5)
+      at validateChildKeys (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1013:11)
+      at jsxWithValidation (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1184:11)
+      at Garden.render (src/components/Garden.tsx:83:13)
+      at finishClassComponent (node_modules/react-dom/cjs/react-dom.development.js:17485:31)
+
+FAIL src/tests/App.test.tsx
+  ✕ renders the course name somewhere (239 ms)
+
+  ● renders the course name somewhere
+
+    TestingLibraryElementError: Unable to find an element with the text: /CISC275/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, <script />, <style />
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"App"[39m
+        [36m>[39m
+          [36m<header[39m
+            [33mclass[39m=[32m"App-header"[39m
+          [36m>[39m
+            [0mGarden on the Go![0m
+          [36m</header>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"borderbox"[39m
+          [36m>[39m
+            [36m<h3>[39m
+              [0mBorder Box[0m
+            [36m</h3>[39m
+            [36m<span>[39m
+              [0mThe current color is: [0m
+              [0mgreen[0m
+            [36m</span>[39m
+            [36m<div>[39m
+              [36m<p>[39m
+                [0mLawn[0m
+              [36m</p>[39m
+              [36m<div[39m
+                [33mdata-testid[39m=[32m"colored-box"[39m
+                [33mstyle[39m=[32m"width: 500px; height: 50px; background-color: green; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
+              [36m/>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"boxcontainer"[39m
+          [36m>[39m
+            [36m<div>[39m
+              [36m<strong>[39m
+                [0mProp List[0m
+              [36m</strong>[39m
+              [36m<ul[39m
+                [33mclass[39m=[32m"scroll-bar"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"propcontainer"[39m
+                [36m>[39m
+                  [36m<li>[39m
+                    [0mCactus[0m
+                  [36m</li>[39m
+                  [36m<div>[39m
+                    [36m<img[39m
+                      [33malt[39m=[32m"Cactus"[39m
+                      [33mdraggable[39m=[32m"true"[39m
+                      [33mid[39m=[32m"1"[39m
+                      [33msrc[39m=[32m"CactusSide.png"[39m
+                      [33mstyle[39m=[32m"border: 0px;"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"propcontainer"[39m
+                [36m>[39m
+                  [36m<li>[39m
+                    [0mTomato Plant[0m
+                  [36m</li>[39m
+                  [36m<div>[39m
+                    [36m<img[39m
+                      [33malt[39m=[32m"Tomato Plant"[39m
+                      [33mdraggable[39m=[32m"true"[39m
+                      [33mid[39m=[32m"2"[39m
+                      [33msrc[39m=[32m"TomatoPlantSide.png"[39m
+                      [33mstyle[39m=[32m"border: 0px;"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"propcontainer"[39m
+                [36m>[39m
+                  [36m<li>[39m
+                    [0mRed Roses[0m
+                  [36m</li>[39m
+                  [36m<div>[39m
+                    [36m<img[39m
+                      [33malt[39m=[32m"Red Roses"[39m
+                      [33mdraggable[39m=[32m"true"[39m
+                      [33mid[39m=[32m"3"[39m
+                      [33msrc[39m=[32m"RedRoseBushSide.png"[39m
+                      [33mstyle[39m=[32m"border: 0px;"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"propcontainer"[39m
+                [36m>[39m
+                  [36m<li>[39m
+                    [0mYellow Roses[0m
+                  [36m</li>[39m
+                  [36m<div>[39m
+                    [36m<img[39m
+                      [33malt[39m=[32m"Yellow Roses"[39m
+                      [33mdraggable[39m=[32m"true"[39m
+                      [33mid[39m=[32m"4"[39m
+                      [33msrc[39m=[32m"YellowRoseBushSide.png"[39m
+                      [33mstyle[39m=[32m"border: 0px;"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"propcontainer"[39m
+                [36m>[39m
+                  [36m<li>[39m
+                    [0mSunflower[0m
+                  [36m</li>[39m
+                  [36m<div>[39m
+                    [36m<img[39m
+                      [33malt[39m=[32m"Sunflower"[39m
+                      [33mdraggable[39m=[32m"true"[39m
+                      [33mid[39m=[32m"5"[39m
+                      [33msrc[39m=[32m"SunflowerSide.png"[39m
+                      [33mstyle[39m=[32m"border: 0px;"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"propcontainer"[39m
+                [36m>[39m
+                  [36m<li>[39m
+                    [0mLilac[0m
+                  [36m</li>[39m
+                  [36m<div>[39m
+                    [36m<img[39m
+                      [33malt[39m=[32m"Lilac"[39m
+                      [33mdraggable[39m=[32m"true"[39m
+                      [33mid[39m=[32m"6"[39m
+                      [33msrc[39m=[32m"LilacSV.png"[39m
+                      [33mstyle[39m=[32m"border: 0px;"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"propcontainer"[39m
+                [36m>[39m
+                  [36m<li>[39m
+                    [0mChrysanthemum[0m
+                  [36m</li>[39m
+                  [36m<div>[39m
+                    [36m<img[39m
+                      [33malt[39m=[32m"Chrysanthemum"[39m
+                      [33mdraggable[39m=[32m"true"[39m
+                      [33mid[39m=[32m"7"[39m
+                      [33msrc[39m=[32m"ChrisSV.png"[39m
+                      [33mstyle[39m=[32m"border: 0px;"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"propcontainer"[39m
+                [36m>[39m
+                  [36m<li>[39m
+                    [0mSiberian Bugloss[0m
+                  [36m</li>[39m
+                  [36m<div>[39m
+                    [36m<img[39m
+                      [33malt[39m=[32m"Siberian Bugloss"[39m
+                      [33mdraggable[39m=[32m"true"[39m
+                      [33mid[39m=[32m"8"[39m
+                      [33msrc[39m=[32m"SBSV.png"[39m
+                      [33mstyle[39m=[32m"border: 0px;"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"propcontainer"[39m
+                [36m>[39m
+                  [36m<li>[39m
+                    [0mBamboo[0m
+                  [36m</li>[39m
+                  [36m<div>[39m
+                    [36m<img[39m
+                      [33malt[39m=[32m"Bamboo"[39m
+                      [33mdraggable[39m=[32m"true"[39m
+                      [33mid[39m=[32m"9"[39m
+                      [33msrc[39m=[32m"BambooSV.png"[39m
+                      [33mstyle[39m=[32m"border: 0px;"[39m
+                    [36m/>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"propcontainer"[39m
+                [36m>[39m
+                  [36m<li>[39m
+       ...
+
+       5 | test("renders the course name somewhere", () => {
+       6 |     render(<App />);
+    >  7 |     const linkElement = screen.getByText(/CISC275/i);
+         |                                ^
+       8 |     expect(linkElement).toBeInTheDocument();
+       9 | });
+      10 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
+      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
+      at Object.<anonymous> (src/tests/App.test.tsx:7:32)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
+---------------------|---------|----------|---------|---------|-------------------------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                   
+---------------------|---------|----------|---------|---------|-------------------------------------
+All files            |   36.18 |     5.71 |   21.42 |   36.66 |                                     
+ src                 |     100 |      100 |     100 |     100 |                                     
+  App.tsx            |     100 |      100 |     100 |     100 |                                     
+  global.d.ts        |       0 |        0 |       0 |       0 |                                     
+  index.d.ts         |       0 |        0 |       0 |       0 |                                     
+ src/DnD-demo        |    1.92 |        0 |       0 |    1.96 |                                     
+  Board.tsx          |       0 |        0 |       0 |       0 | 7-36                                
+  BoardSquare.tsx    |       0 |        0 |       0 |       0 | 13-26                               
+  Overlay.tsx        |       0 |      100 |       0 |       0 | 7-8                                 
+  Pic.tsx            |       0 |        0 |       0 |       0 | 5-13                                
+  Square.tsx         |       0 |        0 |       0 |       0 | 7-11                                
+  constants.ts       |     100 |      100 |     100 |     100 |                                     
+  demo-index.tsx     |       0 |      100 |       0 |       0 | 8-28                                
+  game.ts            |       0 |        0 |       0 |       0 | 1-26                                
+ src/components      |    42.5 |    16.66 |    28.2 |   43.03 |                                     
+  BoardProps.tsx     |       0 |      100 |       0 |       0 | 8-22                                
+  BorderBox.tsx      |   85.71 |      100 |   66.66 |   85.71 | 37                                  
+  BorderBoxUp.tsx    |   85.71 |      100 |   66.66 |   85.71 | 36                                  
+  Garden.tsx         |   43.33 |      100 |   22.22 |   43.33 | 29-30,39,43,51-54,61-65,69-70,74-75 
+  PlantDescriber.tsx |       0 |        0 |       0 |       0 | 8-28                                
+  PlantEditor.tsx    |       0 |      100 |       0 |       0 | 29-32                               
+  PlantView.tsx      |       0 |      100 |       0 |       0 | 4                                   
+  Prop.tsx           |   66.66 |       50 |      50 |   66.66 | 19,29                               
+  PropList.tsx       |   29.41 |        0 |   27.27 |   29.41 | 24-48,55-58                         
+ src/interfaces      |     100 |      100 |     100 |     100 |                                     
+  PropList.ts        |     100 |      100 |     100 |     100 |                                     
+  garden.ts          |       0 |        0 |       0 |       0 |                                     
+  item.ts            |       0 |        0 |       0 |       0 |                                     
+  nonPlant.ts        |       0 |        0 |       0 |       0 |                                     
+  plant.ts           |       0 |        0 |       0 |       0 |                                     
+  shadeLevel.ts      |       0 |        0 |       0 |       0 |                                     
+ src/tests           |       0 |        0 |       0 |       0 |                                     
+  setupTests.ts      |       0 |        0 |       0 |       0 |                                     
+---------------------|---------|----------|---------|---------|-------------------------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        1.999 s
+Time:        5.217 s
 Ran all test suites.

@@ -6,11 +6,12 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
+import { PropListArr } from "../interfaces/PropList";
 import { Boardarr } from "./BoardProps";
 import Prop from "./Prop";
 
 class Garden extends React.Component {
-    boardstate = { boardprops: Boardarr };
+    boardstate = { boardprops: PropListArr };
 
     state = {
         activeDrags: 0,

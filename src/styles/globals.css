@@ -12,6 +12,7 @@ body {
     height: 50px;
     transform: rotate(-90deg);
     border: 1px solid blue;
+    margin: auto;
 }
 
 code {

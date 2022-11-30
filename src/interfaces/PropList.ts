@@ -37,135 +37,150 @@ const Cactus: Plant = {
     species: "Cactus",
     topImage: cactusTD,
     sideImage: cactusSV,
-    size: 20,
+    size: 8,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 12
 };
 const Tomato: Plant = {
     id: 2,
     species: "Tomato Plant",
     topImage: "",
     sideImage: tomatoSV,
-    size: 20,
+    size: 5,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 64
 };
 const RedRoses: Plant = {
     id: 3,
     species: "Red Roses",
     topImage: "",
     sideImage: redrosesSV,
-    size: 20,
+    size: 12,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 54
 };
 const YellowRoses: Plant = {
     id: 4,
     species: "Yellow Roses",
     topImage: "",
     sideImage: yellowrosesSV,
-    size: 20,
+    size: 12,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 49
 };
 const Sunflower: Plant = {
     id: 5,
     species: "Sunflower",
     topImage: "",
     sideImage: sunflowerSV,
-    size: 20,
+    size: 11,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 43
 };
 const Lilac: Plant = {
     id: 6,
     species: "Lilac",
     topImage: lilacTD,
     sideImage: lilacSV,
-    size: 20,
+    size: 9,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 39
 };
 const Chrysanthemum: Plant = {
     id: 7,
     species: "Chrysanthemum",
     topImage: chrisTD,
     sideImage: chrisSV,
-    size: 20,
+    size: 7,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 22
 };
 const SiberianBugloss: Plant = {
     id: 8,
     species: "Siberian Bugloss",
     topImage: SBTD,
     sideImage: SBSV,
-    size: 20,
+    size: 8,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 34
 };
 const Bamboo: Plant = {
     id: 9,
     species: "Bamboo",
     topImage: BambooTD,
     sideImage: BambooSV,
-    size: 20,
+    size: 7,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 27
 };
 const Cabbage: Plant = {
     id: 10,
     species: "Cabbage",
     topImage: CabbageTD,
     sideImage: CabbageSV,
-    size: 20,
+    size: 4,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 74
 };
 const Corn: Plant = {
     id: 11,
     species: "Corn",
     topImage: CornTD,
     sideImage: CornSV,
-    size: 20,
+    size: 8,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 84
 };
 const Potato: Plant = {
     id: 12,
     species: "Potato Plant",
     topImage: PotatoTD,
     sideImage: PotatoSV,
-    size: 20,
+    size: 4,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 54
 };
 const Aloe: Plant = {
     id: 13,
     species: "Aloe",
     topImage: SuccTD,
     sideImage: SuccSV,
-    size: 20,
+    size: 5,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 19
 };
 const Succulent: Plant = {
     id: 14,
     species: "Succulent",
     topImage: AloeTD,
     sideImage: AloeSV,
-    size: 20,
+    size: 4,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4
 };
 const LemonTree: Plant = {
     id: 27,
     species: "Lemon Tree",
     topImage: LemonTD,
     sideImage: LemonSV,
-    size: 20,
+    size: 14,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 62
 };
 const RedMapleTree: Plant = {
     id: 28,
@@ -174,27 +189,51 @@ const RedMapleTree: Plant = {
     sideImage: RedMapleSV,
     size: 20,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 10
 };
 const Bush: Plant = {
     id: 29,
     species: "Bush",
     topImage: BushTD,
     sideImage: BushSV,
-    size: 20,
+    size: 8,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 15
 };
 const Path: Plant = {
     id: 30,
     species: "Path",
     topImage: pathTD,
     sideImage: pathTD,
-    size: 20,
+    size: 10,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
-    floweringPeriod: "Mid-Spring"
+    floweringPeriod: "Mid-Spring",
+    waterReq: 0
 };
 export const PropListArr = [
+    Cactus,
+    Tomato,
+    RedRoses,
+    YellowRoses,
+    Sunflower,
+    Lilac,
+    Chrysanthemum,
+    SiberianBugloss,
+    Bamboo,
+    Cabbage,
+    Corn,
+    Potato,
+    Aloe,
+    Succulent,
+    LemonTree,
+    RedMapleTree,
+    Bush,
+    Path
+];
+
+export const defaultProps = [
     Cactus,
     Tomato,
     RedRoses,

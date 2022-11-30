@@ -16,6 +16,7 @@ export interface Plant {
     // The amount of shade plant should receive on average
     shadeConditions: shadeLevel[];
     floweringPeriod: string;
+    waterReq: number;
 
     /* COMMENTED OUT ATTRIBUTES OF PLANT: WILL ADD TO PLANT ONCE THEY BECOME MORE DEFINED
     waterRequirement: string;

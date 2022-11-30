@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Plant } from "../interfaces/plant";
-import { PropListArr } from "../interfaces/PropList";
+import { defaultProps, PropListArr } from "../interfaces/PropList";
 import Prop from "./Prop";
 
 import "../styles/PropList.css";
@@ -28,6 +28,11 @@ function PropList() {
             })
         );
     }
+    function resetlist() {
+        let newPropList = deepCloneProps(proplist);
+        newPropList = defaultProps;
+        setProplist(newPropList);
+    }
     function alphabeticalOrder() {
         //Might need to do a deep copy of the propList
         const newPropList = deepCloneProps(proplist);
@@ -36,7 +41,6 @@ function PropList() {
                 a.species < b.species ? -1 : 1
             )
         );
-        console.log(newPropList, "Test Alpha");
     }
     function ReversealphabeticalOrder() {
         const newPropList = deepCloneProps(proplist);
@@ -45,19 +49,49 @@ function PropList() {
                 a.species > b.species ? -1 : 1
             )
         );
-        console.log(newPropList, "Test Alpha");
+    }
+    function SortbySizeSmall() {
+        const newPropList = deepCloneProps(proplist);
+        setProplist(newPropList.sort((a: Plant, b: Plant) => a.size - b.size));
+    }
+    function SortbySizeBig() {
+        const newPropList = deepCloneProps(proplist);
+        setProplist(newPropList.sort((a: Plant, b: Plant) => b.size - a.size));
+    }
+    function SortbyWaterReqSmall() {
+        const newPropList = deepCloneProps(proplist);
+        setProplist(
+            newPropList.sort((a: Plant, b: Plant) => a.waterReq - b.waterReq)
+        );
+    }
+    function SortbyWaterReqBig() {
+        const newPropList = deepCloneProps(proplist);
+        setProplist(
+            newPropList.sort((a: Plant, b: Plant) => b.waterReq - a.waterReq)
+        );
     }
 
     return (
         <div>
+            <Button onClick={() => resetlist()}>Reset List</Button>
             <strong>Prop List</strong>
             <ul className="scroll-bar">{generateList(proplist)}</ul>
-            <Button onClick={() => alphabeticalOrder()}>
-                Alphabetical Order
-            </Button>
-            <Button onClick={() => ReversealphabeticalOrder()}>
-                Reverse Alphabetical Order
-            </Button>
+            <div>
+                <Button onClick={() => alphabeticalOrder()}>Alpha</Button>
+                <Button onClick={() => ReversealphabeticalOrder()}>
+                    Reverse Alpha
+                </Button>
+            </div>
+            <div>
+                <Button onClick={() => SortbyWaterReqBig()}>Most Water</Button>
+                <Button onClick={() => SortbyWaterReqSmall()}>
+                    Least Water
+                </Button>
+            </div>
+            <div>
+                <Button onClick={() => SortbySizeBig()}>Biggest Size</Button>
+                <Button onClick={() => SortbySizeSmall()}>Smallest Size</Button>
+            </div>
         </div>
     );
 }

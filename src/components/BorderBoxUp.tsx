@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../styles/BorderBox.css";
 
-// If I took out the "export" in COLORS, would it not update?
 const COLORS = ["green", "blue", "brown"];
 const BORDERS = ["Lawn", "Water", "Wood"];
 const DEFAULT_COLOR_INDEX = 0;
@@ -16,7 +15,7 @@ function BorderPreview({ borderIndex }: ChangeBorderBox): JSX.Element {
         <div
             data-testid="colored-box"
             style={{
-                width: "50px",
+                width: "500px",
                 height: "50px",
                 backgroundColor: COLORS[borderIndex],
                 display: "inline-block",
@@ -27,7 +26,7 @@ function BorderPreview({ borderIndex }: ChangeBorderBox): JSX.Element {
     );
 }
 
-export function BorderBox(): JSX.Element {
+export function BorderBoxUp(): JSX.Element {
     const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
     return (
         <div className="borderbox">

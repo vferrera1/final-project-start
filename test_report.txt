@@ -12,135 +12,150 @@ Browserslist: caniuse-lite is outdated. Please run:
         species: 'Cactus',
         topImage: 'CactusTopDown.png',
         sideImage: 'CactusSide.png',
-        size: 20,
+        size: 8,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 12
       },
       {
         id: 2,
         species: 'Tomato Plant',
         topImage: '',
         sideImage: 'TomatoPlantSide.png',
-        size: 20,
+        size: 5,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 64
       },
       {
         id: 3,
         species: 'Red Roses',
         topImage: '',
         sideImage: 'RedRoseBushSide.png',
-        size: 20,
+        size: 12,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 54
       },
       {
         id: 4,
         species: 'Yellow Roses',
         topImage: '',
         sideImage: 'YellowRoseBushSide.png',
-        size: 20,
+        size: 12,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 49
       },
       {
         id: 5,
         species: 'Sunflower',
         topImage: '',
         sideImage: 'SunflowerSide.png',
-        size: 20,
+        size: 11,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 43
       },
       {
         id: 6,
         species: 'Lilac',
         topImage: 'LilacTV.png',
         sideImage: 'LilacSV.png',
-        size: 20,
+        size: 9,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 39
       },
       {
         id: 7,
         species: 'Chrysanthemum',
         topImage: 'ChrisTD.png',
         sideImage: 'ChrisSV.png',
-        size: 20,
+        size: 7,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 22
       },
       {
         id: 8,
         species: 'Siberian Bugloss',
         topImage: 'SBTD.png',
         sideImage: 'SBSV.png',
-        size: 20,
+        size: 8,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 34
       },
       {
         id: 9,
         species: 'Bamboo',
         topImage: 'BambooTD.png',
         sideImage: 'BambooSV.png',
-        size: 20,
+        size: 7,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 27
       },
       {
         id: 10,
         species: 'Cabbage',
         topImage: 'CabbageTD.png',
         sideImage: 'CabbageSV.png',
-        size: 20,
+        size: 4,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 74
       },
       {
         id: 11,
         species: 'Corn',
         topImage: 'CornTD.png',
         sideImage: 'CornSV.png',
-        size: 20,
+        size: 8,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 84
       },
       {
         id: 12,
         species: 'Potato Plant',
         topImage: 'PotatoTD.png',
         sideImage: 'PotatoSV.png',
-        size: 20,
+        size: 4,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 54
       },
       {
         id: 13,
         species: 'Aloe',
         topImage: 'SuccTD.png',
         sideImage: 'SuccSV.png',
-        size: 20,
+        size: 5,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 19
       },
       {
         id: 14,
         species: 'Succulent',
         topImage: 'SuccRTD.png',
         sideImage: 'SuccRSV.png',
-        size: 20,
+        size: 4,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 4
       },
       {
         id: 27,
         species: 'Lemon Tree',
         topImage: 'LemonTD.png',
         sideImage: 'LemonSV.png',
-        size: 20,
+        size: 14,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 62
       },
       {
         id: 28,
@@ -149,25 +164,28 @@ Browserslist: caniuse-lite is outdated. Please run:
         sideImage: 'RedMapleSV.png',
         size: 20,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 10
       },
       {
         id: 29,
         species: 'Bush',
         topImage: 'BushTD.png',
         sideImage: 'BushSV.png',
-        size: 20,
+        size: 8,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 15
       },
       {
         id: 30,
         species: 'Path',
         topImage: 'Path.png',
         sideImage: 'Path.png',
-        size: 20,
+        size: 10,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring'
+        floweringPeriod: 'Mid-Spring',
+        waterReq: 0
       }
     ] Generated
 
@@ -200,8 +218,8 @@ Browserslist: caniuse-lite is outdated. Please run:
       at Garden.render (src/components/Garden.tsx:83:13)
       at finishClassComponent (node_modules/react-dom/cjs/react-dom.development.js:17485:31)
 
-FAIL src/tests/App.test.tsx
-  ✕ renders the course name somewhere (239 ms)
+FAIL src/tests/App.test.tsx (5.565 s)
+  ✕ renders the course name somewhere (350 ms)
 
   ● renders the course name somewhere
 
@@ -242,6 +260,12 @@ FAIL src/tests/App.test.tsx
             [33mclass[39m=[32m"boxcontainer"[39m
           [36m>[39m
             [36m<div>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mReset List[0m
+              [36m</button>[39m
               [36m<strong>[39m
                 [0mProp List[0m
               [36m</strong>[39m
@@ -389,14 +413,7 @@ FAIL src/tests/App.test.tsx
                       [33mid[39m=[32m"9"[39m
                       [33msrc[39m=[32m"BambooSV.png"[39m
                       [33mstyle[39m=[32m"border: 0px;"[39m
-                    [36m/>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"propcontainer"[39m
-                [36m>[39m
-                  [36m<li>[39m
-       ...
+                   ...
 
        5 | test("renders the course name somewhere", () => {
        6 |     render(<App />);
@@ -419,7 +436,7 @@ FAIL src/tests/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                   
 ---------------------|---------|----------|---------|---------|-------------------------------------
-All files            |   36.18 |     5.71 |   21.42 |   36.66 |                                     
+All files            |   32.74 |     5.71 |   17.14 |   33.53 |                                     
  src                 |     100 |      100 |     100 |     100 |                                     
   App.tsx            |     100 |      100 |     100 |     100 |                                     
   global.d.ts        |       0 |        0 |       0 |       0 |                                     
@@ -433,7 +450,7 @@ All files            |   36.18 |     5.71 |   21.42 |   36.66 |
   constants.ts       |     100 |      100 |     100 |     100 |                                     
   demo-index.tsx     |       0 |      100 |       0 |       0 | 8-28                                
   game.ts            |       0 |        0 |       0 |       0 | 1-26                                
- src/components      |    42.5 |    16.66 |    28.2 |   43.03 |                                     
+ src/components      |   34.69 |    16.66 |   20.75 |   35.78 |                                     
   BoardProps.tsx     |       0 |      100 |       0 |       0 | 8-22                                
   BorderBox.tsx      |   85.71 |      100 |   66.66 |   85.71 | 37                                  
   BorderBoxUp.tsx    |   85.71 |      100 |   66.66 |   85.71 | 36                                  
@@ -442,7 +459,7 @@ All files            |   36.18 |     5.71 |   21.42 |   36.66 |
   PlantEditor.tsx    |       0 |      100 |       0 |       0 | 29-32                               
   PlantView.tsx      |       0 |      100 |       0 |       0 | 4                                   
   Prop.tsx           |   66.66 |       50 |      50 |   66.66 | 19,29                               
-  PropList.tsx       |   29.41 |        0 |   27.27 |   29.41 | 24-48,55-58                         
+  PropList.tsx       |   14.28 |        0 |      12 |   15.15 | 24-70,76-93                         
  src/interfaces      |     100 |      100 |     100 |     100 |                                     
   PropList.ts        |     100 |      100 |     100 |     100 |                                     
   garden.ts          |       0 |        0 |       0 |       0 |                                     
@@ -456,5 +473,5 @@ All files            |   36.18 |     5.71 |   21.42 |   36.66 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.217 s
+Time:        7.28 s
 Ran all test suites.

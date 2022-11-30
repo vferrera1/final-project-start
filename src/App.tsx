@@ -14,7 +14,6 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 function App(): JSX.Element {
     return (
         <DndProvider backend={HTML5Backend}>
-            <PlantView plant={PropListArr[0]} />
             <div className="App">
                 <header className="App-header">Garden on the Go!</header>
                 <BorderBoxUp></BorderBoxUp>

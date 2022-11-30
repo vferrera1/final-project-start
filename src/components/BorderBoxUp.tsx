@@ -26,7 +26,7 @@ function BorderPreview({ borderIndex }: ChangeBorderBox): JSX.Element {
     );
 }
 
-export function BorderBox(): JSX.Element {
+export function BorderBoxUp(): JSX.Element {
     const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
     return (
         <div className="borderbox">

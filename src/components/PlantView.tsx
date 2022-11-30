@@ -1,3 +1,13 @@
+import React from "react";
+
+export function PlantView(): JSX.Element {
+    return <div></div>;
+}
+
+/* This file may become defunct.  
+ * Prop.tsx currently stores the image of the plant,
+ * so it makes sense to adapt what is in here to Prop.tsx 
+ * instead of trying to work with this code.
 import React, { useState } from "react";
 ("./styles/globals.css");
 import { Plant } from "../interfaces/plant";
@@ -15,7 +25,6 @@ export function PlantView({ plant }: { plant: Plant }): JSX.Element {
                 height={`${plant.size * 10}`}
                 onClick={() => setDescriptionVisible(!descriptionVisible)}
             />
-            {/* eslint-disable-next-line no-extra-parens */}
             {descriptionVisible && (
                 <PlantDescriber plant={plant}></PlantDescriber>
             )}

@@ -2,18 +2,16 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Plant } from "../interfaces/plant";
 import { PropListArr } from "../interfaces/PropList";
-import { useDrag } from "react-dnd";
-import { ItemTypes } from "../DnD-demo/constants";
 import Prop from "./Prop";
 
 import "../styles/PropList.css";
-import { idText } from "typescript";
 
 function PropList() {
     const [proplist, setProplist] = useState<Plant[]>(PropListArr);
 
     function generateList(prop: Plant[]) {
         console.log(prop, "Generated");
+        // eslint-disable-next-line no-extra-parens
         return prop.map((prop) => (
             <div key={prop.species} className="propcontainer">
                 <li>{prop.species}</li>

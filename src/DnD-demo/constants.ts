@@ -1,3 +1,3 @@
 export const ItemTypes = {
-    PROP: "prop"
+    PROP: "Prop"
 };

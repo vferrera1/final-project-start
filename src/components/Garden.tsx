@@ -5,7 +5,9 @@
 /* eslint-disable react/no-direct-mutation-state */
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { Container, Form } from "react-bootstrap";
 import Draggable from "react-draggable";
+import { Plant } from "../interfaces/plant";
 import { PropListArr } from "../interfaces/PropList";
 import { Boardarr } from "./BoardProps";
 import Prop from "./Prop";
@@ -78,18 +80,33 @@ class Garden extends React.Component {
     render() {
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
         const { deltaPosition, controlledPosition } = this.state;
-
+        //const [gardenSize, setGardenSize] = useState<string>("800");
+        //const getProptoGardenPercentage = (prop: Plant): number => (prop.size / parseInt(gardenSize)) * 100;
         return (
-            <div className="container">
-                {this.boardstate.boardprops.map((prop) => {
-                    return (
-                        <Draggable bounds="parent" {...dragHandlers}>
-                            <div className="box">
-                                <Prop plant={prop} />
-                            </div>
-                        </Draggable>
-                    );
-                })}
+            <div>
+                <div className="container">
+                    {this.boardstate.boardprops.map((prop) => {
+                        return (
+                            <Draggable bounds="parent" {...dragHandlers}>
+                                <div className="box">
+                                    <Prop plant={prop} />
+                                </div>
+                            </Draggable>
+                        );
+                    })}
+                </div>
+                {/*
+                <Form.Group controlId="formGardenSize">
+                    <Form.Label>Size of Garden:</Form.Label>
+                    <Form.Control
+                        type="number"
+                        value={gardenSize}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                            setGardenSize(e.target.value)
+                        }
+                    />
+                </Form.Group>
+                    */}
             </div>
         );
     }

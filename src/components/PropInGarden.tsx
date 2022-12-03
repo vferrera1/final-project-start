@@ -4,15 +4,8 @@ import React, { useState } from "react";
 import { useDrag } from "react-dnd";
 import { ItemTypes } from "../DnD-demo/constants";
 import { Plant } from "../interfaces/plant";
-import { PlantDescriber } from "./PlantDescriber";
 
-function Prop({
-    plant,
-    selectElement
-}: {
-    plant: Plant;
-    selectElement: (id: string) => void;
-}): JSX.Element {
+function PropInGarden({ plant }: { plant: Plant }): JSX.Element {
     const [{ isDragging }, drag] = useDrag({
         item: { type: ItemTypes.PROP, id: plant },
         collect: (monitor) => ({
@@ -34,12 +27,9 @@ function Prop({
                 src={plant.sideImage}
                 alt={plant.species}
                 style={{ border: isDragging ? "5px solid pink" : "0px" }}
-                onClick={() => {
-                    selectElement(plant.id);
-                }}
             />
         </div>
     );
 }
 
-export default Prop;
+export default PropInGarden;

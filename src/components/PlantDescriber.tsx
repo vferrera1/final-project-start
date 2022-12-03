@@ -4,7 +4,19 @@ import { Plant } from "../interfaces/plant";
 import { shadeLevel } from "../interfaces/shadeLevel";
 import { PlantEditor } from "./PlantEditor";
 
-export function PlantDescriber({ plant }: { plant: Plant }): JSX.Element {
+export function PlantDescriber({
+    selectedElement
+}: {
+    selectedElement: Plant | undefined;
+}): JSX.Element {
+    if (selectedElement === undefined) {
+        return (
+            <div className="Plant-describer">
+                <h6>Please select a garden element.</h6>
+            </div>
+        );
+    }
+    const plant = selectedElement;
     const [editMode, setEditMode] = useState<boolean>(false);
     return (
         <div>

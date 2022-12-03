@@ -10,7 +10,7 @@ import Draggable from "react-draggable";
 import { Plant } from "../interfaces/plant";
 import { PropListArr } from "../interfaces/PropList";
 import { Boardarr } from "./BoardProps";
-import Prop from "./Prop";
+import PropInGarden from "./PropInGarden";
 
 class Garden extends React.Component {
     boardstate = { boardprops: PropListArr };
@@ -25,6 +25,10 @@ class Garden extends React.Component {
             x: -400,
             y: 200
         }
+    };
+
+    gardenSize = {
+        size: "800"
     };
 
     handleDrag = (e: any, ui: any) => {
@@ -89,7 +93,7 @@ class Garden extends React.Component {
                         return (
                             <Draggable bounds="parent" {...dragHandlers}>
                                 <div className="box">
-                                    <Prop plant={prop} />
+                                    <PropInGarden plant={prop} />
                                 </div>
                             </Draggable>
                         );
@@ -100,9 +104,9 @@ class Garden extends React.Component {
                     <Form.Label>Size of Garden:</Form.Label>
                     <Form.Control
                         type="number"
-                        value={gardenSize}
+                        value={this.gardenSize.size}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                            setGardenSize(e.target.value)
+                            this.setGardenSize(e.target.value)
                         }
                     />
                 </Form.Group>

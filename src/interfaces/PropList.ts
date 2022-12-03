@@ -33,7 +33,7 @@ import AloeTD from "../images/SuccRTD.png";
 import AloeSV from "../images/SuccRSV.png";
 
 const Cactus: Plant = {
-    id: 1,
+    id: "1",
     species: "Cactus",
     topImage: cactusTD,
     sideImage: cactusSV,
@@ -42,7 +42,7 @@ const Cactus: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const Tomato: Plant = {
-    id: 2,
+    id: "2",
     species: "Tomato Plant",
     topImage: "",
     sideImage: tomatoSV,
@@ -51,7 +51,7 @@ const Tomato: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const RedRoses: Plant = {
-    id: 3,
+    id: "3",
     species: "Red Roses",
     topImage: "",
     sideImage: redrosesSV,
@@ -60,7 +60,7 @@ const RedRoses: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const YellowRoses: Plant = {
-    id: 4,
+    id: "4",
     species: "Yellow Roses",
     topImage: "",
     sideImage: yellowrosesSV,
@@ -69,7 +69,7 @@ const YellowRoses: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const Sunflower: Plant = {
-    id: 5,
+    id: "5",
     species: "Sunflower",
     topImage: "",
     sideImage: sunflowerSV,
@@ -78,7 +78,7 @@ const Sunflower: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const Lilac: Plant = {
-    id: 6,
+    id: "6",
     species: "Lilac",
     topImage: lilacTD,
     sideImage: lilacSV,
@@ -87,7 +87,7 @@ const Lilac: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const Chrysanthemum: Plant = {
-    id: 7,
+    id: "7",
     species: "Chrysanthemum",
     topImage: chrisTD,
     sideImage: chrisSV,
@@ -96,7 +96,7 @@ const Chrysanthemum: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const SiberianBugloss: Plant = {
-    id: 8,
+    id: "8",
     species: "Siberian Bugloss",
     topImage: SBTD,
     sideImage: SBSV,
@@ -105,7 +105,7 @@ const SiberianBugloss: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const Bamboo: Plant = {
-    id: 9,
+    id: "9",
     species: "Bamboo",
     topImage: BambooTD,
     sideImage: BambooSV,
@@ -114,7 +114,7 @@ const Bamboo: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const Cabbage: Plant = {
-    id: 10,
+    id: "10",
     species: "Cabbage",
     topImage: CabbageTD,
     sideImage: CabbageSV,
@@ -123,7 +123,7 @@ const Cabbage: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const Corn: Plant = {
-    id: 11,
+    id: "11",
     species: "Corn",
     topImage: CornTD,
     sideImage: CornSV,
@@ -132,7 +132,7 @@ const Corn: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const Potato: Plant = {
-    id: 12,
+    id: "12",
     species: "Potato Plant",
     topImage: PotatoTD,
     sideImage: PotatoSV,
@@ -141,7 +141,7 @@ const Potato: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const Aloe: Plant = {
-    id: 13,
+    id: "13",
     species: "Aloe",
     topImage: SuccTD,
     sideImage: SuccSV,
@@ -150,7 +150,7 @@ const Aloe: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const Succulent: Plant = {
-    id: 14,
+    id: "14",
     species: "Succulent",
     topImage: AloeTD,
     sideImage: AloeSV,
@@ -159,7 +159,7 @@ const Succulent: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const LemonTree: Plant = {
-    id: 27,
+    id: "27",
     species: "Lemon Tree",
     topImage: LemonTD,
     sideImage: LemonSV,
@@ -168,7 +168,7 @@ const LemonTree: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const RedMapleTree: Plant = {
-    id: 28,
+    id: "28",
     species: "Red Maple",
     topImage: RedMapleTD,
     sideImage: RedMapleSV,
@@ -177,7 +177,7 @@ const RedMapleTree: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const Bush: Plant = {
-    id: 29,
+    id: "29",
     species: "Bush",
     topImage: BushTD,
     sideImage: BushSV,
@@ -186,7 +186,7 @@ const Bush: Plant = {
     floweringPeriod: "Mid-Spring"
 };
 const Path: Plant = {
-    id: 30,
+    id: "30",
     species: "Path",
     topImage: pathTD,
     sideImage: pathTD,

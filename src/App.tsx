@@ -23,8 +23,10 @@ function App(): JSX.Element {
                     <BorderBox></BorderBox>
                     <TransformWrapper
                         initialScale={1}
-                        initialPositionX={200}
-                        initialPositionY={100}
+                        initialPositionX={100}
+                        initialPositionY={200}
+                        wheel={{ touchPadDisabled: true }}
+                        panning={{ activationKeys: ["shift"] }}
                     >
                         {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                             <React.Fragment>

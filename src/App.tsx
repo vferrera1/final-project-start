@@ -10,6 +10,7 @@ import { BorderBoxUp } from "./components/BorderBoxUp";
 //import { PropListArr } from "./interfaces/PropList";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 function App(): JSX.Element {
     return (
@@ -20,7 +21,11 @@ function App(): JSX.Element {
                 <div className="boxcontainer">
                     <PropList></PropList>
                     <BorderBox></BorderBox>
-                    <Garden></Garden>
+                    <TransformWrapper>
+                        <TransformComponent>
+                            <Garden></Garden>
+                        </TransformComponent>
+                    </TransformWrapper>
                     <BorderBox></BorderBox>
                 </div>
                 <BorderBox></BorderBox>

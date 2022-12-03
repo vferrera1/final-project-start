@@ -40,7 +40,9 @@ const Cactus: Plant = {
     size: 8,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 12
+    waterReq: 12,
+    region: "Global",
+    price: "$$"
 };
 const Tomato: Plant = {
     id: 2,
@@ -50,7 +52,9 @@ const Tomato: Plant = {
     size: 5,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 64
+    waterReq: 64,
+    region: "South America",
+    price: "$$"
 };
 const RedRoses: Plant = {
     id: 3,
@@ -60,7 +64,9 @@ const RedRoses: Plant = {
     size: 12,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 54
+    waterReq: 54,
+    region: "Europe",
+    price: "$$$"
 };
 const YellowRoses: Plant = {
     id: 4,
@@ -70,7 +76,9 @@ const YellowRoses: Plant = {
     size: 12,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 49
+    waterReq: 49,
+    region: "Europe",
+    price: "$$$"
 };
 const Sunflower: Plant = {
     id: 5,
@@ -80,7 +88,9 @@ const Sunflower: Plant = {
     size: 11,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 43
+    waterReq: 43,
+    region: "North America",
+    price: "$$$"
 };
 const Lilac: Plant = {
     id: 6,
@@ -90,7 +100,9 @@ const Lilac: Plant = {
     size: 9,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 39
+    waterReq: 39,
+    region: "Europe",
+    price: "$$"
 };
 const Chrysanthemum: Plant = {
     id: 7,
@@ -100,7 +112,9 @@ const Chrysanthemum: Plant = {
     size: 7,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 22
+    waterReq: 22,
+    region: "Asia",
+    price: "$$$"
 };
 const SiberianBugloss: Plant = {
     id: 8,
@@ -110,7 +124,9 @@ const SiberianBugloss: Plant = {
     size: 8,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 34
+    waterReq: 34,
+    region: "Asia",
+    price: "$$"
 };
 const Bamboo: Plant = {
     id: 9,
@@ -120,7 +136,9 @@ const Bamboo: Plant = {
     size: 7,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 27
+    waterReq: 27,
+    region: "Asia",
+    price: "$$"
 };
 const Cabbage: Plant = {
     id: 10,
@@ -130,7 +148,9 @@ const Cabbage: Plant = {
     size: 4,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 74
+    waterReq: 74,
+    region: "Europe",
+    price: "$"
 };
 const Corn: Plant = {
     id: 11,
@@ -140,7 +160,9 @@ const Corn: Plant = {
     size: 8,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 84
+    waterReq: 84,
+    region: "South America",
+    price: "$"
 };
 const Potato: Plant = {
     id: 12,
@@ -150,7 +172,9 @@ const Potato: Plant = {
     size: 4,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 54
+    waterReq: 54,
+    region: "North America",
+    price: "$"
 };
 const Aloe: Plant = {
     id: 13,
@@ -160,7 +184,9 @@ const Aloe: Plant = {
     size: 5,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 19
+    waterReq: 19,
+    region: "Oceania",
+    price: "$"
 };
 const Succulent: Plant = {
     id: 14,
@@ -170,7 +196,9 @@ const Succulent: Plant = {
     size: 4,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 4
+    waterReq: 4,
+    region: "Global",
+    price: "$"
 };
 const LemonTree: Plant = {
     id: 27,
@@ -180,7 +208,9 @@ const LemonTree: Plant = {
     size: 14,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 62
+    waterReq: 62,
+    region: "Asia",
+    price: "$$$"
 };
 const RedMapleTree: Plant = {
     id: 28,
@@ -190,7 +220,9 @@ const RedMapleTree: Plant = {
     size: 20,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 10
+    waterReq: 10,
+    region: "North America",
+    price: "$$$"
 };
 const Bush: Plant = {
     id: 29,
@@ -200,7 +232,9 @@ const Bush: Plant = {
     size: 8,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 15
+    waterReq: 15,
+    region: "Global",
+    price: "$$"
 };
 const Path: Plant = {
     id: 30,
@@ -210,7 +244,9 @@ const Path: Plant = {
     size: 10,
     shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
     floweringPeriod: "Mid-Spring",
-    waterReq: 0
+    waterReq: 0,
+    region: "Global",
+    price: "$$"
 };
 export const PropListArr = [
     Cactus,

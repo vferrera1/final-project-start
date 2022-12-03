@@ -7,8 +7,25 @@ import { Plant } from "../interfaces/plant";
 import { PlantDescriber } from "./PlantDescriber";
 
 function Prop({ plant }: { plant: Plant }): JSX.Element {
+    const makeid = (length: number) => {
+        let result = "";
+        const characters =
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        const charactersLength = characters.length;
+        for (let i = 0; i < length; i++) {
+            result += characters.charAt(
+                Math.floor(Math.random() * charactersLength)
+            );
+        }
+        return result;
+    };
     const [{ isDragging }, drag] = useDrag({
-        item: { type: ItemTypes.PROP, id: plant },
+        item: {
+            type: ItemTypes.PROP,
+            id: makeid(10),
+            data: plant,
+            name: plant.species
+        },
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging()
         })

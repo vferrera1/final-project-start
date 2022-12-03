@@ -2,6 +2,17 @@
 
 import { shadeLevel } from "./shadeLevel";
 
+type Region =
+    | "North America"
+    | "South America"
+    | "Europe"
+    | "Asia"
+    | "Africa"
+    | "Oceania"
+    | "Global";
+
+type Price = "$" | "$$" | "$$$";
+
 export interface Plant {
     // A unique plant ID (number)
     id: number;
@@ -17,7 +28,8 @@ export interface Plant {
     shadeConditions: shadeLevel[];
     floweringPeriod: string;
     waterReq: number;
-
+    region: Region;
+    price: Price;
     /* COMMENTED OUT ATTRIBUTES OF PLANT: WILL ADD TO PLANT ONCE THEY BECOME MORE DEFINED
     waterRequirement: string;
     soilRequirement: string; //Could also be called nutrient requirement

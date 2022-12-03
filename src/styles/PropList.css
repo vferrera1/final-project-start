@@ -5,3 +5,11 @@
     font-family: "GestaRegular", Arial, Helvetica, sans-serif;
     overflow: auto;
 }
+
+.scroll-bar2 {
+    height: 200px;
+    width: 150px;
+    border: 1px solid grey;
+    font-family: "GestaRegular", Arial, Helvetica, sans-serif;
+    overflow: auto;
+}

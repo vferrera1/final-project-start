@@ -6,13 +6,11 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
+import { Plant } from "../interfaces/plant";
 import { PropListArr } from "../interfaces/PropList";
-import { Boardarr } from "./BoardProps";
 import Prop from "./Prop";
 
-class Garden extends React.Component {
-    boardstate = { boardprops: PropListArr };
-
+class Garden extends React.Component<{ boardprops: Plant[]; drop: any }> {
     state = {
         activeDrags: 0,
         deltaPosition: {
@@ -80,8 +78,8 @@ class Garden extends React.Component {
         const { deltaPosition, controlledPosition } = this.state;
 
         return (
-            <div className="container">
-                {this.boardstate.boardprops.map((prop) => {
+            <div ref={this.props.drop} className="container">
+                {this.props.boardprops.map((prop) => {
                     return (
                         <Draggable bounds="parent" {...dragHandlers}>
                             <div className="box">

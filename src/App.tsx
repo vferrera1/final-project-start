@@ -8,19 +8,50 @@ import PropList from "./components/PropList";
 import { BorderBox } from "./components/BorderBox";
 import { BorderBoxUp } from "./components/BorderBoxUp";
 //import { PropListArr } from "./interfaces/PropList";
-import { DndProvider } from "react-dnd";
+import { DndProvider /* , DropTargetMonitor, useDrop */ } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-
+/* import { Plant } from "./interfaces/plant"; */
+import { PropListArr } from "./interfaces/PropList";
+/* import { ItemTypes } from "./DnD-demo/constants"; */
 function App(): JSX.Element {
+    /*   const [boardprops, SetBoardProps] = useState<Plant[]>([]);
+
+    const [{ isOver }, drop] = useDrop({
+        accept: ItemTypes.PROP,
+        drop: (item: { type: string; id: string; data: Plant; name: string }) =>
+            SetBoardProps(addToBoardList(item.data)),
+        collect: (monitor: DropTargetMonitor) => ({
+            isOver: !!monitor.isOver()
+        })
+    });
+
+    function deepCloneBoardProps(gardenProps: Plant[]): Plant[] {
+        return gardenProps.map(
+            (prop: Plant): Plant => ({
+                ...prop,
+                shadeConditions: [...prop.shadeConditions]
+            })
+        );
+    }
+
+    function addToBoardList(plant: Plant) {
+        const newPropList = deepCloneBoardProps(boardprops);
+        newPropList.push(plant);
+        return newPropList;
+    } */
+
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="App">
                 <header className="App-header">Garden on the Go!</header>
                 <BorderBoxUp></BorderBoxUp>
-                <div className="boxcontainer">
+                <div /* ref={drop} */ className="boxcontainer">
                     <PropList></PropList>
                     <BorderBox></BorderBox>
-                    <Garden></Garden>
+                    <Garden
+                        boardprops={PropListArr}
+                        drop={null /* drop */}
+                    ></Garden>
                     <BorderBox></BorderBox>
                 </div>
                 <BorderBox></BorderBox>

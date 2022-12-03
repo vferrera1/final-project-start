@@ -71,26 +71,224 @@ function PropList() {
         );
     }
 
+    function NA_Region() {
+        const newPropList = deepCloneProps(proplist);
+        const regionarr: Plant[] = [];
+        newPropList.map((q: Plant) => {
+            if (q.region == "North America") {
+                regionarr.push(q);
+            }
+        });
+        setProplist(regionarr);
+    }
+    function SA_Region() {
+        const newPropList = deepCloneProps(proplist);
+        const regionarr: Plant[] = [];
+        newPropList.map((q: Plant) => {
+            if (q.region == "South America") {
+                regionarr.push(q);
+            }
+        });
+        setProplist(regionarr);
+    }
+    function EU_Region() {
+        const newPropList = deepCloneProps(proplist);
+        const regionarr: Plant[] = [];
+        newPropList.map((q: Plant) => {
+            if (q.region == "Europe") {
+                regionarr.push(q);
+            }
+        });
+        setProplist(regionarr);
+    }
+    function AF_Region() {
+        const newPropList = deepCloneProps(proplist);
+        const regionarr: Plant[] = [];
+        newPropList.map((q: Plant) => {
+            if (q.region == "Africa") {
+                regionarr.push(q);
+            }
+        });
+        setProplist(regionarr);
+    }
+    function ASIA_Region() {
+        const newPropList = deepCloneProps(proplist);
+        const regionarr: Plant[] = [];
+        newPropList.map((q: Plant) => {
+            if (q.region == "Asia") {
+                regionarr.push(q);
+            }
+        });
+        setProplist(regionarr);
+    }
+    function AUS_Region() {
+        const newPropList = deepCloneProps(proplist);
+        const regionarr: Plant[] = [];
+        newPropList.map((q: Plant) => {
+            if (q.region == "Oceania") {
+                regionarr.push(q);
+            }
+        });
+        setProplist(regionarr);
+    }
+    function ALL_Region() {
+        const newPropList = deepCloneProps(proplist);
+        const regionarr: Plant[] = [];
+        newPropList.map((q: Plant) => {
+            if (q.region == "Global") {
+                regionarr.push(q);
+            }
+        });
+        setProplist(regionarr);
+    }
+    function lowprice_filter() {
+        const newPropList = deepCloneProps(proplist);
+        const regionarr: Plant[] = [];
+        newPropList.map((q: Plant) => {
+            if (q.price == "$") {
+                regionarr.push(q);
+            }
+        });
+        setProplist(regionarr);
+    }
+    function medprice_filter() {
+        const newPropList = deepCloneProps(proplist);
+        const regionarr: Plant[] = [];
+        newPropList.map((q: Plant) => {
+            if (q.price == "$$") {
+                regionarr.push(q);
+            }
+        });
+        setProplist(regionarr);
+    }
+    function highprice_filter() {
+        const newPropList = deepCloneProps(proplist);
+        const regionarr: Plant[] = [];
+        newPropList.map((q: Plant) => {
+            if (q.price == "$$$") {
+                regionarr.push(q);
+            }
+        });
+        setProplist(regionarr);
+    }
+    function totals() {
+        const newPropList = deepCloneProps(proplist);
+        const NAarr: Plant[] = [];
+        const SAarr: Plant[] = [];
+        const AFarr: Plant[] = [];
+        const EUarr: Plant[] = [];
+        const AUSarr: Plant[] = [];
+        const ASIAarr: Plant[] = [];
+        const lowarr: Plant[] = [];
+        const medarr: Plant[] = [];
+        const higharr: Plant[] = [];
+
+        newPropList.map((q: Plant) => {
+            if (q.region == "Europe") {
+                EUarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.region == "North America") {
+                NAarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.region == "South America") {
+                SAarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.region == "Africa") {
+                AFarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.region == "Oceania") {
+                AUSarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.region == "Asia") {
+                ASIAarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.price == "$") {
+                lowarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.price == "$$") {
+                medarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.price == "$$$") {
+                higharr.push(q);
+            }
+        });
+        return (
+            <div>
+                <h6>The number of North American Plants {NAarr.length}</h6>
+                <h6>The number of South American Plants {SAarr.length}</h6>
+                <h6>The number of Asian Plants {ASIAarr.length}</h6>
+                <h6>The number of African Plants {AFarr.length}</h6>
+                <h6>The number of Oceania Plants {AUSarr.length}</h6>
+                <h6>The number of European Plants {EUarr.length}</h6>
+                <h6>The number of $ Plants {lowarr.length}</h6>
+                <h6>The number of $$ Plants {medarr.length}</h6>
+                <h6>The number of $$$ Plants {higharr.length}</h6>
+            </div>
+        );
+    }
+
     return (
         <div>
+            {totals()}
             <Button onClick={() => resetlist()}>Reset List</Button>
             <strong>Prop List</strong>
             <ul className="scroll-bar">{generateList(proplist)}</ul>
-            <div>
+            Sort
+            <ul className="scroll-bar2">
                 <Button onClick={() => alphabeticalOrder()}>Alpha</Button>
                 <Button onClick={() => ReversealphabeticalOrder()}>
                     Reverse Alpha
                 </Button>
-            </div>
-            <div>
                 <Button onClick={() => SortbyWaterReqBig()}>Most Water</Button>
                 <Button onClick={() => SortbyWaterReqSmall()}>
                     Least Water
                 </Button>
-            </div>
-            <div>
                 <Button onClick={() => SortbySizeBig()}>Biggest Size</Button>
                 <Button onClick={() => SortbySizeSmall()}>Smallest Size</Button>
+            </ul>
+            Filter
+            <div>
+                <div>
+                    <Button onClick={() => lowprice_filter()}>$</Button>
+                    <Button onClick={() => medprice_filter()}>$$</Button>
+                </div>
+                <div>
+                    <Button onClick={() => highprice_filter()}>$$$</Button>
+                </div>
+                <div>
+                    <Button onClick={() => NA_Region()}>North American</Button>
+                    <Button onClick={() => SA_Region()}>South American</Button>
+                </div>
+                <div>
+                    <Button onClick={() => EU_Region()}>European</Button>
+                    <Button onClick={() => AF_Region()}>African</Button>
+                </div>
+                <div>
+                    <Button onClick={() => ASIA_Region()}>Asian</Button>
+                    <Button onClick={() => AUS_Region()}>Oceania</Button>
+                </div>
+                <div>
+                    <Button onClick={() => ALL_Region()}>Global</Button>
+                    <Button onClick={() => resetlist()}>Reset List</Button>
+                </div>
+                Sorting works on Filtered List.{" "}
+                <div>Always Remember to Reset the Filter!</div>
             </div>
         </div>
     );

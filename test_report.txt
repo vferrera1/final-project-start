@@ -15,7 +15,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 8,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 12
+        waterReq: 12,
+        region: 'Global',
+        price: '$$'
       },
       {
         id: 2,
@@ -25,7 +27,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 5,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 64
+        waterReq: 64,
+        region: 'South America',
+        price: '$$'
       },
       {
         id: 3,
@@ -35,7 +39,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 12,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 54
+        waterReq: 54,
+        region: 'Europe',
+        price: '$$$'
       },
       {
         id: 4,
@@ -45,7 +51,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 12,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 49
+        waterReq: 49,
+        region: 'Europe',
+        price: '$$$'
       },
       {
         id: 5,
@@ -55,7 +63,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 11,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 43
+        waterReq: 43,
+        region: 'North America',
+        price: '$$$'
       },
       {
         id: 6,
@@ -65,7 +75,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 9,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 39
+        waterReq: 39,
+        region: 'Europe',
+        price: '$$'
       },
       {
         id: 7,
@@ -75,7 +87,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 7,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 22
+        waterReq: 22,
+        region: 'Asia',
+        price: '$$$'
       },
       {
         id: 8,
@@ -85,7 +99,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 8,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 34
+        waterReq: 34,
+        region: 'Asia',
+        price: '$$'
       },
       {
         id: 9,
@@ -95,7 +111,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 7,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 27
+        waterReq: 27,
+        region: 'Asia',
+        price: '$$'
       },
       {
         id: 10,
@@ -105,7 +123,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 4,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 74
+        waterReq: 74,
+        region: 'Europe',
+        price: '$'
       },
       {
         id: 11,
@@ -115,7 +135,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 8,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 84
+        waterReq: 84,
+        region: 'South America',
+        price: '$'
       },
       {
         id: 12,
@@ -125,7 +147,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 4,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 54
+        waterReq: 54,
+        region: 'North America',
+        price: '$'
       },
       {
         id: 13,
@@ -135,7 +159,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 5,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 19
+        waterReq: 19,
+        region: 'Oceania',
+        price: '$'
       },
       {
         id: 14,
@@ -145,7 +171,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 4,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 4
+        waterReq: 4,
+        region: 'Global',
+        price: '$'
       },
       {
         id: 27,
@@ -155,7 +183,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 14,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 62
+        waterReq: 62,
+        region: 'Asia',
+        price: '$$$'
       },
       {
         id: 28,
@@ -165,7 +195,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 20,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 10
+        waterReq: 10,
+        region: 'North America',
+        price: '$$$'
       },
       {
         id: 29,
@@ -175,7 +207,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 8,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 15
+        waterReq: 15,
+        region: 'Global',
+        price: '$$'
       },
       {
         id: 30,
@@ -185,7 +219,9 @@ Browserslist: caniuse-lite is outdated. Please run:
         size: 10,
         shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
         floweringPeriod: 'Mid-Spring',
-        waterReq: 0
+        waterReq: 0,
+        region: 'Global',
+        price: '$$'
       }
     ] Generated
 
@@ -196,30 +232,30 @@ Browserslist: caniuse-lite is outdated. Please run:
     
     Check the render method of `Garden`. See https://reactjs.org/link/warning-keys for more information.
         at Draggable (/home/runner/work/final-project-start/final-project-start/node_modules/react-draggable/build/cjs/Draggable.js:99:5)
-        at Garden (/home/runner/work/final-project-start/final-project-start/src/components/Garden.tsx:13:38)
+        at Garden (/home/runner/work/final-project-start/final-project-start/src/components/Garden.tsx:13:74)
         at div
         at div
         at /home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/common/DndProvider.js:40:23
         at App
 
-      81 |
-      82 |         return (
-    > 83 |             <div className="container">
+      79 |
+      80 |         return (
+    > 81 |             <div ref={this.props.drop} className="container">
          |             ^
-      84 |                 {this.boardstate.boardprops.map((prop) => {
-      85 |                     return (
-      86 |                         <Draggable bounds="parent" {...dragHandlers}>
+      82 |                 {this.props.boardprops.map((prop) => {
+      83 |                     return (
+      84 |                         <Draggable bounds="parent" {...dragHandlers}>
 
       at printWarning (node_modules/react/cjs/react-jsx-dev-runtime.development.js:117:30)
       at error (node_modules/react/cjs/react-jsx-dev-runtime.development.js:93:5)
       at validateExplicitKey (node_modules/react/cjs/react-jsx-dev-runtime.development.js:986:5)
       at validateChildKeys (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1013:11)
       at jsxWithValidation (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1184:11)
-      at Garden.render (src/components/Garden.tsx:83:13)
+      at Garden.render (src/components/Garden.tsx:81:13)
       at finishClassComponent (node_modules/react-dom/cjs/react-dom.development.js:17485:31)
 
-FAIL src/tests/App.test.tsx (5.565 s)
-  ✕ renders the course name somewhere (350 ms)
+FAIL src/tests/App.test.tsx
+  ✕ renders the course name somewhere (244 ms)
 
   ● renders the course name somewhere
 
@@ -260,6 +296,44 @@ FAIL src/tests/App.test.tsx (5.565 s)
             [33mclass[39m=[32m"boxcontainer"[39m
           [36m>[39m
             [36m<div>[39m
+              [36m<div>[39m
+                [36m<h6>[39m
+                  [0mThe number of North American Plants [0m
+                  [0m3[0m
+                [36m</h6>[39m
+                [36m<h6>[39m
+                  [0mThe number of South American Plants [0m
+                  [0m2[0m
+                [36m</h6>[39m
+                [36m<h6>[39m
+                  [0mThe number of Asian Plants [0m
+                  [0m4[0m
+                [36m</h6>[39m
+                [36m<h6>[39m
+                  [0mThe number of African Plants [0m
+                  [0m0[0m
+                [36m</h6>[39m
+                [36m<h6>[39m
+                  [0mThe number of Oceania Plants [0m
+                  [0m1[0m
+                [36m</h6>[39m
+                [36m<h6>[39m
+                  [0mThe number of European Plants [0m
+                  [0m4[0m
+                [36m</h6>[39m
+                [36m<h6>[39m
+                  [0mThe number of $ Plants [0m
+                  [0m5[0m
+                [36m</h6>[39m
+                [36m<h6>[39m
+                  [0mThe number of $$ Plants [0m
+                  [0m7[0m
+                [36m</h6>[39m
+                [36m<h6>[39m
+                  [0mThe number of $$$ Plants [0m
+                  [0m6[0m
+                [36m</h6>[39m
+              [36m</div>[39m
               [36m<button[39m
                 [33mclass[39m=[32m"btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
@@ -382,38 +456,7 @@ FAIL src/tests/App.test.tsx (5.565 s)
                       [33msrc[39m=[32m"ChrisSV.png"[39m
                       [33mstyle[39m=[32m"border: 0px;"[39m
                     [36m/>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"propcontainer"[39m
-                [36m>[39m
-                  [36m<li>[39m
-                    [0mSiberian Bugloss[0m
-                  [36m</li>[39m
-                  [36m<div>[39m
-                    [36m<img[39m
-                      [33malt[39m=[32m"Siberian Bugloss"[39m
-                      [33mdraggable[39m=[32m"true"[39m
-                      [33mid[39m=[32m"8"[39m
-                      [33msrc[39m=[32m"SBSV.png"[39m
-                      [33mstyle[39m=[32m"border: 0px;"[39m
-                    [36m/>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"propcontainer"[39m
-                [36m>[39m
-                  [36m<li>[39m
-                    [0mBamboo[0m
-                  [36m</li>[39m
-                  [36m<div>[39m
-                    [36m<img[39m
-                      [33malt[39m=[32m"Bamboo"[39m
-                      [33mdraggable[39m=[32m"true"[39m
-                      [33mid[39m=[32m"9"[39m
-                      [33msrc[39m=[32m"BambooSV.png"[39m
-                      [33mstyle[39m=[32m"border: 0px;"[39m
-                   ...
+    ...
 
        5 | test("renders the course name somewhere", () => {
        6 |     render(<App />);
@@ -436,7 +479,7 @@ FAIL src/tests/App.test.tsx (5.565 s)
 ---------------------|---------|----------|---------|---------|-------------------------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                   
 ---------------------|---------|----------|---------|---------|-------------------------------------
-All files            |   32.74 |     5.71 |   17.14 |   33.53 |                                     
+All files            |   35.54 |    26.02 |   22.32 |   35.81 |                                     
  src                 |     100 |      100 |     100 |     100 |                                     
   App.tsx            |     100 |      100 |     100 |     100 |                                     
   global.d.ts        |       0 |        0 |       0 |       0 |                                     
@@ -450,16 +493,16 @@ All files            |   32.74 |     5.71 |   17.14 |   33.53 |
   constants.ts       |     100 |      100 |     100 |     100 |                                     
   demo-index.tsx     |       0 |      100 |       0 |       0 | 8-28                                
   game.ts            |       0 |        0 |       0 |       0 | 1-26                                
- src/components      |   34.69 |    16.66 |   20.75 |   35.78 |                                     
+ src/components      |   37.38 |       38 |   25.26 |   37.61 |                                     
   BoardProps.tsx     |       0 |      100 |       0 |       0 | 8-22                                
   BorderBox.tsx      |   85.71 |      100 |   66.66 |   85.71 | 37                                  
   BorderBoxUp.tsx    |   85.71 |      100 |   66.66 |   85.71 | 36                                  
-  Garden.tsx         |   43.33 |      100 |   22.22 |   43.33 | 29-30,39,43,51-54,61-65,69-70,74-75 
+  Garden.tsx         |   41.37 |      100 |   22.22 |   41.37 | 27-28,37,41,49-52,59-63,67-68,72-73 
   PlantDescriber.tsx |       0 |        0 |       0 |       0 | 8-28                                
   PlantEditor.tsx    |       0 |      100 |       0 |       0 | 29-32                               
   PlantView.tsx      |       0 |      100 |       0 |       0 | 4                                   
-  Prop.tsx           |   66.66 |       50 |      50 |   66.66 | 19,29                               
-  PropList.tsx       |   14.28 |        0 |      12 |   15.15 | 24-70,76-93                         
+  Prop.tsx           |   85.71 |       50 |      60 |   84.61 | 36,46                               
+  PropList.tsx       |   30.55 |    40.47 |   22.72 |   30.98 | 32-172,203,249-288                  
  src/interfaces      |     100 |      100 |     100 |     100 |                                     
   PropList.ts        |     100 |      100 |     100 |     100 |                                     
   garden.ts          |       0 |        0 |       0 |       0 |                                     
@@ -473,5 +516,5 @@ All files            |   32.74 |     5.71 |   17.14 |   33.53 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        7.28 s
+Time:        5.026 s
 Ran all test suites.

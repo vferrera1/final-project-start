@@ -5,8 +5,8 @@ import { useDrag } from "react-dnd";
 import { ItemTypes } from "../DnD-demo/constants";
 import { Plant } from "../interfaces/plant";
 import { PlantDescriber } from "./PlantDescriber";
-
-function Prop({ plant }: { plant: Plant }): JSX.Element {
+//function Prop({ plant }: { plant: Plant }): JSX.Element
+function Prop({ plant }: { plant: Plant }, sizeValue: number): JSX.Element {
     const [{ isDragging }, drag] = useDrag({
         item: { type: ItemTypes.PROP, id: plant },
         collect: (monitor) => ({
@@ -27,6 +27,8 @@ function Prop({ plant }: { plant: Plant }): JSX.Element {
                 alt={plant.species}
                 style={{ border: isDragging ? "5px solid pink" : "0px" }}
                 onClick={() => setDescriptionVisible(!descriptionVisible)}
+                width={(plant.size / sizeValue) * 800}
+                height={(plant.size / sizeValue) * 800}
             />
             {descriptionVisible && displayPlantDescription()}
         </div>

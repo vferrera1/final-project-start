@@ -10,7 +10,7 @@ import { PropListArr } from "../interfaces/PropList";
 import { Boardarr } from "./BoardProps";
 import Prop from "./Prop";
 
-class Garden extends React.Component {
+class Garden extends React.Component<{ scaleValue: number }> {
     boardstate = { boardprops: PropListArr };
 
     state = {
@@ -78,6 +78,7 @@ class Garden extends React.Component {
     render() {
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
         const { deltaPosition, controlledPosition } = this.state;
+        const { scaleValue } = this.props;
 
         return (
             <div className="container">
@@ -85,7 +86,7 @@ class Garden extends React.Component {
                     return (
                         <Draggable bounds="parent" {...dragHandlers}>
                             <div className="box">
-                                <Prop plant={prop} />
+                                <Prop plant={prop} sizeValue={scaleValue} />
                             </div>
                         </Draggable>
                     );

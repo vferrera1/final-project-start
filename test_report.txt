@@ -255,7 +255,7 @@ Browserslist: caniuse-lite is outdated. Please run:
       at finishClassComponent (node_modules/react-dom/cjs/react-dom.development.js:17485:31)
 
 FAIL src/tests/App.test.tsx
-  ✕ renders the course name somewhere (244 ms)
+  ✕ renders the course name somewhere (241 ms)
 
   ● renders the course name somewhere
 
@@ -516,5 +516,5 @@ All files            |   35.54 |    26.02 |   22.32 |   35.81 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.026 s
+Time:        5.161 s
 Ran all test suites.

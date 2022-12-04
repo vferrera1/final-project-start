@@ -20,15 +20,19 @@ function App(): JSX.Element {
      */
     // Stores the state of the list of garden elements (plants, objects)
     // that is passed down into the selection list (and the garden?)
-    const [gardenElements, setGardenElements] = useState<Plant[]>(PropListArr);
+    const GARDENELEMENTS = PropListArr.map(
+        (element: Plant): Plant => ({
+            ...element,
+            shadeConditions: [...element.shadeConditions]
+        })
+    );
+    const [gardenElements, setGardenElements] =
+        useState<Plant[]>(GARDENELEMENTS);
     // Stores the state of the garden element selected to be displayed in the description box
     const [selectedElement, setSelectedElement] = useState<Plant | undefined>(
         undefined
     );
-    // I DON'T THINK I NEED THESE FUNCTIONS BELOW
-    // Functions to handle the conditional rendering of the descripiton box
-    //const handleShowPlantDescription = () => setShowPlantDescription(true);
-    //const handleClosePlantDescription = () => setShowPlantDescription(false);
+
     // Goes through the list of garden elements to find the plant/object to be displayed in the description box
     function selectElement(id: string) {
         setSelectedElement(
@@ -43,6 +47,9 @@ function App(): JSX.Element {
                     element.id === id ? newElement : element
             )
         );
+        // I don't know how to get the description box to directly update after an edit.
+        // This is to get the description box to close so that upon reopening, it's updated.
+        setSelectedElement(undefined);
     }
     // Updates the garden element list to account for a removal of a plant/object.
     function removeGardenElement(id: string) {
@@ -51,6 +58,10 @@ function App(): JSX.Element {
                 (element: Plant): boolean => element.id !== id
             )
         );
+        setSelectedElement(undefined);
+    }
+    function rearrangeGardenElements(sortedGardenElements: Plant[]) {
+        setGardenElements(sortedGardenElements);
     }
     return (
         <DndProvider backend={HTML5Backend}>
@@ -58,15 +69,18 @@ function App(): JSX.Element {
                 <header className="App-header">Garden on the Go!</header>
                 <PlantDescriber
                     selectedElement={selectedElement}
+                    editElement={editGardenElement}
+                    removeElement={removeGardenElement}
                 ></PlantDescriber>
                 <BorderBoxUp></BorderBoxUp>
                 <div className="boxcontainer">
                     <PropList
                         gardenElements={gardenElements}
                         selectElement={selectElement}
+                        rearrangeGardenElements={rearrangeGardenElements}
                     ></PropList>
                     <BorderBox></BorderBox>
-                    <Garden></Garden>
+                    <Garden selectElement={selectElement}></Garden>
                     <BorderBox></BorderBox>
                 </div>
                 <BorderBox></BorderBox>

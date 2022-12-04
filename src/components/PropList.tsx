@@ -1,5 +1,5 @@
 /* eslint-disable no-extra-parens */
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "react-bootstrap";
 import { Plant } from "../interfaces/plant";
 import Prop from "./Prop";
@@ -8,16 +8,17 @@ import "../styles/PropList.css";
 
 function PropList({
     gardenElements,
-    selectElement
+    selectElement,
+    rearrangeGardenElements
 }: {
     gardenElements: Plant[];
     selectElement: (id: string) => void;
+    rearrangeGardenElements: (sortedGardenElements: Plant[]) => void;
 }) {
-    const [selectionList, setSelectionList] = useState<Plant[]>(gardenElements);
-    function generateList(prop: Plant[]) {
-        console.log(prop, "Generated");
+    function generateList(selectionList: Plant[]) {
+        console.log(selectionList, "Generated");
         // eslint-disable-next-line no-extra-parens
-        return prop.map((prop) => (
+        return selectionList.map((prop) => (
             <div key={prop.species} className="propcontainer">
                 <li>{prop.species}</li>
                 <Prop plant={prop} selectElement={selectElement} />
@@ -34,8 +35,8 @@ function PropList({
     }
     function alphabeticalOrder() {
         //Might need to do a deep copy of the propList
-        const newPropList = deepCloneProps(selectionList);
-        setSelectionList(
+        const newPropList = deepCloneProps(gardenElements);
+        rearrangeGardenElements(
             newPropList.sort((a: Plant, b: Plant) =>
                 a.species < b.species ? -1 : 1
             )
@@ -43,8 +44,8 @@ function PropList({
         console.log(newPropList, "Test Alpha");
     }
     function ReversealphabeticalOrder() {
-        const newPropList = deepCloneProps(selectionList);
-        setSelectionList(
+        const newPropList = deepCloneProps(gardenElements);
+        rearrangeGardenElements(
             newPropList.sort((a: Plant, b: Plant) =>
                 a.species > b.species ? -1 : 1
             )
@@ -55,7 +56,7 @@ function PropList({
     return (
         <div>
             <strong>Prop List</strong>
-            <ul className="scroll-bar">{generateList(selectionList)}</ul>
+            <ul className="scroll-bar">{generateList(gardenElements)}</ul>
             <Button onClick={() => alphabeticalOrder()}>
                 Alphabetical Order
             </Button>

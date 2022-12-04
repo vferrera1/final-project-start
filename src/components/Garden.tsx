@@ -10,9 +10,9 @@ import Draggable from "react-draggable";
 import { Plant } from "../interfaces/plant";
 import { PropListArr } from "../interfaces/PropList";
 import { Boardarr } from "./BoardProps";
-import PropInGarden from "./PropInGarden";
+import Prop from "./Prop";
 
-class Garden extends React.Component {
+class Garden extends React.Component<{ selectElement: (id: string) => void }> {
     boardstate = { boardprops: PropListArr };
 
     state = {
@@ -84,6 +84,7 @@ class Garden extends React.Component {
     render() {
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
         const { deltaPosition, controlledPosition } = this.state;
+        const { selectElement } = this.props;
         //const [gardenSize, setGardenSize] = useState<string>("800");
         //const getProptoGardenPercentage = (prop: Plant): number => (prop.size / parseInt(gardenSize)) * 100;
         return (
@@ -93,7 +94,10 @@ class Garden extends React.Component {
                         return (
                             <Draggable bounds="parent" {...dragHandlers}>
                                 <div className="box">
-                                    <PropInGarden plant={prop} />
+                                    <Prop
+                                        plant={prop}
+                                        selectElement={selectElement}
+                                    />
                                 </div>
                             </Draggable>
                         );

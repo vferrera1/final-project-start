@@ -16,7 +16,7 @@ function PropList() {
         return prop.map((prop) => (
             <div key={prop.species} className="propcontainer">
                 <li>{prop.species}</li>
-                <Prop plant={prop} />
+                <Prop plant={prop} sizeValue={100} />
             </div>
         ));
     }

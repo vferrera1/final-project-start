@@ -4,6 +4,7 @@ import { ItemTypes } from "./constants";
 
 const Pic: React.FC = () => {
     const [{ isDragging }, drag] = useDrag({
+        type: ItemTypes.PROP,
         item: { type: ItemTypes.PROP },
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging

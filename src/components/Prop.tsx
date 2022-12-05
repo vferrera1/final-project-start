@@ -20,12 +20,13 @@ function Prop({ plant }: { plant: Plant }): JSX.Element {
         return result;
     };
     const [{ isDragging }, drag] = useDrag({
-        item: {
+        type: ItemTypes.PROP,
+        /*  item: {
             type: ItemTypes.PROP,
             id: makeid(10),
             data: plant,
             name: plant.species
-        },
+        }, */
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging()
         })

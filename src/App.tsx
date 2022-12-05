@@ -49,7 +49,9 @@ function App(): JSX.Element {
         );
         // I don't know how to get the description box to directly update after an edit.
         // This is to get the description box to close so that upon reopening, it's updated.
-        setSelectedElement(undefined);
+        setSelectedElement(
+            gardenElements.find((element: Plant): boolean => element.id === id)
+        );
     }
     // Updates the garden element list to account for a removal of a plant/object.
     function removeGardenElement(id: string) {
@@ -68,6 +70,7 @@ function App(): JSX.Element {
             <div className="App">
                 <header className="App-header">Garden on the Go!</header>
                 <PlantDescriber
+                    gardenElements={gardenElements}
                     selectedElement={selectedElement}
                     editElement={editGardenElement}
                     removeElement={removeGardenElement}

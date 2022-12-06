@@ -57,6 +57,11 @@ export function PlantDescriber({
         return (
             <div className="Plant-describer">
                 <h6>{plant.species}</h6>
+                <img
+                    id={plant.id.toString()}
+                    src={plant.sideImage}
+                    alt={plant.species}
+                ></img>
                 <p className="Plant-attribute">
                     <b>Size</b>: {plant.size} ft
                 </p>

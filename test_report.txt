@@ -8,7 +8,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   console.log
     [
       {
-        id: 1,
+        id: '1',
         species: 'Cactus',
         topImage: 'CactusTopDown.png',
         sideImage: 'CactusSide.png',
@@ -20,7 +20,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$$'
       },
       {
-        id: 2,
+        id: '2',
         species: 'Tomato Plant',
         topImage: '',
         sideImage: 'TomatoPlantSide.png',
@@ -32,7 +32,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$$'
       },
       {
-        id: 3,
+        id: '3',
         species: 'Red Roses',
         topImage: '',
         sideImage: 'RedRoseBushSide.png',
@@ -44,7 +44,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$$$'
       },
       {
-        id: 4,
+        id: '4',
         species: 'Yellow Roses',
         topImage: '',
         sideImage: 'YellowRoseBushSide.png',
@@ -56,7 +56,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$$$'
       },
       {
-        id: 5,
+        id: '5',
         species: 'Sunflower',
         topImage: '',
         sideImage: 'SunflowerSide.png',
@@ -68,7 +68,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$$$'
       },
       {
-        id: 6,
+        id: '6',
         species: 'Lilac',
         topImage: 'LilacTV.png',
         sideImage: 'LilacSV.png',
@@ -80,7 +80,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$$'
       },
       {
-        id: 7,
+        id: '7',
         species: 'Chrysanthemum',
         topImage: 'ChrisTD.png',
         sideImage: 'ChrisSV.png',
@@ -92,7 +92,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$$$'
       },
       {
-        id: 8,
+        id: '8',
         species: 'Siberian Bugloss',
         topImage: 'SBTD.png',
         sideImage: 'SBSV.png',
@@ -104,7 +104,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$$'
       },
       {
-        id: 9,
+        id: '9',
         species: 'Bamboo',
         topImage: 'BambooTD.png',
         sideImage: 'BambooSV.png',
@@ -116,7 +116,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$$'
       },
       {
-        id: 10,
+        id: '10',
         species: 'Cabbage',
         topImage: 'CabbageTD.png',
         sideImage: 'CabbageSV.png',
@@ -128,7 +128,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$'
       },
       {
-        id: 11,
+        id: '11',
         species: 'Corn',
         topImage: 'CornTD.png',
         sideImage: 'CornSV.png',
@@ -140,7 +140,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$'
       },
       {
-        id: 12,
+        id: '12',
         species: 'Potato Plant',
         topImage: 'PotatoTD.png',
         sideImage: 'PotatoSV.png',
@@ -152,7 +152,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$'
       },
       {
-        id: 13,
+        id: '13',
         species: 'Aloe',
         topImage: 'SuccTD.png',
         sideImage: 'SuccSV.png',
@@ -164,7 +164,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$'
       },
       {
-        id: 14,
+        id: '14',
         species: 'Succulent',
         topImage: 'SuccRTD.png',
         sideImage: 'SuccRSV.png',
@@ -176,7 +176,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$'
       },
       {
-        id: 27,
+        id: '27',
         species: 'Lemon Tree',
         topImage: 'LemonTD.png',
         sideImage: 'LemonSV.png',
@@ -188,7 +188,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$$$'
       },
       {
-        id: 28,
+        id: '28',
         species: 'Red Maple',
         topImage: 'RedMapleTD.png',
         sideImage: 'RedMapleSV.png',
@@ -200,7 +200,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$$$'
       },
       {
-        id: 29,
+        id: '29',
         species: 'Bush',
         topImage: 'BushTD.png',
         sideImage: 'BushSV.png',
@@ -212,7 +212,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         price: '$$'
       },
       {
-        id: 30,
+        id: '30',
         species: 'Path',
         topImage: 'Path.png',
         sideImage: 'Path.png',
@@ -225,37 +225,37 @@ Browserslist: caniuse-lite is outdated. Please run:
       }
     ] Generated
 
-      at generateList (src/components/PropList.tsx:14:17)
+      at generateList (src/components/PropList.tsx:22:17)
 
   console.error
     Warning: Each child in a list should have a unique "key" prop.
     
     Check the render method of `Garden`. See https://reactjs.org/link/warning-keys for more information.
         at Draggable (/home/runner/work/final-project-start/final-project-start/node_modules/react-draggable/build/cjs/Draggable.js:99:5)
-        at Garden (/home/runner/work/final-project-start/final-project-start/src/components/Garden.tsx:13:74)
+        at Garden (/home/runner/work/final-project-start/final-project-start/src/components/Garden.tsx:17:4)
         at div
         at div
         at /home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/common/DndProvider.js:40:23
-        at App
+        at App (/home/runner/work/final-project-start/final-project-start/src/App.tsx:31:9)
 
-      79 |
-      80 |         return (
-    > 81 |             <div ref={this.props.drop} className="container">
-         |             ^
-      82 |                 {this.props.boardprops.map((prop) => {
-      83 |                     return (
-      84 |                         <Draggable bounds="parent" {...dragHandlers}>
+      89 |         return (
+      90 |             <div>
+    > 91 |                 <div ref={this.props.drop} className="container">
+         |                 ^
+      92 |                     {this.props.boardprops.map((prop) => {
+      93 |                         return (
+      94 |                             <Draggable bounds="parent" {...dragHandlers}>
 
       at printWarning (node_modules/react/cjs/react-jsx-dev-runtime.development.js:117:30)
       at error (node_modules/react/cjs/react-jsx-dev-runtime.development.js:93:5)
       at validateExplicitKey (node_modules/react/cjs/react-jsx-dev-runtime.development.js:986:5)
       at validateChildKeys (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1013:11)
       at jsxWithValidation (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1184:11)
-      at Garden.render (src/components/Garden.tsx:81:13)
+      at Garden.render (src/components/Garden.tsx:91:17)
       at finishClassComponent (node_modules/react-dom/cjs/react-dom.development.js:17485:31)
 
 FAIL src/tests/App.test.tsx
-  ✕ renders the course name somewhere (241 ms)
+  ✕ renders the course name somewhere (267 ms)
 
   ● renders the course name somewhere
 
@@ -272,6 +272,13 @@ FAIL src/tests/App.test.tsx
           [36m>[39m
             [0mGarden on the Go![0m
           [36m</header>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"Plant-describer"[39m
+          [36m>[39m
+            [36m<h6>[39m
+              [0mPlease select a garden element.[0m
+            [36m</h6>[39m
+          [36m</div>[39m
           [36m<div[39m
             [33mclass[39m=[32m"borderbox"[39m
           [36m>[39m
@@ -451,12 +458,7 @@ FAIL src/tests/App.test.tsx
                   [36m<div>[39m
                     [36m<img[39m
                       [33malt[39m=[32m"Chrysanthemum"[39m
-                      [33mdraggable[39m=[32m"true"[39m
-                      [33mid[39m=[32m"7"[39m
-                      [33msrc[39m=[32m"ChrisSV.png"[39m
-                      [33mstyle[39m=[32m"border: 0px;"[39m
-                    [36m/>[39m
-    ...
+                      [33mdraggable...
 
        5 | test("renders the course name somewhere", () => {
        6 |     render(<App />);
@@ -479,9 +481,9 @@ FAIL src/tests/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                   
 ---------------------|---------|----------|---------|---------|-------------------------------------
-All files            |   35.54 |    26.02 |   22.32 |   35.81 |                                     
- src                 |     100 |      100 |     100 |     100 |                                     
-  App.tsx            |     100 |      100 |     100 |     100 |                                     
+All files            |   30.42 |     3.92 |   19.28 |   30.59 |                                     
+ src                 |   31.57 |        0 |   18.18 |   31.57 |                                     
+  App.tsx            |   31.57 |        0 |   18.18 |   31.57 | 63-97                               
   global.d.ts        |       0 |        0 |       0 |       0 |                                     
   index.d.ts         |       0 |        0 |       0 |       0 |                                     
  src/DnD-demo        |    1.92 |        0 |       0 |    1.96 |                                     
@@ -493,16 +495,16 @@ All files            |   35.54 |    26.02 |   22.32 |   35.81 |
   constants.ts       |     100 |      100 |     100 |     100 |                                     
   demo-index.tsx     |       0 |      100 |       0 |       0 | 8-28                                
   game.ts            |       0 |        0 |       0 |       0 | 1-26                                
- src/components      |   37.38 |       38 |   25.26 |   37.61 |                                     
+ src/components      |   30.73 |     8.33 |   22.12 |   30.84 |                                     
   BoardProps.tsx     |       0 |      100 |       0 |       0 | 8-22                                
   BorderBox.tsx      |   85.71 |      100 |   66.66 |   85.71 | 37                                  
   BorderBoxUp.tsx    |   85.71 |      100 |   66.66 |   85.71 | 36                                  
-  Garden.tsx         |   41.37 |      100 |   22.22 |   41.37 | 27-28,37,41,49-52,59-63,67-68,72-73 
-  PlantDescriber.tsx |       0 |        0 |       0 |       0 | 8-28                                
-  PlantEditor.tsx    |       0 |      100 |       0 |       0 | 29-32                               
+  Garden.tsx         |   45.16 |      100 |   22.22 |   45.16 | 35-36,45,49,57-60,67-71,75-76,80-81 
+  PlantDescriber.tsx |   15.38 |    16.66 |      20 |   15.38 | 19,30-86                            
+  PlantEditor.tsx    |    5.26 |        0 |       0 |    5.26 | 30-286                              
   PlantView.tsx      |       0 |      100 |       0 |       0 | 4                                   
-  Prop.tsx           |   85.71 |       50 |      60 |   84.61 | 36,46                               
-  PropList.tsx       |   30.55 |    40.47 |   22.72 |   30.98 | 32-172,203,249-288                  
+  Prop.tsx           |   91.66 |       50 |      75 |    90.9 | 49                                  
+  PropList.tsx       |   25.24 |        0 |   23.07 |   25.74 | 40-149,199-230                      
  src/interfaces      |     100 |      100 |     100 |     100 |                                     
   PropList.ts        |     100 |      100 |     100 |     100 |                                     
   garden.ts          |       0 |        0 |       0 |       0 |                                     
@@ -516,5 +518,5 @@ All files            |   35.54 |    26.02 |   22.32 |   35.81 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.161 s
+Time:        5.457 s
 Ran all test suites.

@@ -8,13 +8,13 @@ import ReactDOM from "react-dom";
 import { Container, Form } from "react-bootstrap";
 import Draggable from "react-draggable";
 import { Plant } from "../interfaces/plant";
-import { PropListArr } from "../interfaces/PropList";
-import { Boardarr } from "./BoardProps";
 import Prop from "./Prop";
 
-class Garden extends React.Component<{ selectElement: (id: string) => void }> {
-    boardstate = { boardprops: PropListArr };
-
+class Garden extends React.Component<{
+    selectElement: (id: string) => void;
+    boardprops: Plant[];
+    drop: any;
+}> {
     state = {
         activeDrags: 0,
         deltaPosition: {
@@ -85,12 +85,11 @@ class Garden extends React.Component<{ selectElement: (id: string) => void }> {
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
         const { deltaPosition, controlledPosition } = this.state;
         const { selectElement } = this.props;
-        //const [gardenSize, setGardenSize] = useState<string>("800");
-        //const getProptoGardenPercentage = (prop: Plant): number => (prop.size / parseInt(gardenSize)) * 100;
+
         return (
             <div>
-                <div className="container">
-                    {this.boardstate.boardprops.map((prop) => {
+                <div ref={this.props.drop} className="container">
+                    {this.props.boardprops.map((prop) => {
                         return (
                             <Draggable bounds="parent" {...dragHandlers}>
                                 <div className="box">
@@ -103,18 +102,6 @@ class Garden extends React.Component<{ selectElement: (id: string) => void }> {
                         );
                     })}
                 </div>
-                {/*
-                <Form.Group controlId="formGardenSize">
-                    <Form.Label>Size of Garden:</Form.Label>
-                    <Form.Control
-                        type="number"
-                        value={this.gardenSize.size}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                            this.setGardenSize(e.target.value)
-                        }
-                    />
-                </Form.Group>
-                    */}
             </div>
         );
     }

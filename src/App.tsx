@@ -1,38 +1,58 @@
 import React, { useState } from "react";
+import { DndProvider, DropTargetMonitor, useDrop } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+// Importing Styles
 import "./styles/App.css";
 import "./styles/globals.css";
 //import { Garden } from "./interfaces/garden";
 //import { PlantView } from "./components/PlantView";
+// Importing Components
 import Garden from "./components/Garden";
 import PropList from "./components/PropList";
 import { BorderBox } from "./components/BorderBox";
 import { BorderBoxUp } from "./components/BorderBoxUp";
 import { PlantDescriber } from "./components/PlantDescriber";
-import { PropListArr } from "./interfaces/PropList";
+// Importing interfaces and constants
 import { Plant } from "./interfaces/plant";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-
+import { PropListArr } from "./interfaces/PropList";
+import { ItemTypes } from "./DnD-demo/constants";
 function App(): JSX.Element {
-    /* Storing the state of the list of garden elements up in App.
-     * Used to update the rendered garden list in the selection area
-     * and to update which element is being displayed in the description box.
-     */
-    // Stores the state of the list of garden elements (plants, objects)
-    // that is passed down into the selection list (and the garden?)
     const GARDENELEMENTS = PropListArr.map(
         (element: Plant): Plant => ({
             ...element,
             shadeConditions: [...element.shadeConditions]
         })
     );
+    // Stores the universal state of the list of garden elements (plants, objects)
+    // that is shared with the selection list (upon updating) and is referenced in the description box & plant editor.
+    // DOES NOT LISTEN TO CHANGES MADE IN "propList"
     const [gardenElements, setGardenElements] =
         useState<Plant[]>(GARDENELEMENTS);
+    // Stores the list of garden elements (plants, objects) that will be displayed in the selection area.
+    // WILL LISTEN TO CHANGES MADE IN "gardenElements" (SEE "editGardenElements")
+    const [propList, setPropList] = useState<Plant[]>(PropListArr);
     // Stores the state of the garden element selected to be displayed in the description box
     const [selectedElement, setSelectedElement] = useState<Plant | undefined>(
         undefined
     );
+    /* Storing the state of the list of garden elements up in App.
+     * Used to update the rendered garden list in the selection area
+     * and to update which element is being displayed in the description box.
+     */
+    const [boardprops, SetBoardProps] = useState<Plant[]>([]);
+    // Garden will reference Drop
+    const [{ isOver }, drop] = useDrop({
+        accept: ItemTypes.PROP,
+        drop: (item: { type: string; id: string; data: Plant; name: string }) =>
+            SetBoardProps(addToBoardList(item.data)),
+        collect: (monitor: DropTargetMonitor) => ({
+            isOver: !!monitor.isOver()
+        })
+    });
 
+    /* Functions to support updating the description box and the universal list of garden elements,
+     * whose information is passed down into the plant selection list.
+     */
     // Goes through the list of garden elements to find the plant/object to be displayed in the description box
     function selectElement(id: string) {
         setSelectedElement(
@@ -43,6 +63,12 @@ function App(): JSX.Element {
     function editGardenElement(id: string, newElement: Plant) {
         setGardenElements(
             gardenElements.map(
+                (element: Plant): Plant =>
+                    element.id === id ? newElement : element
+            )
+        );
+        setPropList(
+            propList.map(
                 (element: Plant): Plant =>
                     element.id === id ? newElement : element
             )
@@ -60,11 +86,33 @@ function App(): JSX.Element {
                 (element: Plant): boolean => element.id !== id
             )
         );
+        setPropList(
+            propList.filter((element: Plant): boolean => element.id !== id)
+        );
         setSelectedElement(undefined);
     }
-    function rearrangeGardenElements(sortedGardenElements: Plant[]) {
+    // Updates the plant selection list upon sorting actions by updating the order of the universal list of garden elements
+    // As of right now, WE DO NOT WANT TO UPDATE THE UNIVERSAL LIST OF GARDEN ELEMENTS FOR SORTING FEATURES
+    /*function rearrangeGardenElements(sortedGardenElements: Plant[]) {
         setGardenElements(sortedGardenElements);
     }
+    */
+    // Functions to support updating the garden
+    function deepCloneBoardProps(gardenProps: Plant[]): Plant[] {
+        return gardenProps.map(
+            (prop: Plant): Plant => ({
+                ...prop,
+                shadeConditions: [...prop.shadeConditions]
+            })
+        );
+    }
+
+    function addToBoardList(plant: Plant) {
+        const newPropList = deepCloneBoardProps(boardprops);
+        newPropList.push(plant);
+        return newPropList;
+    }
+
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="App">
@@ -76,14 +124,19 @@ function App(): JSX.Element {
                     removeElement={removeGardenElement}
                 ></PlantDescriber>
                 <BorderBoxUp></BorderBoxUp>
-                <div className="boxcontainer">
+                <div ref={drop} className="boxcontainer">
                     <PropList
                         gardenElements={gardenElements}
+                        propList={propList}
+                        setPropList={setPropList}
                         selectElement={selectElement}
-                        rearrangeGardenElements={rearrangeGardenElements}
                     ></PropList>
                     <BorderBox></BorderBox>
-                    <Garden selectElement={selectElement}></Garden>
+                    <Garden
+                        selectElement={selectElement}
+                        boardprops={PropListArr}
+                        drop={null /* drop */}
+                    ></Garden>
                     <BorderBox></BorderBox>
                 </div>
                 <BorderBox></BorderBox>

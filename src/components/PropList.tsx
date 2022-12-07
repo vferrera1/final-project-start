@@ -7,7 +7,7 @@ import Prop from "./Prop";
 
 import "../styles/PropList.css";
 
-function PropList() {
+function PropList({ boardprops }: { boardprops: Plant[] }) {
     const [proplist, setProplist] = useState<Plant[]>(PropListArr);
 
     function generateList(prop: Plant[]) {
@@ -171,8 +171,8 @@ function PropList() {
         });
         setProplist(regionarr);
     }
-    function totals() {
-        const newPropList = deepCloneProps(proplist);
+    function totals(list: Plant[]) {
+        const newPropList = list;
         const NAarr: Plant[] = [];
         const SAarr: Plant[] = [];
         const AFarr: Plant[] = [];
@@ -182,6 +182,11 @@ function PropList() {
         const lowarr: Plant[] = [];
         const medarr: Plant[] = [];
         const higharr: Plant[] = [];
+        const farmarr: Plant[] = [];
+        const decoarr: Plant[] = [];
+        const cactiarr: Plant[] = [];
+        const flowerarr: Plant[] = [];
+        const treearr: Plant[] = [];
 
         newPropList.map((q: Plant) => {
             if (q.region == "Europe") {
@@ -228,8 +233,34 @@ function PropList() {
                 higharr.push(q);
             }
         });
+        newPropList.map((q: Plant) => {
+            if (q.misc == "Farmable") {
+                farmarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.misc == "Decorations") {
+                decoarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.misc == "Cacti") {
+                cactiarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.misc == "Flowers") {
+                flowerarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.misc == "Tree") {
+                treearr.push(q);
+            }
+        });
         return (
             <div>
+                <h5>Aggregate of Board Pieces</h5>
                 <h6>The number of North American Plants {NAarr.length}</h6>
                 <h6>The number of South American Plants {SAarr.length}</h6>
                 <h6>The number of Asian Plants {ASIAarr.length}</h6>
@@ -239,28 +270,41 @@ function PropList() {
                 <h6>The number of $ Plants {lowarr.length}</h6>
                 <h6>The number of $$ Plants {medarr.length}</h6>
                 <h6>The number of $$$ Plants {higharr.length}</h6>
+                <h6>The number of Trees {treearr.length}</h6>
+                <h6>The number of Decorations {decoarr.length}</h6>
+                <h6>The number of Cacti {cactiarr.length}</h6>
+                <h6>The number of Flowers {flowerarr.length}</h6>
+                <h6>The number of Farmable Plants {farmarr.length}</h6>
             </div>
         );
     }
 
     return (
         <div>
-            {totals()}
+            {totals(boardprops)}
             <Button onClick={() => resetlist()}>Reset List</Button>
             <strong>Prop List</strong>
             <ul className="scroll-bar">{generateList(proplist)}</ul>
             Sort
-            <ul className="scroll-bar2">
-                <Button onClick={() => alphabeticalOrder()}>Alpha</Button>
-                <Button onClick={() => ReversealphabeticalOrder()}>
-                    Reverse Alpha
-                </Button>
+            <ul>
+                <div>
+                    <Button onClick={() => alphabeticalOrder()}>Alpha</Button>
+                    <Button onClick={() => ReversealphabeticalOrder()}>
+                        Reverse Alpha
+                    </Button>
+                </div>
                 <Button onClick={() => SortbyWaterReqBig()}>Most Water</Button>
                 <Button onClick={() => SortbyWaterReqSmall()}>
                     Least Water
                 </Button>
-                <Button onClick={() => SortbySizeBig()}>Biggest Size</Button>
-                <Button onClick={() => SortbySizeSmall()}>Smallest Size</Button>
+                <div>
+                    <Button onClick={() => SortbySizeBig()}>
+                        Biggest Size
+                    </Button>
+                    <Button onClick={() => SortbySizeSmall()}>
+                        Smallest Size
+                    </Button>
+                </div>
             </ul>
             Filter
             <div>

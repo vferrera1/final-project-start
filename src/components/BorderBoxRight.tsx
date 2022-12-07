@@ -25,16 +25,10 @@ function BorderPreview({ borderIndex }: ChangeBorderBox): JSX.Element {
     );
 }
 
-export function BorderBoxLeft(): JSX.Element {
+export function BorderBoxRight(): JSX.Element {
     const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
     return (
         <div className="borderboxleft">
-            <div className="orienttextvertical">
-                <div>
-                    <h3>Border Box</h3>
-                    <span>The current border is: {BORDERS[colorIndex]}</span>
-                </div>
-            </div>
             <div
                 onClick={() => setColorIndex((1 + colorIndex) % COLORS.length)}
             >
@@ -42,6 +36,12 @@ export function BorderBoxLeft(): JSX.Element {
                     setBorderIndex={setColorIndex}
                     borderIndex={colorIndex}
                 ></BorderPreview>
+            </div>
+            <div className="orienttextverticalright">
+                <div>
+                    <h3>Border Box</h3>
+                    <span>The current border is: {BORDERS[colorIndex]}</span>
+                </div>
             </div>
         </div>
     );

@@ -11,6 +11,7 @@ import { BorderBoxDown } from "./components/BorderBoxDown";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { BorderBoxLeft } from "./components/BorderBoxLeft";
+import { BorderBoxRight } from "./components/BorderBoxRight";
 
 function App(): JSX.Element {
     return (
@@ -22,7 +23,7 @@ function App(): JSX.Element {
                     <PropList></PropList>
                     <BorderBoxLeft></BorderBoxLeft>
                     <Garden></Garden>
-                    <BorderBox></BorderBox>
+                    <BorderBoxRight></BorderBoxRight>
                 </div>
                 <BorderBoxDown></BorderBoxDown>
             </div>

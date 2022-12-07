@@ -161,9 +161,7 @@ export function PlantEditor({
                         </Form.Group>
                         {/* Water Requirement */}
                         <Form.Group controlId="formPlantSize" as={Row}>
-                            <Form.Label>
-                                Water Requirement `(unit?)`:
-                            </Form.Label>
+                            <Form.Label>Water Requirement (unit?):</Form.Label>
                             <Col>
                                 <Form.Control
                                     type="number"

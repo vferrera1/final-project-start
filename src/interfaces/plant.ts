@@ -13,23 +13,20 @@ export type Region =
 
 export type Price = "$" | "$$" | "$$$";
 
+type Misc = "Farmable" | "Tree" | "Flowers" | "Decorations" | "Cacti";
+
 export interface Plant {
-    // A unique plant ID (number)
-    id: string;
-    // The species/name of the plant
+    id: number;
     species: string;
-    // A URL/filepath of the top view of the plant
     topImage: string;
-    // A URL/filepath of the side view of the plant
     sideImage: string;
-    // The relative size of plant to the garden
     size: number;
-    // The amount of shade plant should receive on average
     shadeConditions: shadeLevel[];
     floweringPeriod: string;
     waterReq: number;
     region: Region;
     price: Price;
+    misc: Misc;
     /* COMMENTED OUT ATTRIBUTES OF PLANT: WILL ADD TO PLANT ONCE THEY BECOME MORE DEFINED
     soilRequirement: string; //Could also be called nutrient requirement
     temperatureRequirement: string;

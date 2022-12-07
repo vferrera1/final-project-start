@@ -11,12 +11,14 @@ function PropList({
     gardenElements,
     propList,
     setPropList,
-    selectElement
+    selectElement,
+    boardprops
 }: {
     gardenElements: Plant[];
     propList: Plant[];
     setPropList: (newPropList: Plant[]) => void;
-    selectElement: (id: string) => void;
+    selectElement: (id: number) => void;
+    boardprops: Plant[];
 }) {
     function generateList(selectionList: Plant[]) {
         console.log(selectionList, "Generated");
@@ -148,38 +150,96 @@ function PropList({
         );
         setPropList(priceArr);
     }
-    function totals() {
-        const newPropList = deepCloneProps(propList);
-        const NAarr: Plant[] = newPropList.filter(
-            (q: Plant): boolean => q.region === "North America"
-        );
-        const SAarr: Plant[] = newPropList.filter(
-            (q: Plant): boolean => q.region === "South America"
-        );
-        const AFarr: Plant[] = newPropList.filter(
-            (q: Plant): boolean => q.region === "Africa"
-        );
-        const EUarr: Plant[] = newPropList.filter(
-            (q: Plant): boolean => q.region === "Europe"
-        );
-        const AUSarr: Plant[] = newPropList.filter(
-            (q: Plant): boolean => q.region === "Oceania"
-        );
-        const ASIAarr: Plant[] = newPropList.filter(
-            (q: Plant): boolean => q.region === "Asia"
-        );
-        const lowarr: Plant[] = newPropList.filter(
-            (q: Plant): boolean => q.price === "$"
-        );
-        const medarr: Plant[] = newPropList.filter(
-            (q: Plant): boolean => q.price === "$$"
-        );
-        const higharr: Plant[] = newPropList.filter(
-            (q: Plant): boolean => q.price === "$$$"
-        );
+    function totals(list: Plant[]) {
+        const newPropList = list;
+        const NAarr: Plant[] = [];
+        const SAarr: Plant[] = [];
+        const AFarr: Plant[] = [];
+        const EUarr: Plant[] = [];
+        const AUSarr: Plant[] = [];
+        const ASIAarr: Plant[] = [];
+        const lowarr: Plant[] = [];
+        const medarr: Plant[] = [];
+        const higharr: Plant[] = [];
+        const farmarr: Plant[] = [];
+        const decoarr: Plant[] = [];
+        const cactiarr: Plant[] = [];
+        const flowerarr: Plant[] = [];
+        const treearr: Plant[] = [];
 
+        newPropList.map((q: Plant) => {
+            if (q.region == "Europe") {
+                EUarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.region == "North America") {
+                NAarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.region == "South America") {
+                SAarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.region == "Africa") {
+                AFarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.region == "Oceania") {
+                AUSarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.region == "Asia") {
+                ASIAarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.price == "$") {
+                lowarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.price == "$$") {
+                medarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.price == "$$$") {
+                higharr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.misc == "Farmable") {
+                farmarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.misc == "Decorations") {
+                decoarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.misc == "Cacti") {
+                cactiarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.misc == "Flowers") {
+                flowerarr.push(q);
+            }
+        });
+        newPropList.map((q: Plant) => {
+            if (q.misc == "Tree") {
+                treearr.push(q);
+            }
+        });
         return (
             <div>
+                <h5>Aggregate of Board Pieces</h5>
                 <h6>The number of North American Plants {NAarr.length}</h6>
                 <h6>The number of South American Plants {SAarr.length}</h6>
                 <h6>The number of Asian Plants {ASIAarr.length}</h6>
@@ -189,13 +249,18 @@ function PropList({
                 <h6>The number of $ Plants {lowarr.length}</h6>
                 <h6>The number of $$ Plants {medarr.length}</h6>
                 <h6>The number of $$$ Plants {higharr.length}</h6>
+                <h6>The number of Trees {treearr.length}</h6>
+                <h6>The number of Decorations {decoarr.length}</h6>
+                <h6>The number of Cacti {cactiarr.length}</h6>
+                <h6>The number of Flowers {flowerarr.length}</h6>
+                <h6>The number of Farmable Plants {farmarr.length}</h6>
             </div>
         );
     }
 
     return (
         <div>
-            {totals()}
+            {totals(boardprops)}
             <Button onClick={() => resetlist()}>Reset List</Button>
             <strong>Prop List</strong>
             <ul className="scroll-bar">{generateList(propList)}</ul>

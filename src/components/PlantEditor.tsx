@@ -23,8 +23,8 @@ export function PlantEditor({
 }: {
     plant: Plant;
     changeEditMode: () => void;
-    editElement: (id: string, newElement: Plant) => void;
-    removeElement: (id: string) => void;
+    editElement: (id: number, newElement: Plant) => void;
+    removeElement: (id: number) => void;
 }): JSX.Element {
     // Create local state variables that will update the plant if the editted info is saved:
     const [species, setSpecies] = useState<string>(plant.species);

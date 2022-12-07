@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DndProvider /*, DropTargetMonitor, useDrop */ } from "react-dnd";
+import { DndProvider, DropTargetMonitor, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 // Importing Styles
 import "./styles/App.css";
@@ -15,7 +15,9 @@ import { PlantDescriber } from "./components/PlantDescriber";
 // Importing interfaces and constants
 import { Plant } from "./interfaces/plant";
 import { PropListArr } from "./interfaces/PropList";
+import { ItemTypes } from "./DnD-demo/constants";
 // import { ItemTypes } from "./DnD-demo/constants";
+import Trashcan from "./images/TrashCan.png";
 function App(): JSX.Element {
     const GARDENELEMENTS = PropListArr.map(
         (element: Plant): Plant => ({
@@ -39,33 +41,13 @@ function App(): JSX.Element {
         undefined
     );
 
-    /* Storing the state of the list of garden elements up in App.
-     * Used to update the rendered garden list in the selection area
-     * and to update which element is being displayed in the description box.
-     */
-    /* const [boardprops, SetBoardProps] = useState<Plant[]>([]);
-    // Garden will reference Drop
-    const [{ isOver }, drop] = useDrop({
-        accept: ItemTypes.PROP,
-        drop: (item: { type: string; id: string; data: Plant; name: string }) =>
-            SetBoardProps(addToBoardList(item.data)),
-        collect: (monitor: DropTargetMonitor) => ({
-            isOver: !!monitor.isOver()
-        })
-    });
-    */
-
-    /* Functions to support updating the description box and the universal list of garden elements,
-     * whose information is passed down into the plant selection list.
-     */
-    // Goes through the list of garden elements to find the plant/object to be displayed in the description box
-    function selectElement(id: string) {
+    function selectElement(id: number) {
         setSelectedElement(
             gardenElements.find((element: Plant): boolean => element.id === id)
         );
     }
     // Updates the garden element list to account for a change in a plant/object's attributes
-    function editGardenElement(id: string, newElement: Plant) {
+    function editGardenElement(id: number, newElement: Plant) {
         setGardenElements(
             gardenElements.map(
                 (element: Plant): Plant =>
@@ -85,7 +67,7 @@ function App(): JSX.Element {
         );
     }
     // Updates the garden element list to account for a removal of a plant/object.
-    function removeGardenElement(id: string) {
+    function removeGardenElement(id: number) {
         setGardenElements(
             gardenElements.filter(
                 (element: Plant): boolean => element.id !== id
@@ -96,31 +78,58 @@ function App(): JSX.Element {
         );
         setSelectedElement(undefined);
     }
-    // Updates the plant selection list upon sorting actions by updating the order of the universal list of garden elements
-    // As of right now, WE DO NOT WANT TO UPDATE THE UNIVERSAL LIST OF GARDEN ELEMENTS FOR SORTING FEATURES
-    /*function rearrangeGardenElements(sortedGardenElements: Plant[]) {
-        setGardenElements(sortedGardenElements);
+    const [boardprops, SetBoardProps] = useState<Plant[]>([]);
+
+    interface ITEM {
+        type: string;
+        id: string;
+        data: Plant;
+        name: string;
     }
-    */
-    // Functions to support updating the garden
-    /*
+    const [{ isOver }, drop] = useDrop({
+        accept: ItemTypes.PROP,
+        drop: (item: ITEM) => SetBoardProps(addToBoardList(item.data)),
+        collect: (monitor: DropTargetMonitor) => ({
+            isOver: !!monitor.isOver()
+        })
+    });
+
     function deepCloneBoardProps(gardenProps: Plant[]): Plant[] {
         return gardenProps.map(
             (prop: Plant): Plant => ({
-                ...prop,
-                shadeConditions: [...prop.shadeConditions]
+                ...prop
             })
         );
     }
-    */
 
-    /*
     function addToBoardList(plant: Plant) {
         const newPropList = deepCloneBoardProps(boardprops);
+        plant.id = Math.floor(Math.random() * 1000);
         newPropList.push(plant);
         return newPropList;
     }
-    */
+
+    const [{ isOver2 }, drop2] = useDrop({
+        accept: ItemTypes.PROP,
+        drop: (item: ITEM) => SetBoardProps(removeFromBoardList(item.data)),
+        collect: (monitor: DropTargetMonitor) => ({
+            isOver2: !!monitor.isOver()
+        })
+    });
+
+    function removeFromBoardList(plant: Plant): Plant[] {
+        const newPropList = deepCloneBoardProps(boardprops);
+        let i = 0;
+        newPropList.map((q: Plant) => {
+            if (q.id == plant.id) {
+                newPropList.splice(i, 1);
+                return newPropList;
+            } else {
+                i++;
+            }
+        });
+        return newPropList;
+    }
 
     return (
         <DndProvider backend={HTML5Backend}>
@@ -139,16 +148,20 @@ function App(): JSX.Element {
                         propList={propList}
                         setPropList={setPropList}
                         selectElement={selectElement}
+                        boardprops={boardprops}
                     ></PropList>
                     <BorderBox></BorderBox>
                     <Garden
                         selectElement={selectElement}
-                        boardprops={PropListArr}
-                        drop={null /* drop */}
+                        boardprops={boardprops}
+                        drop={drop}
                     ></Garden>
                     <BorderBox></BorderBox>
                 </div>
                 <BorderBox></BorderBox>
+            </div>
+            <div ref={drop2}>
+                <img src={Trashcan} />
             </div>
         </DndProvider>
     );

@@ -11,7 +11,7 @@ function Prop({
     selectElement
 }: {
     plant: Plant;
-    selectElement: (id: string) => void;
+    selectElement: (id: number) => void;
 }): JSX.Element {
     const makeid = (length: number) => {
         let result = "";

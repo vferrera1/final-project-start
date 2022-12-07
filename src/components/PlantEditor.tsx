@@ -1,8 +1,19 @@
 import React, { useState } from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
-import { Plant } from "../interfaces/plant";
+import { Plant, Region, Price } from "../interfaces/plant";
 // If we add more interfaces inside plant, we might need to make extra components
 import { shadeLevel } from "../interfaces/shadeLevel";
+
+const REGIONS: Region[] = [
+    "North America",
+    "South America",
+    "Europe",
+    "Asia",
+    "Africa",
+    "Oceania",
+    "Global"
+];
+const PRICES: Price[] = ["$", "$$", "$$$"];
 
 export function PlantEditor({
     plant,
@@ -15,16 +26,6 @@ export function PlantEditor({
     editElement: (id: string, newElement: Plant) => void;
     removeElement: (id: string) => void;
 }): JSX.Element {
-    /* What do you have to update, and how do you plan on doing so?
-     *     Species: Create a textbox where user can edit plant name
-     *     Images?: CREATE LATER
-     *     Size:
-     *         Create a numerical textbox where user can edit plant size.
-     *         Specify the units to properly convert plant size
-     *     shadeConditions:
-     *         Create a multi-checkbox list to specify which shade environments the plant can live in
-     *     floweringPeriod: Create a textbox where user can edit floweringPeriod.
-     */
     // Create local state variables that will update the plant if the editted info is saved:
     const [species, setSpecies] = useState<string>(plant.species);
     const [size, setSize] = useState<string>(plant.size.toString());
@@ -34,6 +35,9 @@ export function PlantEditor({
     const [floweringPeriod, setFloweringPeriod] = useState<string>(
         plant.floweringPeriod
     );
+    const [waterReq, setWaterReq] = useState<string>(plant.waterReq.toString());
+    const [region, setRegion] = useState<Region>(plant.region);
+    const [price, setPrice] = useState<Price>(plant.price);
     // --------------------------------------------------------------------------------------------
     function updateShadeRequirements(
         event: React.ChangeEvent<HTMLInputElement>
@@ -67,13 +71,43 @@ export function PlantEditor({
                 : setShadeConditions([...shadeConditions, newShadeLevel]);
         }
     }
+    function createRegionOption(location: Region): JSX.Element {
+        return (
+            <option key={location} value={location}>
+                {location}
+            </option>
+        );
+    }
+    function createPriceOption(cost: Price): JSX.Element {
+        return (
+            <option key={cost} value={cost}>
+                {cost}
+            </option>
+        );
+    }
+    function changeRegion(event: React.ChangeEvent<HTMLSelectElement>) {
+        const newRegion = REGIONS.find(
+            (region: Region): boolean =>
+                region.toString() === event.target.value
+        );
+        newRegion === undefined ? setRegion(region) : setRegion(newRegion);
+    }
+    function changePrice(event: React.ChangeEvent<HTMLSelectElement>) {
+        const newPrice = PRICES.find(
+            (price: Price): boolean => price.toString() === event.target.value
+        );
+        newPrice === undefined ? setPrice(price) : setPrice(newPrice);
+    }
     function saveChanges() {
         editElement(plant.id, {
             ...plant,
             species: species,
             size: parseInt(size) || 0,
             shadeConditions: shadeConditions,
-            floweringPeriod: floweringPeriod
+            floweringPeriod: floweringPeriod,
+            waterReq: parseInt(waterReq) || 0,
+            region: region,
+            price: price
         });
         changeEditMode();
     }
@@ -122,6 +156,21 @@ export function PlantEditor({
                                     onChange={(
                                         event: React.ChangeEvent<HTMLInputElement>
                                     ) => setSize(event.target.value)}
+                                ></Form.Control>
+                            </Col>
+                        </Form.Group>
+                        {/* Water Requirement */}
+                        <Form.Group controlId="formPlantSize" as={Row}>
+                            <Form.Label>
+                                Water Requirement `(unit?)`:
+                            </Form.Label>
+                            <Col>
+                                <Form.Control
+                                    type="number"
+                                    value={waterReq}
+                                    onChange={(
+                                        event: React.ChangeEvent<HTMLInputElement>
+                                    ) => setWaterReq(event.target.value)}
                                 ></Form.Control>
                             </Col>
                         </Form.Group>
@@ -196,6 +245,35 @@ export function PlantEditor({
                                         event: React.ChangeEvent<HTMLInputElement>
                                     ) => setFloweringPeriod(event.target.value)}
                                 ></Form.Control>
+                            </Col>
+                        </Form.Group>
+                        {/* Region */}
+                        {/* Make a dropdown/select menu to have the user choose a region */}
+                        <Form.Group controlId="formRegion" as={Row}>
+                            <Form.Label>Region:</Form.Label>
+                            <Col>
+                                <Form.Select
+                                    value={region}
+                                    onChange={changeRegion}
+                                >
+                                    {REGIONS.map((region: Region) =>
+                                        createRegionOption(region)
+                                    )}
+                                </Form.Select>
+                            </Col>
+                        </Form.Group>
+                        {/* Price */}
+                        <Form.Group controlId="formPrice" as={Row}>
+                            <Form.Label>Price:</Form.Label>
+                            <Col>
+                                <Form.Select
+                                    value={price}
+                                    onChange={changePrice}
+                                >
+                                    {PRICES.map((price: Price) =>
+                                        createPriceOption(price)
+                                    )}
+                                </Form.Select>
                             </Col>
                         </Form.Group>
                         {/* Buttons */}

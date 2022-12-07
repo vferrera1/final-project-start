@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DndProvider, DropTargetMonitor, useDrop } from "react-dnd";
+import { DndProvider /*, DropTargetMonitor, useDrop */ } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 // Importing Styles
 import "./styles/App.css";
@@ -15,7 +15,7 @@ import { PlantDescriber } from "./components/PlantDescriber";
 // Importing interfaces and constants
 import { Plant } from "./interfaces/plant";
 import { PropListArr } from "./interfaces/PropList";
-import { ItemTypes } from "./DnD-demo/constants";
+// import { ItemTypes } from "./DnD-demo/constants";
 function App(): JSX.Element {
     const GARDENELEMENTS = PropListArr.map(
         (element: Plant): Plant => ({
@@ -23,23 +23,27 @@ function App(): JSX.Element {
             shadeConditions: [...element.shadeConditions]
         })
     );
+
     // Stores the universal state of the list of garden elements (plants, objects)
     // that is shared with the selection list (upon updating) and is referenced in the description box & plant editor.
     // DOES NOT LISTEN TO CHANGES MADE IN "propList"
     const [gardenElements, setGardenElements] =
         useState<Plant[]>(GARDENELEMENTS);
+
     // Stores the list of garden elements (plants, objects) that will be displayed in the selection area.
     // WILL LISTEN TO CHANGES MADE IN "gardenElements" (SEE "editGardenElements")
     const [propList, setPropList] = useState<Plant[]>(PropListArr);
+
     // Stores the state of the garden element selected to be displayed in the description box
     const [selectedElement, setSelectedElement] = useState<Plant | undefined>(
         undefined
     );
+
     /* Storing the state of the list of garden elements up in App.
      * Used to update the rendered garden list in the selection area
      * and to update which element is being displayed in the description box.
      */
-    const [boardprops, SetBoardProps] = useState<Plant[]>([]);
+    /* const [boardprops, SetBoardProps] = useState<Plant[]>([]);
     // Garden will reference Drop
     const [{ isOver }, drop] = useDrop({
         accept: ItemTypes.PROP,
@@ -49,6 +53,7 @@ function App(): JSX.Element {
             isOver: !!monitor.isOver()
         })
     });
+    */
 
     /* Functions to support updating the description box and the universal list of garden elements,
      * whose information is passed down into the plant selection list.
@@ -98,6 +103,7 @@ function App(): JSX.Element {
     }
     */
     // Functions to support updating the garden
+    /*
     function deepCloneBoardProps(gardenProps: Plant[]): Plant[] {
         return gardenProps.map(
             (prop: Plant): Plant => ({
@@ -106,12 +112,15 @@ function App(): JSX.Element {
             })
         );
     }
+    */
 
+    /*
     function addToBoardList(plant: Plant) {
         const newPropList = deepCloneBoardProps(boardprops);
         newPropList.push(plant);
         return newPropList;
     }
+    */
 
     return (
         <DndProvider backend={HTML5Backend}>
@@ -124,7 +133,7 @@ function App(): JSX.Element {
                     removeElement={removeGardenElement}
                 ></PlantDescriber>
                 <BorderBoxUp></BorderBoxUp>
-                <div ref={drop} className="boxcontainer">
+                <div /* ref={drop} */ className="boxcontainer">
                     <PropList
                         gardenElements={gardenElements}
                         propList={propList}

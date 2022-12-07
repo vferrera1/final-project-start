@@ -66,6 +66,9 @@ export function PlantDescriber({
                     <b>Size</b>: {plant.size} ft
                 </p>
                 <p className="Plant-attribute">
+                    <b>Water Required</b>: {plant.waterReq}
+                </p>
+                <p className="Plant-attribute">
                     <b>Shade Conditions</b>:{" "}
                     {plant.shadeConditions.map(
                         (shade: shadeLevel): string => `${shade.toString()},`
@@ -73,6 +76,12 @@ export function PlantDescriber({
                 </p>
                 <p className="Plant-attribute">
                     <b>Flowering Period</b>: {plant.floweringPeriod}
+                </p>
+                <p className="Plant-attribute">
+                    <b>Region</b>: {plant.region}
+                </p>
+                <p className="Plant-attribute">
+                    <b>Price</b>: {plant.price}
                 </p>
                 <Button onClick={() => setEditMode(!editMode)}>
                     Edit Plant

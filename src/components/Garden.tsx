@@ -5,12 +5,16 @@
 /* eslint-disable react/no-direct-mutation-state */
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { Container, Form } from "react-bootstrap";
 import Draggable from "react-draggable";
 import { Plant } from "../interfaces/plant";
-import { PropListArr } from "../interfaces/PropList";
 import Prop from "./Prop";
 
-class Garden extends React.Component<{ boardprops: Plant[]; drop: any }> {
+class Garden extends React.Component<{
+    selectElement: (id: string) => void;
+    boardprops: Plant[];
+    drop: any;
+}> {
     state = {
         activeDrags: 0,
         deltaPosition: {
@@ -21,6 +25,10 @@ class Garden extends React.Component<{ boardprops: Plant[]; drop: any }> {
             x: -400,
             y: 200
         }
+    };
+
+    gardenSize = {
+        size: "800"
     };
 
     handleDrag = (e: any, ui: any) => {
@@ -76,18 +84,24 @@ class Garden extends React.Component<{ boardprops: Plant[]; drop: any }> {
     render() {
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
         const { deltaPosition, controlledPosition } = this.state;
+        const { selectElement } = this.props;
 
         return (
-            <div ref={this.props.drop} className="container">
-                {this.props.boardprops.map((prop) => {
-                    return (
-                        <Draggable bounds="parent" {...dragHandlers}>
-                            <div className="box">
-                                <Prop plant={prop} />
-                            </div>
-                        </Draggable>
-                    );
-                })}
+            <div>
+                <div ref={this.props.drop} className="container">
+                    {this.props.boardprops.map((prop) => {
+                        return (
+                            <Draggable bounds="parent" {...dragHandlers}>
+                                <div className="box">
+                                    <Prop
+                                        plant={prop}
+                                        selectElement={selectElement}
+                                    />
+                                </div>
+                            </Draggable>
+                        );
+                    })}
+                </div>
             </div>
         );
     }

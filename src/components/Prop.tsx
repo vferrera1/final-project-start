@@ -6,7 +6,13 @@ import { ItemTypes } from "../DnD-demo/constants";
 import { Plant } from "../interfaces/plant";
 import { PlantDescriber } from "./PlantDescriber";
 
-function Prop({ plant }: { plant: Plant }): JSX.Element {
+function Prop({
+    plant,
+    selectElement
+}: {
+    plant: Plant;
+    selectElement: (id: string) => void;
+}): JSX.Element {
     const makeid = (length: number) => {
         let result = "";
         const characters =
@@ -30,11 +36,7 @@ function Prop({ plant }: { plant: Plant }): JSX.Element {
             isDragging: !!monitor.isDragging()
         })
     });
-    const [descriptionVisible, setDescriptionVisible] =
-        useState<boolean>(false);
-    function displayPlantDescription(): JSX.Element {
-        return <PlantDescriber plant={plant}></PlantDescriber>;
-    }
+
     return (
         <div>
             <img
@@ -43,9 +45,10 @@ function Prop({ plant }: { plant: Plant }): JSX.Element {
                 src={plant.sideImage}
                 alt={plant.species}
                 style={{ border: isDragging ? "5px solid pink" : "0px" }}
-                onClick={() => setDescriptionVisible(!descriptionVisible)}
+                onClick={() => {
+                    selectElement(plant.id);
+                }}
             />
-            {descriptionVisible && displayPlantDescription()}
         </div>
     );
 }

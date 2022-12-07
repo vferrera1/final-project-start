@@ -2,7 +2,7 @@
 
 import { shadeLevel } from "./shadeLevel";
 
-type Region =
+export type Region =
     | "North America"
     | "South America"
     | "Europe"
@@ -11,11 +11,11 @@ type Region =
     | "Oceania"
     | "Global";
 
-type Price = "$" | "$$" | "$$$";
+export type Price = "$" | "$$" | "$$$";
 
 export interface Plant {
     // A unique plant ID (number)
-    id: number;
+    id: string;
     // The species/name of the plant
     species: string;
     // A URL/filepath of the top view of the plant
@@ -31,7 +31,6 @@ export interface Plant {
     region: Region;
     price: Price;
     /* COMMENTED OUT ATTRIBUTES OF PLANT: WILL ADD TO PLANT ONCE THEY BECOME MORE DEFINED
-    waterRequirement: string;
     soilRequirement: string; //Could also be called nutrient requirement
     temperatureRequirement: string;
 

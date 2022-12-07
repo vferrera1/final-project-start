@@ -58,8 +58,8 @@ img {
 }
 /* This is what will hold a plant's description (when user hovers over a plant)*/
 .Plant-describer {
-    height: 300px;
-    width: 300px;
+    height: auto;
+    width: auto;
     padding: 30px;
     border: 15px solid green;
     margin: auto;

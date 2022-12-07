@@ -12,8 +12,8 @@ export function PlantDescriber({
 }: {
     gardenElements: Plant[];
     selectedElement: Plant | undefined;
-    editElement: (id: string, newElement: Plant) => void;
-    removeElement: (id: string) => void;
+    editElement: (id: number, newElement: Plant) => void;
+    removeElement: (id: number) => void;
 }): JSX.Element {
     function changeEditMode() {
         setEditMode(!editMode);

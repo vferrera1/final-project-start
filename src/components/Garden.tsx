@@ -11,7 +11,7 @@ import { Plant } from "../interfaces/plant";
 import Prop from "./Prop";
 
 class Garden extends React.Component<{
-    selectElement: (id: string) => void;
+    selectElement: (id: number) => void;
     boardprops: Plant[];
     drop: any;
 }> {

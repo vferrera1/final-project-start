@@ -5,518 +5,186 @@
 Browserslist: caniuse-lite is outdated. Please run:
   npx browserslist@latest --update-db
   Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
-  console.log
-    [
-      {
-        id: '1',
-        species: 'Cactus',
-        topImage: 'CactusTopDown.png',
-        sideImage: 'CactusSide.png',
-        size: 8,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 12,
-        region: 'Global',
-        price: '$$'
-      },
-      {
-        id: '2',
-        species: 'Tomato Plant',
-        topImage: '',
-        sideImage: 'TomatoPlantSide.png',
-        size: 5,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 64,
-        region: 'South America',
-        price: '$$'
-      },
-      {
-        id: '3',
-        species: 'Red Roses',
-        topImage: '',
-        sideImage: 'RedRoseBushSide.png',
-        size: 12,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 54,
-        region: 'Europe',
-        price: '$$$'
-      },
-      {
-        id: '4',
-        species: 'Yellow Roses',
-        topImage: '',
-        sideImage: 'YellowRoseBushSide.png',
-        size: 12,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 49,
-        region: 'Europe',
-        price: '$$$'
-      },
-      {
-        id: '5',
-        species: 'Sunflower',
-        topImage: '',
-        sideImage: 'SunflowerSide.png',
-        size: 11,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 43,
-        region: 'North America',
-        price: '$$$'
-      },
-      {
-        id: '6',
-        species: 'Lilac',
-        topImage: 'LilacTV.png',
-        sideImage: 'LilacSV.png',
-        size: 9,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 39,
-        region: 'Europe',
-        price: '$$'
-      },
-      {
-        id: '7',
-        species: 'Chrysanthemum',
-        topImage: 'ChrisTD.png',
-        sideImage: 'ChrisSV.png',
-        size: 7,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 22,
-        region: 'Asia',
-        price: '$$$'
-      },
-      {
-        id: '8',
-        species: 'Siberian Bugloss',
-        topImage: 'SBTD.png',
-        sideImage: 'SBSV.png',
-        size: 8,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 34,
-        region: 'Asia',
-        price: '$$'
-      },
-      {
-        id: '9',
-        species: 'Bamboo',
-        topImage: 'BambooTD.png',
-        sideImage: 'BambooSV.png',
-        size: 7,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 27,
-        region: 'Asia',
-        price: '$$'
-      },
-      {
-        id: '10',
-        species: 'Cabbage',
-        topImage: 'CabbageTD.png',
-        sideImage: 'CabbageSV.png',
-        size: 4,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 74,
-        region: 'Europe',
-        price: '$'
-      },
-      {
-        id: '11',
-        species: 'Corn',
-        topImage: 'CornTD.png',
-        sideImage: 'CornSV.png',
-        size: 8,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 84,
-        region: 'South America',
-        price: '$'
-      },
-      {
-        id: '12',
-        species: 'Potato Plant',
-        topImage: 'PotatoTD.png',
-        sideImage: 'PotatoSV.png',
-        size: 4,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 54,
-        region: 'North America',
-        price: '$'
-      },
-      {
-        id: '13',
-        species: 'Aloe',
-        topImage: 'SuccTD.png',
-        sideImage: 'SuccSV.png',
-        size: 5,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 19,
-        region: 'Oceania',
-        price: '$'
-      },
-      {
-        id: '14',
-        species: 'Succulent',
-        topImage: 'SuccRTD.png',
-        sideImage: 'SuccRSV.png',
-        size: 4,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 4,
-        region: 'Global',
-        price: '$'
-      },
-      {
-        id: '27',
-        species: 'Lemon Tree',
-        topImage: 'LemonTD.png',
-        sideImage: 'LemonSV.png',
-        size: 14,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 62,
-        region: 'Asia',
-        price: '$$$'
-      },
-      {
-        id: '28',
-        species: 'Red Maple',
-        topImage: 'RedMapleTD.png',
-        sideImage: 'RedMapleSV.png',
-        size: 20,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 10,
-        region: 'North America',
-        price: '$$$'
-      },
-      {
-        id: '29',
-        species: 'Bush',
-        topImage: 'BushTD.png',
-        sideImage: 'BushSV.png',
-        size: 8,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 15,
-        region: 'Global',
-        price: '$$'
-      },
-      {
-        id: '30',
-        species: 'Path',
-        topImage: 'Path.png',
-        sideImage: 'Path.png',
-        size: 10,
-        shadeConditions: [ 'NONE', 'LIGHT', 'PARTIAL' ],
-        floweringPeriod: 'Mid-Spring',
-        waterReq: 0,
-        region: 'Global',
-        price: '$$'
-      }
-    ] Generated
+  console.error
+    Error: Uncaught [Invariant Violation: Expected drag drop context]
+        at reportException (/home/runner/work/final-project-start/final-project-start/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
+        at innerInvokeEventListeners (/home/runner/work/final-project-start/final-project-start/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:341:9)
+        at invokeEventListeners (/home/runner/work/final-project-start/final-project-start/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
+        at HTMLUnknownElementImpl._dispatch (/home/runner/work/final-project-start/final-project-start/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
+        at HTMLUnknownElementImpl.dispatchEvent (/home/runner/work/final-project-start/final-project-start/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
+        at HTMLUnknownElement.dispatchEvent (/home/runner/work/final-project-start/final-project-start/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
+        at Object.invokeGuardedCallbackDev (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:3994:16)
+        at invokeGuardedCallback (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:4056:31)
+        at beginWork$1 (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:23964:7)
+        at performUnitOfWork (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:22779:12) Invariant Violation: Expected drag drop context
+        at invariant (/home/runner/work/final-project-start/final-project-start/node_modules/@react-dnd/invariant/src/index.ts:28:15)
+        at useDragDropManager (/home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
+        at useDropTargetMonitor (/home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
+        at useDrop (/home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
+        at App (/home/runner/work/final-project-start/final-project-start/src/App.tsx:90:32)
+        at renderWithHooks (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+        at mountIndeterminateComponent (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:17811:13)
+        at beginWork (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:19049:16)
+        at HTMLUnknownElement.callCallback (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:3945:14)
+        at HTMLUnknownElement.callTheUserObjectsOperation (/home/runner/work/final-project-start/final-project-start/node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+        at innerInvokeEventListeners (/home/runner/work/final-project-start/final-project-start/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
+        at invokeEventListeners (/home/runner/work/final-project-start/final-project-start/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
+        at HTMLUnknownElementImpl._dispatch (/home/runner/work/final-project-start/final-project-start/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
+        at HTMLUnknownElementImpl.dispatchEvent (/home/runner/work/final-project-start/final-project-start/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
+        at HTMLUnknownElement.dispatchEvent (/home/runner/work/final-project-start/final-project-start/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
+        at Object.invokeGuardedCallbackDev (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:3994:16)
+        at invokeGuardedCallback (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:4056:31)
+        at beginWork$1 (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:23964:7)
+        at performUnitOfWork (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+        at workLoopSync (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+        at renderRootSync (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:22670:7)
+        at performSyncWorkOnRoot (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:22293:18)
+        at scheduleUpdateOnFiber (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:21881:7)
+        at updateContainer (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:25482:3)
+        at /home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:26021:7
+        at unbatchedUpdates (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:22431:12)
+        at legacyRenderSubtreeIntoContainer (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:26020:5)
+        at Object.render (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:26103:10)
+        at /home/runner/work/final-project-start/final-project-start/node_modules/@testing-library/react/dist/pure.js:101:25
+        at batchedUpdates$1 (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:22380:12)
+        at act (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1042:14)
+        at render (/home/runner/work/final-project-start/final-project-start/node_modules/@testing-library/react/dist/pure.js:97:26)
+        at Object.<anonymous> (/home/runner/work/final-project-start/final-project-start/src/tests/App.test.tsx:6:5)
+        at Promise.then.completed (/home/runner/work/final-project-start/final-project-start/node_modules/jest-circus/build/utils.js:391:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (/home/runner/work/final-project-start/final-project-start/node_modules/jest-circus/build/utils.js:316:10)
+        at _callCircusTest (/home/runner/work/final-project-start/final-project-start/node_modules/jest-circus/build/run.js:218:40)
+        at _runTest (/home/runner/work/final-project-start/final-project-start/node_modules/jest-circus/build/run.js:155:3)
+        at _runTestsForDescribeBlock (/home/runner/work/final-project-start/final-project-start/node_modules/jest-circus/build/run.js:66:9)
+        at run (/home/runner/work/final-project-start/final-project-start/node_modules/jest-circus/build/run.js:25:3)
+        at runAndTransformResultsToJestFormat (/home/runner/work/final-project-start/final-project-start/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
+        at jestAdapter (/home/runner/work/final-project-start/final-project-start/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
+        at runTestInternal (/home/runner/work/final-project-start/final-project-start/node_modules/jest-runner/build/runTest.js:389:16)
+        at runTest (/home/runner/work/final-project-start/final-project-start/node_modules/jest-runner/build/runTest.js:475:34)
+        at TestRunner.runTests (/home/runner/work/final-project-start/final-project-start/node_modules/jest-runner/build/index.js:111:12)
+        at TestScheduler.scheduleTests (/home/runner/work/final-project-start/final-project-start/node_modules/@jest/core/build/TestScheduler.js:333:13)
+        at runJest (/home/runner/work/final-project-start/final-project-start/node_modules/@jest/core/build/runJest.js:404:19)
+        at _run10000 (/home/runner/work/final-project-start/final-project-start/node_modules/@jest/core/build/cli/index.js:320:7)
+        at runCLI (/home/runner/work/final-project-start/final-project-start/node_modules/@jest/core/build/cli/index.js:173:3)
+        at Object.run (/home/runner/work/final-project-start/final-project-start/node_modules/jest-cli/build/cli/index.js:155:37) {
+      framesToPop: 1
+    }
 
-      at generateList (src/components/PropList.tsx:22:17)
+      at VirtualConsole.<anonymous> (node_modules/jsdom/lib/jsdom/virtual-console.js:29:45)
+      at reportException (node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:70:28)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:341:9)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
+      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
+      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
 
   console.error
-    Warning: Each child in a list should have a unique "key" prop.
+    The above error occurred in the <App> component:
     
-    Check the render method of `Garden`. See https://reactjs.org/link/warning-keys for more information.
-        at Draggable (/home/runner/work/final-project-start/final-project-start/node_modules/react-draggable/build/cjs/Draggable.js:99:5)
-        at Garden (/home/runner/work/final-project-start/final-project-start/src/components/Garden.tsx:17:4)
-        at div
-        at div
-        at /home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/common/DndProvider.js:40:23
-        at App (/home/runner/work/final-project-start/final-project-start/src/App.tsx:31:9)
+        at App (/home/runner/work/final-project-start/final-project-start/src/App.tsx:34:9)
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
 
-      89 |         return (
-      90 |             <div>
-    > 91 |                 <div ref={this.props.drop} className="container">
-         |                 ^
-      92 |                     {this.props.boardprops.map((prop) => {
-      93 |                         return (
-      94 |                             <Draggable bounds="parent" {...dragHandlers}>
-
-      at printWarning (node_modules/react/cjs/react-jsx-dev-runtime.development.js:117:30)
-      at error (node_modules/react/cjs/react-jsx-dev-runtime.development.js:93:5)
-      at validateExplicitKey (node_modules/react/cjs/react-jsx-dev-runtime.development.js:986:5)
-      at validateChildKeys (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1013:11)
-      at jsxWithValidation (node_modules/react/cjs/react-jsx-dev-runtime.development.js:1184:11)
-      at Garden.render (src/components/Garden.tsx:91:17)
-      at finishClassComponent (node_modules/react-dom/cjs/react-dom.development.js:17485:31)
+      at logCapturedError (node_modules/react-dom/cjs/react-dom.development.js:20085:23)
+      at update.callback (node_modules/react-dom/cjs/react-dom.development.js:20118:5)
+      at callCallback (node_modules/react-dom/cjs/react-dom.development.js:12318:12)
+      at commitUpdateQueue (node_modules/react-dom/cjs/react-dom.development.js:12339:9)
+      at commitLifeCycles (node_modules/react-dom/cjs/react-dom.development.js:20736:11)
+      at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:23426:7)
+      at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
 
 FAIL src/tests/App.test.tsx
-  ✕ renders the course name somewhere (267 ms)
+  ✕ renders the course name somewhere (83 ms)
 
   ● renders the course name somewhere
 
-    TestingLibraryElementError: Unable to find an element with the text: /CISC275/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+    Invariant Violation: Expected drag drop context
 
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<div[39m
-          [33mclass[39m=[32m"App"[39m
-        [36m>[39m
-          [36m<header[39m
-            [33mclass[39m=[32m"App-header"[39m
-          [36m>[39m
-            [0mGarden on the Go![0m
-          [36m</header>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"Plant-describer"[39m
-          [36m>[39m
-            [36m<h6>[39m
-              [0mPlease select a garden element.[0m
-            [36m</h6>[39m
-          [36m</div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"borderbox"[39m
-          [36m>[39m
-            [36m<h3>[39m
-              [0mBorder Box[0m
-            [36m</h3>[39m
-            [36m<span>[39m
-              [0mThe current color is: [0m
-              [0mgreen[0m
-            [36m</span>[39m
-            [36m<div>[39m
-              [36m<p>[39m
-                [0mLawn[0m
-              [36m</p>[39m
-              [36m<div[39m
-                [33mdata-testid[39m=[32m"colored-box"[39m
-                [33mstyle[39m=[32m"width: 500px; height: 50px; background-color: green; display: inline-block; vertical-align: bottom; margin-left: 5px;"[39m
-              [36m/>[39m
-            [36m</div>[39m
-          [36m</div>[39m
-          [36m<div[39m
-            [33mclass[39m=[32m"boxcontainer"[39m
-          [36m>[39m
-            [36m<div>[39m
-              [36m<div>[39m
-                [36m<h6>[39m
-                  [0mThe number of North American Plants [0m
-                  [0m3[0m
-                [36m</h6>[39m
-                [36m<h6>[39m
-                  [0mThe number of South American Plants [0m
-                  [0m2[0m
-                [36m</h6>[39m
-                [36m<h6>[39m
-                  [0mThe number of Asian Plants [0m
-                  [0m4[0m
-                [36m</h6>[39m
-                [36m<h6>[39m
-                  [0mThe number of African Plants [0m
-                  [0m0[0m
-                [36m</h6>[39m
-                [36m<h6>[39m
-                  [0mThe number of Oceania Plants [0m
-                  [0m1[0m
-                [36m</h6>[39m
-                [36m<h6>[39m
-                  [0mThe number of European Plants [0m
-                  [0m4[0m
-                [36m</h6>[39m
-                [36m<h6>[39m
-                  [0mThe number of $ Plants [0m
-                  [0m5[0m
-                [36m</h6>[39m
-                [36m<h6>[39m
-                  [0mThe number of $$ Plants [0m
-                  [0m7[0m
-                [36m</h6>[39m
-                [36m<h6>[39m
-                  [0mThe number of $$$ Plants [0m
-                  [0m6[0m
-                [36m</h6>[39m
-              [36m</div>[39m
-              [36m<button[39m
-                [33mclass[39m=[32m"btn btn-primary"[39m
-                [33mtype[39m=[32m"button"[39m
-              [36m>[39m
-                [0mReset List[0m
-              [36m</button>[39m
-              [36m<strong>[39m
-                [0mProp List[0m
-              [36m</strong>[39m
-              [36m<ul[39m
-                [33mclass[39m=[32m"scroll-bar"[39m
-              [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"propcontainer"[39m
-                [36m>[39m
-                  [36m<li>[39m
-                    [0mCactus[0m
-                  [36m</li>[39m
-                  [36m<div>[39m
-                    [36m<img[39m
-                      [33malt[39m=[32m"Cactus"[39m
-                      [33mdraggable[39m=[32m"true"[39m
-                      [33mid[39m=[32m"1"[39m
-                      [33msrc[39m=[32m"CactusSide.png"[39m
-                      [33mstyle[39m=[32m"border: 0px;"[39m
-                    [36m/>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"propcontainer"[39m
-                [36m>[39m
-                  [36m<li>[39m
-                    [0mTomato Plant[0m
-                  [36m</li>[39m
-                  [36m<div>[39m
-                    [36m<img[39m
-                      [33malt[39m=[32m"Tomato Plant"[39m
-                      [33mdraggable[39m=[32m"true"[39m
-                      [33mid[39m=[32m"2"[39m
-                      [33msrc[39m=[32m"TomatoPlantSide.png"[39m
-                      [33mstyle[39m=[32m"border: 0px;"[39m
-                    [36m/>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"propcontainer"[39m
-                [36m>[39m
-                  [36m<li>[39m
-                    [0mRed Roses[0m
-                  [36m</li>[39m
-                  [36m<div>[39m
-                    [36m<img[39m
-                      [33malt[39m=[32m"Red Roses"[39m
-                      [33mdraggable[39m=[32m"true"[39m
-                      [33mid[39m=[32m"3"[39m
-                      [33msrc[39m=[32m"RedRoseBushSide.png"[39m
-                      [33mstyle[39m=[32m"border: 0px;"[39m
-                    [36m/>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"propcontainer"[39m
-                [36m>[39m
-                  [36m<li>[39m
-                    [0mYellow Roses[0m
-                  [36m</li>[39m
-                  [36m<div>[39m
-                    [36m<img[39m
-                      [33malt[39m=[32m"Yellow Roses"[39m
-                      [33mdraggable[39m=[32m"true"[39m
-                      [33mid[39m=[32m"4"[39m
-                      [33msrc[39m=[32m"YellowRoseBushSide.png"[39m
-                      [33mstyle[39m=[32m"border: 0px;"[39m
-                    [36m/>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"propcontainer"[39m
-                [36m>[39m
-                  [36m<li>[39m
-                    [0mSunflower[0m
-                  [36m</li>[39m
-                  [36m<div>[39m
-                    [36m<img[39m
-                      [33malt[39m=[32m"Sunflower"[39m
-                      [33mdraggable[39m=[32m"true"[39m
-                      [33mid[39m=[32m"5"[39m
-                      [33msrc[39m=[32m"SunflowerSide.png"[39m
-                      [33mstyle[39m=[32m"border: 0px;"[39m
-                    [36m/>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"propcontainer"[39m
-                [36m>[39m
-                  [36m<li>[39m
-                    [0mLilac[0m
-                  [36m</li>[39m
-                  [36m<div>[39m
-                    [36m<img[39m
-                      [33malt[39m=[32m"Lilac"[39m
-                      [33mdraggable[39m=[32m"true"[39m
-                      [33mid[39m=[32m"6"[39m
-                      [33msrc[39m=[32m"LilacSV.png"[39m
-                      [33mstyle[39m=[32m"border: 0px;"[39m
-                    [36m/>[39m
-                  [36m</div>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"propcontainer"[39m
-                [36m>[39m
-                  [36m<li>[39m
-                    [0mChrysanthemum[0m
-                  [36m</li>[39m
-                  [36m<div>[39m
-                    [36m<img[39m
-                      [33malt[39m=[32m"Chrysanthemum"[39m
-                      [33mdraggable...
-
-       5 | test("renders the course name somewhere", () => {
-       6 |     render(<App />);
-    >  7 |     const linkElement = screen.getByText(/CISC275/i);
+      88 |         name: string;
+      89 |     }
+    > 90 |     const [{ isOver }, drop] = useDrop({
          |                                ^
-       8 |     expect(linkElement).toBeInTheDocument();
-       9 | });
-      10 |
+      91 |         accept: ItemTypes.PROP,
+      92 |         drop: (item: ITEM) => SetBoardProps(addToBoardList(item.data)),
+      93 |         collect: (monitor: DropTargetMonitor) => ({
 
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByText (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/tests/App.test.tsx:7:32)
+      at invariant (node_modules/@react-dnd/invariant/src/index.ts:28:15)
+      at useDragDropManager (node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
+      at useDropTargetMonitor (node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
+      at useDrop (node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
+      at App (src/App.tsx:90:32)
+      at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
+      at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19049:16)
+      at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
+      at HTMLUnknownElement.callTheUserObjectsOperation (node_modules/jsdom/lib/jsdom/living/generated/EventListener.js:26:30)
+      at innerInvokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:338:25)
+      at invokeEventListeners (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:274:3)
+      at HTMLUnknownElementImpl._dispatch (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:221:9)
+      at HTMLUnknownElementImpl.dispatchEvent (node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:94:17)
+      at HTMLUnknownElement.dispatchEvent (node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:231:34)
+      at Object.invokeGuardedCallbackDev (node_modules/react-dom/cjs/react-dom.development.js:3994:16)
+      at invokeGuardedCallback (node_modules/react-dom/cjs/react-dom.development.js:4056:31)
+      at beginWork$1 (node_modules/react-dom/cjs/react-dom.development.js:23964:7)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:22779:12)
+      at workLoopSync (node_modules/react-dom/cjs/react-dom.development.js:22707:5)
+      at renderRootSync (node_modules/react-dom/cjs/react-dom.development.js:22670:7)
+      at performSyncWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:22293:18)
+      at scheduleUpdateOnFiber (node_modules/react-dom/cjs/react-dom.development.js:21881:7)
+      at updateContainer (node_modules/react-dom/cjs/react-dom.development.js:25482:3)
+      at node_modules/react-dom/cjs/react-dom.development.js:26021:7
+      at unbatchedUpdates (node_modules/react-dom/cjs/react-dom.development.js:22431:12)
+      at legacyRenderSubtreeIntoContainer (node_modules/react-dom/cjs/react-dom.development.js:26020:5)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:26103:10)
+      at node_modules/@testing-library/react/dist/pure.js:101:25
+      at batchedUpdates$1 (node_modules/react-dom/cjs/react-dom.development.js:22380:12)
+      at act (node_modules/react-dom/cjs/react-dom-test-utils.development.js:1042:14)
+      at render (node_modules/@testing-library/react/dist/pure.js:97:26)
+      at Object.<anonymous> (src/tests/App.test.tsx:6:5)
       at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
       at runJest (node_modules/@jest/core/build/runJest.js:404:19)
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
----------------------|---------|----------|---------|---------|-------------------------------------
-File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                   
----------------------|---------|----------|---------|---------|-------------------------------------
-All files            |   30.42 |     3.92 |   19.28 |   30.59 |                                     
- src                 |   31.57 |        0 |   18.18 |   31.57 |                                     
-  App.tsx            |   31.57 |        0 |   18.18 |   31.57 | 63-97                               
-  global.d.ts        |       0 |        0 |       0 |       0 |                                     
-  index.d.ts         |       0 |        0 |       0 |       0 |                                     
- src/DnD-demo        |    1.92 |        0 |       0 |    1.96 |                                     
-  Board.tsx          |       0 |        0 |       0 |       0 | 7-36                                
-  BoardSquare.tsx    |       0 |        0 |       0 |       0 | 13-26                               
-  Overlay.tsx        |       0 |      100 |       0 |       0 | 7-8                                 
-  Pic.tsx            |       0 |        0 |       0 |       0 | 5-13                                
-  Square.tsx         |       0 |        0 |       0 |       0 | 7-11                                
-  constants.ts       |     100 |      100 |     100 |     100 |                                     
-  demo-index.tsx     |       0 |      100 |       0 |       0 | 8-28                                
-  game.ts            |       0 |        0 |       0 |       0 | 1-26                                
- src/components      |   30.73 |     8.33 |   22.12 |   30.84 |                                     
-  BoardProps.tsx     |       0 |      100 |       0 |       0 | 8-22                                
-  BorderBox.tsx      |   85.71 |      100 |   66.66 |   85.71 | 37                                  
-  BorderBoxUp.tsx    |   85.71 |      100 |   66.66 |   85.71 | 36                                  
-  Garden.tsx         |   45.16 |      100 |   22.22 |   45.16 | 35-36,45,49,57-60,67-71,75-76,80-81 
-  PlantDescriber.tsx |   15.38 |    16.66 |      20 |   15.38 | 19,30-86                            
-  PlantEditor.tsx    |    5.26 |        0 |       0 |    5.26 | 30-286                              
-  PlantView.tsx      |       0 |      100 |       0 |       0 | 4                                   
-  Prop.tsx           |   91.66 |       50 |      75 |    90.9 | 49                                  
-  PropList.tsx       |   25.24 |        0 |   23.07 |   25.74 | 40-149,199-230                      
- src/interfaces      |     100 |      100 |     100 |     100 |                                     
-  PropList.ts        |     100 |      100 |     100 |     100 |                                     
-  garden.ts          |       0 |        0 |       0 |       0 |                                     
-  item.ts            |       0 |        0 |       0 |       0 |                                     
-  nonPlant.ts        |       0 |        0 |       0 |       0 |                                     
-  plant.ts           |       0 |        0 |       0 |       0 |                                     
-  shadeLevel.ts      |       0 |        0 |       0 |       0 |                                     
- src/tests           |       0 |        0 |       0 |       0 |                                     
-  setupTests.ts      |       0 |        0 |       0 |       0 |                                     
----------------------|---------|----------|---------|---------|-------------------------------------
+---------------------|---------|----------|---------|---------|-------------------
+File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+---------------------|---------|----------|---------|---------|-------------------
+All files            |    9.78 |        0 |    1.29 |    9.91 |                   
+ src                 |    17.5 |        0 |      10 |    17.5 |                   
+  App.tsx            |    17.5 |        0 |      10 |    17.5 | 46-80,92-135      
+  global.d.ts        |       0 |        0 |       0 |       0 |                   
+  index.d.ts         |       0 |        0 |       0 |       0 |                   
+ src/DnD-demo        |    1.92 |        0 |       0 |    1.96 |                   
+  Board.tsx          |       0 |        0 |       0 |       0 | 7-36              
+  BoardSquare.tsx    |       0 |        0 |       0 |       0 | 13-26             
+  Overlay.tsx        |       0 |      100 |       0 |       0 | 7-8               
+  Pic.tsx            |       0 |        0 |       0 |       0 | 5-13              
+  Square.tsx         |       0 |        0 |       0 |       0 | 7-11              
+  constants.ts       |     100 |      100 |     100 |     100 |                   
+  demo-index.tsx     |       0 |      100 |       0 |       0 | 8-28              
+  game.ts            |       0 |        0 |       0 |       0 | 1-26              
+ src/components      |    3.12 |        0 |       0 |    3.17 |                   
+  BoardProps.tsx     |       0 |      100 |       0 |       0 | 8-22              
+  BorderBox.tsx      |   42.85 |      100 |       0 |   42.85 | 15-37             
+  BorderBoxUp.tsx    |   42.85 |      100 |       0 |   42.85 | 14-36             
+  Garden.tsx         |       0 |      100 |       0 |       0 | 18-93             
+  PlantDescriber.tsx |       0 |        0 |       0 |       0 | 19-86             
+  PlantEditor.tsx    |    5.26 |        0 |       0 |    5.26 | 30-286            
+  PlantView.tsx      |       0 |      100 |       0 |       0 | 4                 
+  Prop.tsx           |       0 |        0 |       0 |       0 | 16-49             
+  PropList.tsx       |       0 |        0 |       0 |       0 | 24-295            
+ src/interfaces      |     100 |      100 |     100 |     100 |                   
+  PropList.ts        |     100 |      100 |     100 |     100 |                   
+  garden.ts          |       0 |        0 |       0 |       0 |                   
+  item.ts            |       0 |        0 |       0 |       0 |                   
+  nonPlant.ts        |       0 |        0 |       0 |       0 |                   
+  plant.ts           |       0 |        0 |       0 |       0 |                   
+  shadeLevel.ts      |       0 |        0 |       0 |       0 |                   
+ src/tests           |       0 |        0 |       0 |       0 |                   
+  setupTests.ts      |       0 |        0 |       0 |       0 |                   
+---------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.457 s
+Time:        5.258 s
 Ran all test suites.

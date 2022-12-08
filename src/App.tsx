@@ -12,7 +12,6 @@ import PropList from "./components/PropList";
 import { BorderBox } from "./components/BorderBox";
 import { BorderBoxUp } from "./components/BorderBoxUp";
 import { PlantDescriber } from "./components/PlantDescriber";
-//import { PlantView } from "./components/PlantView";
 // Importing interfaces and constants
 import { Plant } from "./interfaces/plant";
 import { PropListArr } from "./interfaces/PropList";

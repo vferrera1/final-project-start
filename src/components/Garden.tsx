@@ -9,6 +9,7 @@ import { Container, Form } from "react-bootstrap";
 import Draggable from "react-draggable";
 import { Plant } from "../interfaces/plant";
 import Prop from "./Prop";
+import PropsInBoard from "./PropsInBoard";
 
 class Garden extends React.Component<{
     selectElement: (id: number) => void;
@@ -95,7 +96,7 @@ class Garden extends React.Component<{
                         return (
                             <Draggable bounds="parent" {...dragHandlers}>
                                 <div className="box">
-                                    <Prop
+                                    <PropsInBoard
                                         plant={prop}
                                         selectElement={selectElement}
                                         scaleValue={scaleValue}

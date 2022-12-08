@@ -16,9 +16,21 @@ const SORTINGMETHODS = [
     "Greatest Water Requirement",
     "Least Water Requirement"
 ];
-interface sortMethodPair {
+const REGIONS = [
+    "All",
+    "North America",
+    "South America",
+    "Europe",
+    "Asia",
+    "Africa",
+    "Oceania",
+    "Global"
+];
+const PRICES = ["All", "$", "$$", "$$$"];
+
+interface methodReference {
     name: string;
-    sortFunction: () => void;
+    operation: () => void;
 }
 
 function PropList({
@@ -33,7 +45,8 @@ function PropList({
     selectElement: (id: string) => void;
 }) {
     const [sortingMethod, setSortingMethod] = useState<string>("Original");
-    //const [filteringMethod, setFilteringMethod] = useState<string>("None");
+    const [regionFilter, setRegionFilter] = useState<string>("None");
+    const [priceFilter, setPriceFilter] = useState<string>("None");
 
     function generateList(selectionList: Plant[]) {
         console.log(selectionList, "Generated");
@@ -62,7 +75,6 @@ function PropList({
         setPropList(newPropList);
     }
     function alphabeticalOrder() {
-        //Might need to do a deep copy of the propList
         const newPropList = deepCloneProps(propList);
         setPropList(
             newPropList.sort((a: Plant, b: Plant) =>
@@ -100,70 +112,70 @@ function PropList({
     }
 
     function NA_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "North America"
         );
         setPropList(regionarr);
     }
     function SA_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "South America"
         );
         setPropList(regionarr);
     }
     function EU_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "Europe"
         );
         setPropList(regionarr);
     }
     function AF_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "Africa"
         );
         setPropList(regionarr);
     }
     function ASIA_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "Asia"
         );
         setPropList(regionarr);
     }
     function AUS_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "Oceania"
         );
         setPropList(regionarr);
     }
     function ALL_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "Global"
         );
         setPropList(regionarr);
     }
     function lowPrice() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const priceArr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.price === "$"
         );
         setPropList(priceArr);
     }
     function midPrice() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const priceArr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.price === "$$"
         );
         setPropList(priceArr);
     }
     function highPrice() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const priceArr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.price === "$$$"
         );
@@ -214,34 +226,73 @@ function PropList({
         );
     }
     function changeSortingMethod(event: React.ChangeEvent<HTMLSelectElement>) {
-        const sortingMethods: sortMethodPair[] = [
-            { name: "Original", sortFunction: resetlist },
-            { name: "A-Z", sortFunction: alphabeticalOrder },
-            { name: "Z-A", sortFunction: ReverseAlphabeticalOrder },
-            { name: "Smallest-Largest", sortFunction: SortbySizeSmall },
-            { name: "Largest-Smallest", sortFunction: SortbySizeBig },
+        const sortingMethods: methodReference[] = [
+            { name: "Original", operation: resetlist },
+            { name: "A-Z", operation: alphabeticalOrder },
+            { name: "Z-A", operation: ReverseAlphabeticalOrder },
+            { name: "Smallest-Largest", operation: SortbySizeSmall },
+            { name: "Largest-Smallest", operation: SortbySizeBig },
             {
                 name: "Greatest Water Requirement",
-                sortFunction: SortbyWaterReqBig
+                operation: SortbyWaterReqBig
             },
             {
                 name: "Least Water Requirement",
-                sortFunction: SortbyWaterReqSmall
+                operation: SortbyWaterReqSmall
             }
         ];
         const newSortingMethod = sortingMethods.find(
-            (sortMethod: sortMethodPair): boolean =>
+            (sortMethod: methodReference): boolean =>
                 sortMethod.name === event.target.value
         );
         if (newSortingMethod !== undefined) {
             setSortingMethod(newSortingMethod.name);
-            newSortingMethod.sortFunction();
+            newSortingMethod.operation();
         }
     }
-    function createSortOption(sortOption: string): JSX.Element {
+    function changeRegionFilter(event: React.ChangeEvent<HTMLSelectElement>) {
+        const regionFilterers: methodReference[] = [
+            { name: "All", operation: resetlist },
+            { name: "North America", operation: NA_Region },
+            { name: "South America", operation: SA_Region },
+            { name: "Europe", operation: EU_Region },
+            { name: "Africa", operation: AF_Region },
+            { name: "Asia", operation: ASIA_Region },
+            { name: "Oceania", operation: AUS_Region },
+            { name: "Global", operation: ALL_Region }
+        ];
+        const newRegionFilter = regionFilterers.find(
+            (regionFilterer: methodReference): boolean =>
+                regionFilterer.name === event.target.value
+        );
+        if (newRegionFilter !== undefined) {
+            setRegionFilter(newRegionFilter.name);
+            setPriceFilter("None");
+            newRegionFilter.operation();
+        }
+    }
+    function changePriceFilter(event: React.ChangeEvent<HTMLSelectElement>) {
+        const priceFilterers: methodReference[] = [
+            { name: "All", operation: resetlist },
+            { name: "$", operation: lowPrice },
+            { name: "$$", operation: midPrice },
+            { name: "$$$", operation: highPrice }
+        ];
+        const newPriceFilter = priceFilterers.find(
+            (priceFilterer: methodReference): boolean =>
+                priceFilterer.name === event.target.value
+        );
+        if (newPriceFilter !== undefined) {
+            setPriceFilter(newPriceFilter.name);
+            setRegionFilter("None");
+            resetlist();
+            newPriceFilter.operation();
+        }
+    }
+    function createOption(userOption: string): JSX.Element {
         return (
-            <option key={sortOption} value={sortOption}>
-                {sortOption}
+            <option key={userOption} value={userOption}>
+                {userOption}
             </option>
         );
     }
@@ -260,21 +311,24 @@ function PropList({
                     onChange={changeSortingMethod}
                 >
                     {SORTINGMETHODS.map((sortMethod: string) =>
-                        createSortOption(sortMethod)
+                        createOption(sortMethod)
                     )}
                 </Form.Select>
             </Form.Group>
-            {/* Filter By */}
-            <Button onClick={() => NA_Region()}>North America</Button>
-            <Button onClick={() => SA_Region()}>South America</Button>
-            <Button onClick={() => EU_Region()}>Europe</Button>
-            <Button onClick={() => AF_Region()}>Africa</Button>
-            <Button onClick={() => ASIA_Region()}>Asia</Button>
-            <Button onClick={() => AUS_Region()}>Oceania</Button>
-            <Button onClick={() => ALL_Region()}>World</Button>
-            <Button onClick={() => lowPrice()}>Low Price</Button>
-            <Button onClick={() => midPrice()}>Medium Price</Button>
-            <Button onClick={() => highPrice()}>High Price</Button>
+            {/* Filter By Region */}
+            <Form.Group controlId="formFilterbyRegion">
+                <Form.Label>Filter By Region:</Form.Label>
+                <Form.Select value={regionFilter} onChange={changeRegionFilter}>
+                    {REGIONS.map((region: string) => createOption(region))}
+                </Form.Select>
+            </Form.Group>
+            {/* Filter By Price */}
+            <Form.Group controlId="formFilterbyPrice">
+                <Form.Label>Filter By Price:</Form.Label>
+                <Form.Select value={priceFilter} onChange={changePriceFilter}>
+                    {PRICES.map((price: string) => createOption(price))}
+                </Form.Select>
+            </Form.Group>
         </div>
     );
 }

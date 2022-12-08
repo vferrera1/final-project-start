@@ -94,7 +94,7 @@ Browserslist: caniuse-lite is outdated. Please run:
       at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
 
 FAIL src/tests/App.test.tsx
-  ✕ renders the course name somewhere (84 ms)
+  ✕ renders the course name somewhere (76 ms)
 
   ● renders the course name somewhere
 
@@ -149,7 +149,7 @@ FAIL src/tests/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |    9.97 |        0 |    1.29 |    10.1 |                   
+All files            |    9.71 |        0 |    1.26 |    9.86 |                   
  src                 |   19.04 |        0 |    9.52 |   19.04 |                   
   App.tsx            |   19.04 |        0 |    9.52 |   19.04 | 26,51-85,97-140   
   global.d.ts        |       0 |        0 |       0 |       0 |                   
@@ -163,16 +163,17 @@ All files            |    9.97 |        0 |    1.29 |    10.1 |
   constants.ts       |     100 |      100 |     100 |     100 |                   
   demo-index.tsx     |       0 |      100 |       0 |       0 | 8-28              
   game.ts            |       0 |        0 |       0 |       0 | 1-26              
- src/components      |    3.11 |        0 |       0 |    3.16 |                   
+ src/components      |    2.99 |        0 |       0 |    3.05 |                   
   BoardProps.tsx     |       0 |      100 |       0 |       0 | 8-22              
   BorderBox.tsx      |   42.85 |      100 |       0 |   42.85 | 15-37             
   BorderBoxUp.tsx    |   42.85 |      100 |       0 |   42.85 | 14-36             
-  Garden.tsx         |       0 |      100 |       0 |       0 | 19-95             
+  Garden.tsx         |       0 |      100 |       0 |       0 | 20-96             
   PlantDescriber.tsx |       0 |        0 |       0 |       0 | 19-86             
   PlantEditor.tsx    |    5.26 |        0 |       0 |    5.26 | 30-286            
   PlantView.tsx      |       0 |      100 |       0 |       0 | 4                 
   Prop.tsx           |       0 |        0 |       0 |       0 | 18-55             
   PropList.tsx       |       0 |        0 |       0 |       0 | 24-299            
+  PropsInBoard.tsx   |       0 |      100 |       0 |       0 | 18-42             
  src/interfaces      |     100 |      100 |     100 |     100 |                   
   PropList.ts        |     100 |      100 |     100 |     100 |                   
   garden.ts          |       0 |        0 |       0 |       0 |                   
@@ -186,5 +187,5 @@ All files            |    9.97 |        0 |    1.29 |    10.1 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.456 s
+Time:        5.282 s
 Ran all test suites.

@@ -1,8 +1,6 @@
-/* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Plant } from "../interfaces/plant";
-//import { defaultProps, PropListArr } from "../interfaces/PropList";
 import Prop from "./Prop";
 
 import "../styles/PropList.css";
@@ -50,8 +48,10 @@ function PropList({
 
     function generateList(selectionList: Plant[]) {
         console.log(selectionList, "Generated");
-        // eslint-disable-next-line no-extra-parens
-        return selectionList.map((prop) => (
+        return selectionList.map((prop) => generateListElement(prop));
+    }
+    function generateListElement(prop: Plant): JSX.Element {
+        return (
             <div key={prop.species} className="propcontainer">
                 <li>{prop.species}</li>
                 <Prop
@@ -60,7 +60,7 @@ function PropList({
                     sizeValue={100}
                 />
             </div>
-        ));
+        );
     }
     function deepCloneProps(gardenProps: Plant[]): Plant[] {
         return gardenProps.map(
@@ -267,6 +267,7 @@ function PropList({
         );
         if (newRegionFilter !== undefined) {
             setRegionFilter(newRegionFilter.name);
+            setSortingMethod("Original");
             setPriceFilter("None");
             newRegionFilter.operation();
         }
@@ -284,6 +285,7 @@ function PropList({
         );
         if (newPriceFilter !== undefined) {
             setPriceFilter(newPriceFilter.name);
+            setSortingMethod("Original");
             setRegionFilter("None");
             resetlist();
             newPriceFilter.operation();
@@ -302,7 +304,6 @@ function PropList({
             <Button onClick={() => resetlist()}>Reset List</Button>
             <strong>Prop List</strong>
             <ul className="scroll-bar">{generateList(propList)}</ul>
-            {/* There should be a better way to implement this...maybe use a drop-down? */}
             {/* Sort By */}
             <Form.Group controlId="formSortSelectionList">
                 <Form.Label>Sort By:</Form.Label>

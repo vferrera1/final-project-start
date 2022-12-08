@@ -33,7 +33,7 @@ import AloeTD from "../images/SuccRTD.png";
 import AloeSV from "../images/SuccRSV.png";
 
 const Cactus: Plant = {
-    id: "1",
+    id: 1,
     species: "Cactus",
     topImage: cactusTD,
     sideImage: cactusSV,
@@ -42,10 +42,11 @@ const Cactus: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 12,
     region: "Global",
-    price: "$$"
+    price: "$$",
+    category: "Cacti"
 };
 const Tomato: Plant = {
-    id: "2",
+    id: 2,
     species: "Tomato Plant",
     topImage: "",
     sideImage: tomatoSV,
@@ -54,10 +55,11 @@ const Tomato: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 64,
     region: "South America",
-    price: "$$"
+    price: "$$",
+    category: "Farmable"
 };
 const RedRoses: Plant = {
-    id: "3",
+    id: 3,
     species: "Red Roses",
     topImage: "",
     sideImage: redrosesSV,
@@ -66,10 +68,11 @@ const RedRoses: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 54,
     region: "Europe",
-    price: "$$$"
+    price: "$$$",
+    category: "Flowers"
 };
 const YellowRoses: Plant = {
-    id: "4",
+    id: 4,
     species: "Yellow Roses",
     topImage: "",
     sideImage: yellowrosesSV,
@@ -78,10 +81,11 @@ const YellowRoses: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 49,
     region: "Europe",
-    price: "$$$"
+    price: "$$$",
+    category: "Flowers"
 };
 const Sunflower: Plant = {
-    id: "5",
+    id: 5,
     species: "Sunflower",
     topImage: "",
     sideImage: sunflowerSV,
@@ -90,10 +94,11 @@ const Sunflower: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 43,
     region: "North America",
-    price: "$$$"
+    price: "$$$",
+    category: "Flowers"
 };
 const Lilac: Plant = {
-    id: "6",
+    id: 6,
     species: "Lilac",
     topImage: lilacTD,
     sideImage: lilacSV,
@@ -102,10 +107,11 @@ const Lilac: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 39,
     region: "Europe",
-    price: "$$"
+    price: "$$",
+    category: "Flowers"
 };
 const Chrysanthemum: Plant = {
-    id: "7",
+    id: 7,
     species: "Chrysanthemum",
     topImage: chrisTD,
     sideImage: chrisSV,
@@ -114,10 +120,11 @@ const Chrysanthemum: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 22,
     region: "Asia",
-    price: "$$$"
+    price: "$$$",
+    category: "Flowers"
 };
 const SiberianBugloss: Plant = {
-    id: "8",
+    id: 8,
     species: "Siberian Bugloss",
     topImage: SBTD,
     sideImage: SBSV,
@@ -126,10 +133,11 @@ const SiberianBugloss: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 34,
     region: "Asia",
-    price: "$$"
+    price: "$$",
+    category: "Flowers"
 };
 const Bamboo: Plant = {
-    id: "9",
+    id: 9,
     species: "Bamboo",
     topImage: BambooTD,
     sideImage: BambooSV,
@@ -138,10 +146,11 @@ const Bamboo: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 27,
     region: "Asia",
-    price: "$$"
+    price: "$$",
+    category: "Decorations"
 };
 const Cabbage: Plant = {
-    id: "10",
+    id: 10,
     species: "Cabbage",
     topImage: CabbageTD,
     sideImage: CabbageSV,
@@ -150,10 +159,11 @@ const Cabbage: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 74,
     region: "Europe",
-    price: "$"
+    price: "$",
+    category: "Farmable"
 };
 const Corn: Plant = {
-    id: "11",
+    id: 11,
     species: "Corn",
     topImage: CornTD,
     sideImage: CornSV,
@@ -162,10 +172,11 @@ const Corn: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 84,
     region: "South America",
-    price: "$"
+    price: "$",
+    category: "Farmable"
 };
 const Potato: Plant = {
-    id: "12",
+    id: 12,
     species: "Potato Plant",
     topImage: PotatoTD,
     sideImage: PotatoSV,
@@ -174,10 +185,11 @@ const Potato: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 54,
     region: "North America",
-    price: "$"
+    price: "$",
+    category: "Farmable"
 };
 const Aloe: Plant = {
-    id: "13",
+    id: 13,
     species: "Aloe",
     topImage: SuccTD,
     sideImage: SuccSV,
@@ -186,10 +198,11 @@ const Aloe: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 19,
     region: "Oceania",
-    price: "$"
+    price: "$",
+    category: "Cacti"
 };
 const Succulent: Plant = {
-    id: "14",
+    id: 14,
     species: "Succulent",
     topImage: AloeTD,
     sideImage: AloeSV,
@@ -198,10 +211,11 @@ const Succulent: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 4,
     region: "Global",
-    price: "$"
+    price: "$",
+    category: "Cacti"
 };
 const LemonTree: Plant = {
-    id: "27",
+    id: 27,
     species: "Lemon Tree",
     topImage: LemonTD,
     sideImage: LemonSV,
@@ -210,10 +224,11 @@ const LemonTree: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 62,
     region: "Asia",
-    price: "$$$"
+    price: "$$$",
+    category: "Tree"
 };
 const RedMapleTree: Plant = {
-    id: "28",
+    id: 28,
     species: "Red Maple",
     topImage: RedMapleTD,
     sideImage: RedMapleSV,
@@ -222,10 +237,11 @@ const RedMapleTree: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 10,
     region: "North America",
-    price: "$$$"
+    price: "$$$",
+    category: "Tree"
 };
 const Bush: Plant = {
-    id: "29",
+    id: 29,
     species: "Bush",
     topImage: BushTD,
     sideImage: BushSV,
@@ -234,10 +250,11 @@ const Bush: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 15,
     region: "Global",
-    price: "$$"
+    price: "$$",
+    category: "Decorations"
 };
 const Path: Plant = {
-    id: "30",
+    id: 30,
     species: "Path",
     topImage: pathTD,
     sideImage: pathTD,
@@ -246,7 +263,8 @@ const Path: Plant = {
     floweringPeriod: "Mid-Spring",
     waterReq: 0,
     region: "Global",
-    price: "$$"
+    price: "$$",
+    category: "Decorations"
 };
 export const PropListArr = [
     Cactus,

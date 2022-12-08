@@ -12,8 +12,8 @@ export function PlantDescriber({
 }: {
     gardenElements: Plant[];
     selectedElement: Plant | undefined;
-    editElement: (id: string, newElement: Plant) => void;
-    removeElement: (id: string) => void;
+    editElement: (id: number, newElement: Plant) => void;
+    removeElement: (id: number) => void;
 }): JSX.Element {
     function changeEditMode() {
         setEditMode(!editMode);
@@ -82,6 +82,9 @@ export function PlantDescriber({
                 </p>
                 <p className="Plant-attribute">
                     <b>Price</b>: {plant.price}
+                </p>
+                <p className="Plant-attribute">
+                    <b>Category</b>: {plant.category}
                 </p>
                 <Button onClick={() => setEditMode(!editMode)}>
                     Edit Plant

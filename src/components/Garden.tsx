@@ -9,12 +9,14 @@ import { Container, Form } from "react-bootstrap";
 import Draggable from "react-draggable";
 import { Plant } from "../interfaces/plant";
 import Prop from "./Prop";
+import PropsInBoard from "./PropsInBoard";
 
 class Garden extends React.Component<{
-    selectElement: (id: string) => void;
+    selectElement: (id: number) => void;
     boardprops: Plant[];
     scaleValue: number;
     drop: any;
+    scaleValue: number;
 }> {
     state = {
         activeDrags: 0,
@@ -87,6 +89,7 @@ class Garden extends React.Component<{
         const { deltaPosition, controlledPosition } = this.state;
         const { scaleValue } = this.props;
         const { selectElement } = this.props;
+        const { scaleValue } = this.props;
 
         return (
             <div>
@@ -95,10 +98,11 @@ class Garden extends React.Component<{
                         return (
                             <Draggable bounds="parent" {...dragHandlers}>
                                 <div className="box">
-                                    <Prop
+                                    <PropsInBoard
                                         plant={prop}
                                         sizeValue={scaleValue}
                                         selectElement={selectElement}
+                                        scaleValue={scaleValue}
                                     />
                                 </div>
                             </Draggable>

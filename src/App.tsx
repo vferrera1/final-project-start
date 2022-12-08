@@ -19,7 +19,12 @@ import { PropListArr } from "./interfaces/PropList";
 import { ItemTypes } from "./DnD-demo/constants";
 // import { ItemTypes } from "./DnD-demo/constants";
 import Trashcan from "./images/TrashCan.png";
+import { Form } from "react-bootstrap";
 function App(): JSX.Element {
+    const [size, setSize] = useState<number>(800);
+    function updateSize(event: React.ChangeEvent<HTMLInputElement>) {
+        setSize(event.target.valueAsNumber);
+    }
     const GARDENELEMENTS = PropListArr.map(
         (element: Plant): Plant => ({
             ...element,
@@ -142,6 +147,16 @@ function App(): JSX.Element {
                     editElement={editGardenElement}
                     removeElement={removeGardenElement}
                 ></PlantDescriber>
+                <div>
+                    <Form.Group controlId="formGardenSize">
+                        <Form.Label>Size of Garden:</Form.Label>
+                        <Form.Control
+                            type="number"
+                            value={size}
+                            onChange={updateSize}
+                        />
+                    </Form.Group>
+                </div>
                 <BorderBoxUp></BorderBoxUp>
                 <div /* ref={drop} */ className="boxcontainer">
                     <PropList
@@ -156,6 +171,7 @@ function App(): JSX.Element {
                         selectElement={selectElement}
                         boardprops={boardprops}
                         drop={drop}
+                        scaleValue={size}
                     ></Garden>
                     <BorderBox></BorderBox>
                 </div>

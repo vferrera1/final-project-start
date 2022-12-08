@@ -14,6 +14,7 @@ class Garden extends React.Component<{
     selectElement: (id: number) => void;
     boardprops: Plant[];
     drop: any;
+    scaleValue: number;
 }> {
     state = {
         activeDrags: 0,
@@ -85,6 +86,7 @@ class Garden extends React.Component<{
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
         const { deltaPosition, controlledPosition } = this.state;
         const { selectElement } = this.props;
+        const { scaleValue } = this.props;
 
         return (
             <div>
@@ -96,6 +98,7 @@ class Garden extends React.Component<{
                                     <Prop
                                         plant={prop}
                                         selectElement={selectElement}
+                                        scaleValue={scaleValue}
                                     />
                                 </div>
                             </Draggable>

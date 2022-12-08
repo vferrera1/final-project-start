@@ -26,7 +26,11 @@ function PropList({
         return selectionList.map((prop) => (
             <div key={prop.species} className="propcontainer">
                 <li>{prop.species}</li>
-                <Prop plant={prop} selectElement={selectElement} />
+                <Prop
+                    plant={prop}
+                    selectElement={selectElement}
+                    scaleValue={100}
+                />
             </div>
         ));
     }

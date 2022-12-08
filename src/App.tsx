@@ -26,7 +26,7 @@ function App(): JSX.Element {
                         initialPositionX={100}
                         initialPositionY={200}
                         wheel={{ touchPadDisabled: true }}
-                        panning={{ activationKeys: ["shift"] }}
+                        panning={{ activationKeys: ["Shift"] }}
                     >
                         {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                             <React.Fragment>

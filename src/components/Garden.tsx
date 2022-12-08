@@ -12,11 +12,9 @@ import Prop from "./Prop";
 import PropsInBoard from "./PropsInBoard";
 
 class Garden extends React.Component<{
-    selectElement: (id: number) => void;
     boardprops: Plant[];
     scaleValue: number;
     drop: any;
-    scaleValue: number;
 }> {
     state = {
         activeDrags: 0,
@@ -88,9 +86,7 @@ class Garden extends React.Component<{
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
         const { deltaPosition, controlledPosition } = this.state;
         const { scaleValue } = this.props;
-        const { selectElement } = this.props;
-        const { scaleValue } = this.props;
-
+        console.log("Board Props = ", this.props.boardprops);
         return (
             <div>
                 <div ref={this.props.drop} className="container">
@@ -100,8 +96,6 @@ class Garden extends React.Component<{
                                 <div className="box">
                                     <PropsInBoard
                                         plant={prop}
-                                        sizeValue={scaleValue}
-                                        selectElement={selectElement}
                                         scaleValue={scaleValue}
                                     />
                                 </div>

@@ -14,6 +14,7 @@ function Prop({
     selectElement: (id: number) => void;
     scaleValue: number;
 }): JSX.Element {
+    /*
     const makeid = (length: number) => {
         let result = "";
         const characters =
@@ -26,10 +27,11 @@ function Prop({
         }
         return result;
     };
+    */
     const [{ isDragging }, drag] = useDrag({
         item: {
             type: ItemTypes.PROP,
-            id: makeid(10),
+            id: plant.id,
             data: plant,
             name: plant.species
         },

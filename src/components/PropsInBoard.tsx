@@ -8,11 +8,9 @@ import { PlantDescriber } from "./PlantDescriber";
 
 function Prop({
     plant,
-    selectElement,
     scaleValue
 }: {
     plant: Plant;
-    selectElement: (id: number) => void;
     scaleValue: number;
 }): JSX.Element {
     const makeid = (length: number) => {
@@ -31,15 +29,12 @@ function Prop({
     return (
         <div>
             <img
-                id={plant.id.toString()}
+                id={makeid(10).toString()}
                 src={plant.sideImage}
                 alt={plant.species}
                 style={{
                     width: `${(plant.size / scaleValue) * 800}px`,
                     height: `${(plant.size / scaleValue) * 800}px`
-                }}
-                onClick={() => {
-                    selectElement(plant.id);
                 }}
             />
         </div>

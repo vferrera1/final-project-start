@@ -25,6 +25,14 @@ const REGIONS = [
     "Global"
 ];
 const PRICES = ["All", "$", "$$", "$$$"];
+const CATEGORIES = [
+    "All",
+    "Farmable",
+    "Trees",
+    "Flowers",
+    "Decorations",
+    "Cacti"
+];
 
 interface methodReference {
     name: string;
@@ -45,16 +53,22 @@ function PropList({
     boardprops: Plant[];
 }) {
     const [sortingMethod, setSortingMethod] = useState<string>("Original");
-    const [regionFilter, setRegionFilter] = useState<string>("None");
-    const [priceFilter, setPriceFilter] = useState<string>("None");
+    const [regionFilter, setRegionFilter] = useState<string>("All");
+    const [priceFilter, setPriceFilter] = useState<string>("All");
+    const [categoryFilter, setCategoryFilter] = useState<string>("All");
 
+    console.log(
+        "In PropList.tsx...\nGarden Elements = ",
+        gardenElements,
+        "\nProp List = ",
+        propList
+    );
     function generateList(selectionList: Plant[]) {
-        console.log(selectionList, "Generated");
         return selectionList.map((prop) => generateListElement(prop));
     }
     function generateListElement(prop: Plant): JSX.Element {
         return (
-            <div key={prop.species} className="propcontainer">
+            <div key={prop.id} className="propcontainer">
                 <li>{prop.species}</li>
                 <Prop
                     plant={prop}
@@ -183,6 +197,42 @@ function PropList({
         );
         setPropList(priceArr);
     }
+    function filterFarmable() {
+        const newPropList = deepCloneProps(gardenElements);
+        const categoryArr: Plant[] = newPropList.filter(
+            (q: Plant): boolean => q.category === "Farmable"
+        );
+        setPropList(categoryArr);
+    }
+    function filterTrees() {
+        const newPropList = deepCloneProps(gardenElements);
+        const categoryArr: Plant[] = newPropList.filter(
+            (q: Plant): boolean => q.category === "Tree"
+        );
+        setPropList(categoryArr);
+    }
+    function filterFlowers() {
+        const newPropList = deepCloneProps(gardenElements);
+        const categoryArr: Plant[] = newPropList.filter(
+            (q: Plant): boolean => q.category === "Flowers"
+        );
+        setPropList(categoryArr);
+    }
+    function filterDecorations() {
+        const newPropList = deepCloneProps(gardenElements);
+        const categoryArr: Plant[] = newPropList.filter(
+            (q: Plant): boolean => q.category === "Decorations"
+        );
+        setPropList(categoryArr);
+    }
+    function filterCacti() {
+        const newPropList = deepCloneProps(gardenElements);
+        const categoryArr: Plant[] = newPropList.filter(
+            (q: Plant): boolean => q.category === "Cacti"
+        );
+        setPropList(categoryArr);
+    }
+
     function totals(list: Plant[]) {
         const newPropList = list;
         const NAarr: Plant[] = [];
@@ -334,6 +384,7 @@ function PropList({
             setRegionFilter(newRegionFilter.name);
             setSortingMethod("Original");
             setPriceFilter("None");
+            setCategoryFilter("All");
             newRegionFilter.operation();
         }
     }
@@ -352,8 +403,31 @@ function PropList({
             setPriceFilter(newPriceFilter.name);
             setSortingMethod("Original");
             setRegionFilter("None");
+            setCategoryFilter("All");
             resetlist();
             newPriceFilter.operation();
+        }
+    }
+    function changeCategoryFilter(event: React.ChangeEvent<HTMLSelectElement>) {
+        const categoryFilterers: methodReference[] = [
+            { name: "All", operation: resetlist },
+            { name: "Farmable", operation: filterFarmable },
+            { name: "Trees", operation: filterTrees },
+            { name: "Flowers", operation: filterFlowers },
+            { name: "Decorations", operation: filterDecorations },
+            { name: "Cacti", operation: filterCacti }
+        ];
+        const newCategoryFilter = categoryFilterers.find(
+            (categoryFilterer: methodReference): boolean =>
+                categoryFilterer.name === event.target.value
+        );
+        if (newCategoryFilter !== undefined) {
+            setCategoryFilter(newCategoryFilter.name);
+            setSortingMethod("Original");
+            setRegionFilter("All");
+            setPriceFilter("All");
+            resetlist();
+            newCategoryFilter.operation();
         }
     }
     function createOption(userOption: string): JSX.Element {
@@ -393,6 +467,18 @@ function PropList({
                 <Form.Label>Filter By Price:</Form.Label>
                 <Form.Select value={priceFilter} onChange={changePriceFilter}>
                     {PRICES.map((price: string) => createOption(price))}
+                </Form.Select>
+            </Form.Group>
+            {/* Filter by Category */}
+            <Form.Group controlId="formFilterbyCategory">
+                <Form.Label>Filter By Category:</Form.Label>
+                <Form.Select
+                    value={categoryFilter}
+                    onChange={changeCategoryFilter}
+                >
+                    {CATEGORIES.map((category: string) =>
+                        createOption(category)
+                    )}
                 </Form.Select>
             </Form.Group>
         </div>

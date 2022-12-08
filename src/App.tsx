@@ -19,26 +19,27 @@ import { ItemTypes } from "./DnD-demo/constants";
 import Trashcan from "./images/TrashCan.png";
 
 function App(): JSX.Element {
-    const [gardenSize, setGardenSize] = useState<number>(800);
-    function updateGardenSize(event: React.ChangeEvent<HTMLInputElement>) {
-        setGardenSize(event.target.valueAsNumber);
+    function deepCloneBoardProps(gardenProps: Plant[]): Plant[] {
+        return gardenProps.map(
+            (prop: Plant): Plant => ({
+                ...prop,
+                shadeConditions: [...prop.shadeConditions]
+            })
+        );
     }
-    const GARDENELEMENTS = PropListArr.map(
-        (element: Plant): Plant => ({
-            ...element,
-            shadeConditions: [...element.shadeConditions]
-        })
-    );
 
     // Stores the universal state of the list of garden elements (plants, objects)
     // that is shared with the selection list (upon updating) and is referenced in the description box & plant editor.
     // DOES NOT LISTEN TO CHANGES MADE IN "propList"
-    const [gardenElements, setGardenElements] =
-        useState<Plant[]>(GARDENELEMENTS);
+    const [gardenElements, setGardenElements] = useState<Plant[]>(
+        deepCloneBoardProps(PropListArr)
+    );
 
     // Stores the list of garden elements (plants, objects) that will be displayed in the selection area.
     // WILL LISTEN TO CHANGES MADE IN "gardenElements" (SEE "editGardenElements")
-    const [propList, setPropList] = useState<Plant[]>(PropListArr);
+    const [propList, setPropList] = useState<Plant[]>(
+        deepCloneBoardProps(PropListArr)
+    );
 
     // Stores the state of the garden element selected to be displayed in the description box
     const [selectedElement, setSelectedElement] = useState<Plant | undefined>(
@@ -82,6 +83,10 @@ function App(): JSX.Element {
         );
         setSelectedElement(undefined);
     }
+    const [gardenSize, setGardenSize] = useState<number>(800);
+    function updateGardenSize(event: React.ChangeEvent<HTMLInputElement>) {
+        setGardenSize(event.target.valueAsNumber);
+    }
     const [boardprops, SetBoardProps] = useState<Plant[]>([]);
 
     interface ITEM {
@@ -98,15 +103,6 @@ function App(): JSX.Element {
             isOver: !!monitor.isOver()
         })
     });
-
-    function deepCloneBoardProps(gardenProps: Plant[]): Plant[] {
-        return gardenProps.map(
-            (prop: Plant): Plant => ({
-                ...prop,
-                shadeConditions: [...prop.shadeConditions]
-            })
-        );
-    }
 
     function addToBoardList(plant: Plant) {
         const newPropList = deepCloneBoardProps(boardprops);
@@ -169,7 +165,6 @@ function App(): JSX.Element {
                     ></PropList>
                     <BorderBox></BorderBox>
                     <Garden
-                        selectElement={selectElement}
                         boardprops={boardprops}
                         drop={drop}
                         scaleValue={gardenSize}

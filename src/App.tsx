@@ -1,21 +1,24 @@
+// Importing React elements
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 import { DndProvider /*, DropTargetMonitor, useDrop */ } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 // Importing Styles
 import "./styles/App.css";
 import "./styles/globals.css";
-//import { Garden } from "./interfaces/garden";
-//import { PlantView } from "./components/PlantView";
 // Importing Components
 import Garden from "./components/Garden";
 import PropList from "./components/PropList";
 import { BorderBox } from "./components/BorderBox";
 import { BorderBoxUp } from "./components/BorderBoxUp";
 import { PlantDescriber } from "./components/PlantDescriber";
+//import { PlantView } from "./components/PlantView";
 // Importing interfaces and constants
 import { Plant } from "./interfaces/plant";
 import { PropListArr } from "./interfaces/PropList";
+//import { Garden } from "./interfaces/garden";
 // import { ItemTypes } from "./DnD-demo/constants";
+
 function App(): JSX.Element {
     const GARDENELEMENTS = PropListArr.map(
         (element: Plant): Plant => ({
@@ -96,12 +99,6 @@ function App(): JSX.Element {
         );
         setSelectedElement(undefined);
     }
-    // Updates the plant selection list upon sorting actions by updating the order of the universal list of garden elements
-    // As of right now, WE DO NOT WANT TO UPDATE THE UNIVERSAL LIST OF GARDEN ELEMENTS FOR SORTING FEATURES
-    /*function rearrangeGardenElements(sortedGardenElements: Plant[]) {
-        setGardenElements(sortedGardenElements);
-    }
-    */
     // Functions to support updating the garden
     /*
     function deepCloneBoardProps(gardenProps: Plant[]): Plant[] {
@@ -122,6 +119,10 @@ function App(): JSX.Element {
     }
     */
 
+    const [gardenSize, setGardenSize] = useState<number>(800);
+    function updateGardenSize(event: React.ChangeEvent<HTMLInputElement>) {
+        setGardenSize(event.target.valueAsNumber);
+    }
     return (
         <DndProvider backend={HTML5Backend}>
             <div className="App">
@@ -132,6 +133,16 @@ function App(): JSX.Element {
                     editElement={editGardenElement}
                     removeElement={removeGardenElement}
                 ></PlantDescriber>
+                <div>
+                    <Form.Group controlId="formGardenSize">
+                        <Form.Label>Size of Garden:</Form.Label>
+                        <Form.Control
+                            type="number"
+                            value={gardenSize}
+                            onChange={updateGardenSize}
+                        />
+                    </Form.Group>
+                </div>
                 <BorderBoxUp></BorderBoxUp>
                 <div /* ref={drop} */ className="boxcontainer">
                     <PropList
@@ -145,7 +156,8 @@ function App(): JSX.Element {
                         selectElement={selectElement}
                         boardprops={PropListArr}
                         drop={null /* drop */}
-                    ></Garden>
+                        scaleValue={gardenSize}
+                    />
                     <BorderBox></BorderBox>
                 </div>
                 <BorderBox></BorderBox>

@@ -1,11 +1,25 @@
 /* eslint-disable no-extra-parens */
-import React from "react";
-import { Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Form } from "react-bootstrap";
 import { Plant } from "../interfaces/plant";
 //import { defaultProps, PropListArr } from "../interfaces/PropList";
 import Prop from "./Prop";
 
 import "../styles/PropList.css";
+
+const SORTINGMETHODS = [
+    "Original",
+    "A-Z",
+    "Z-A",
+    "Smallest-Largest",
+    "Largest-Smallest",
+    "Greatest Water Requirement",
+    "Least Water Requirement"
+];
+interface sortMethodPair {
+    name: string;
+    sortFunction: () => void;
+}
 
 function PropList({
     gardenElements,
@@ -18,13 +32,20 @@ function PropList({
     setPropList: (newPropList: Plant[]) => void;
     selectElement: (id: string) => void;
 }) {
+    const [sortingMethod, setSortingMethod] = useState<string>("Original");
+    //const [filteringMethod, setFilteringMethod] = useState<string>("None");
+
     function generateList(selectionList: Plant[]) {
         console.log(selectionList, "Generated");
         // eslint-disable-next-line no-extra-parens
         return selectionList.map((prop) => (
             <div key={prop.species} className="propcontainer">
                 <li>{prop.species}</li>
-                <Prop plant={prop} selectElement={selectElement} />
+                <Prop
+                    plant={prop}
+                    selectElement={selectElement}
+                    sizeValue={100}
+                />
             </div>
         ));
     }
@@ -192,7 +213,38 @@ function PropList({
             </div>
         );
     }
-
+    function changeSortingMethod(event: React.ChangeEvent<HTMLSelectElement>) {
+        const sortingMethods: sortMethodPair[] = [
+            { name: "Original", sortFunction: resetlist },
+            { name: "A-Z", sortFunction: alphabeticalOrder },
+            { name: "Z-A", sortFunction: ReverseAlphabeticalOrder },
+            { name: "Smallest-Largest", sortFunction: SortbySizeSmall },
+            { name: "Largest-Smallest", sortFunction: SortbySizeBig },
+            {
+                name: "Greatest Water Requirement",
+                sortFunction: SortbyWaterReqBig
+            },
+            {
+                name: "Least Water Requirement",
+                sortFunction: SortbyWaterReqSmall
+            }
+        ];
+        const newSortingMethod = sortingMethods.find(
+            (sortMethod: sortMethodPair): boolean =>
+                sortMethod.name === event.target.value
+        );
+        if (newSortingMethod !== undefined) {
+            setSortingMethod(newSortingMethod.name);
+            newSortingMethod.sortFunction();
+        }
+    }
+    function createSortOption(sortOption: string): JSX.Element {
+        return (
+            <option key={sortOption} value={sortOption}>
+                {sortOption}
+            </option>
+        );
+    }
     return (
         <div>
             {totals()}
@@ -201,22 +253,17 @@ function PropList({
             <ul className="scroll-bar">{generateList(propList)}</ul>
             {/* There should be a better way to implement this...maybe use a drop-down? */}
             {/* Sort By */}
-            <Button onClick={() => alphabeticalOrder()}>
-                Alphabetical Order
-            </Button>
-            <Button onClick={() => ReverseAlphabeticalOrder()}>
-                Reverse Alphabetical Order
-            </Button>
-            <Button onClick={() => SortbySizeSmall()}>
-                Smallest to Largest
-            </Button>
-            <Button onClick={() => SortbySizeBig()}>Largest to Smallest</Button>
-            <Button onClick={() => SortbyWaterReqSmall()}>
-                Lowest Water Requirement
-            </Button>
-            <Button onClick={() => SortbyWaterReqBig()}>
-                Highest Water Requirement
-            </Button>
+            <Form.Group controlId="formSortSelectionList">
+                <Form.Label>Sort By:</Form.Label>
+                <Form.Select
+                    value={sortingMethod}
+                    onChange={changeSortingMethod}
+                >
+                    {SORTINGMETHODS.map((sortMethod: string) =>
+                        createSortOption(sortMethod)
+                    )}
+                </Form.Select>
+            </Form.Group>
             {/* Filter By */}
             <Button onClick={() => NA_Region()}>North America</Button>
             <Button onClick={() => SA_Region()}>South America</Button>

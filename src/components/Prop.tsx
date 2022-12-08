@@ -5,12 +5,13 @@ import { useDrag } from "react-dnd";
 import { ItemTypes } from "../DnD-demo/constants";
 import { Plant } from "../interfaces/plant";
 import { PlantDescriber } from "./PlantDescriber";
-
 function Prop({
     plant,
+    sizeValue,
     selectElement
 }: {
     plant: Plant;
+    sizeValue: number;
     selectElement: (id: string) => void;
 }): JSX.Element {
     const makeid = (length: number) => {
@@ -44,10 +45,16 @@ function Prop({
                 ref={drag}
                 src={plant.sideImage}
                 alt={plant.species}
-                style={{ border: isDragging ? "5px solid pink" : "0px" }}
+                style={{
+                    border: isDragging ? "5px solid pink" : "0px",
+                    width: `${(plant.size / sizeValue) * 800}px`,
+                    height: `${(plant.size / sizeValue) * 800}px`
+                }}
                 onClick={() => {
                     selectElement(plant.id);
                 }}
+                width={(plant.size / sizeValue) * 800}
+                height={(plant.size / sizeValue) * 800}
             />
         </div>
     );

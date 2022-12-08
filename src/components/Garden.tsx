@@ -13,6 +13,7 @@ import Prop from "./Prop";
 class Garden extends React.Component<{
     selectElement: (id: string) => void;
     boardprops: Plant[];
+    scaleValue: number;
     drop: any;
 }> {
     state = {
@@ -84,6 +85,7 @@ class Garden extends React.Component<{
     render() {
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
         const { deltaPosition, controlledPosition } = this.state;
+        const { scaleValue } = this.props;
         const { selectElement } = this.props;
 
         return (
@@ -95,6 +97,7 @@ class Garden extends React.Component<{
                                 <div className="box">
                                     <Prop
                                         plant={prop}
+                                        sizeValue={scaleValue}
                                         selectElement={selectElement}
                                     />
                                 </div>

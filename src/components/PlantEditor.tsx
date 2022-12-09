@@ -127,22 +127,7 @@ export function PlantEditor({
         });
         changeEditMode();
     }
-    /* Later, I want to add a function that prevents the user from accidentally deleting a plant,
-     * but at the moment, I'm not sure how to implement it.
-    function deletePlant(plantID: string): JSX.Element {
-        return (
-            <div>
-                <span style={{ color: "red" }}>
-                    Are you sure you want to delete {plant.id} from your garden?
-                    This action cannot be undone!
-                </span>
-                <Button onClick={() => removeElement(plantID)} variant="danger">
-                    DELETE
-                </Button>
-            </div>
-        );
-    }
-    */
+
     return (
         <div>
             <h6>Plant Editor</h6>

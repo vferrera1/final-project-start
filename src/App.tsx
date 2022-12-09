@@ -9,7 +9,6 @@ import "./styles/globals.css";
 // Importing Components
 import Garden from "./components/Garden";
 import PropList from "./components/PropList";
-import { BorderBox } from "./components/BorderBox";
 import { BorderBoxUp } from "./components/BorderBoxUp";
 import { PlantDescriber } from "./components/PlantDescriber";
 // Importing interfaces and constants
@@ -193,6 +192,7 @@ function App(): JSX.Element {
                         wheel={{ touchPadDisabled: true }}
                         panning={{ activationKeys: ["Shift"] }}
                     >
+                        {/* eslint-disable-next-line @typescript-eslint/no-unused-vars*/}
                         {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
                             <React.Fragment>
                                 <div className="tools">

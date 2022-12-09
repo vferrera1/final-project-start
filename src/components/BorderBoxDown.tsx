@@ -24,14 +24,10 @@ function BorderPreview({ borderIndex }: ChangeBorderBox): JSX.Element {
     );
 }
 
-export function BorderBoxUp(): JSX.Element {
+export function BorderBoxDown(): JSX.Element {
     const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
     return (
-        <div className="borderboxup">
-            <div>
-                <h3>Border Box</h3>
-            </div>
-            <span>The current border is: {BORDERS[colorIndex]}</span>
+        <div className="borderboxdown">
             <div
                 onClick={() => setColorIndex((1 + colorIndex) % COLORS.length)}
             >
@@ -40,6 +36,8 @@ export function BorderBoxUp(): JSX.Element {
                     borderIndex={colorIndex}
                 ></BorderPreview>
             </div>
+            <span>The current border is: {BORDERS[colorIndex]}</span>
+            <h3>Border Box</h3>
         </div>
     );
 }

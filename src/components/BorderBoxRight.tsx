@@ -14,24 +14,21 @@ function BorderPreview({ borderIndex }: ChangeBorderBox): JSX.Element {
         <div
             data-testid="colored-box"
             style={{
-                width: "750px",
-                height: "50px",
+                width: "50px",
+                height: "750px",
                 backgroundColor: COLORS[borderIndex],
                 display: "inline-block",
-                verticalAlign: "bottom"
+                verticalAlign: "bottom",
+                marginLeft: "5px"
             }}
         ></div>
     );
 }
 
-export function BorderBoxUp(): JSX.Element {
+export function BorderBoxRight(): JSX.Element {
     const [colorIndex, setColorIndex] = useState<number>(DEFAULT_COLOR_INDEX);
     return (
-        <div className="borderboxup">
-            <div>
-                <h3>Border Box</h3>
-            </div>
-            <span>The current border is: {BORDERS[colorIndex]}</span>
+        <div className="borderboxleft">
             <div
                 onClick={() => setColorIndex((1 + colorIndex) % COLORS.length)}
             >
@@ -39,6 +36,12 @@ export function BorderBoxUp(): JSX.Element {
                     setBorderIndex={setColorIndex}
                     borderIndex={colorIndex}
                 ></BorderPreview>
+            </div>
+            <div className="orienttextverticalright">
+                <div>
+                    <h3>Border Box</h3>
+                    <span>The current border is: {BORDERS[colorIndex]}</span>
+                </div>
             </div>
         </div>
     );

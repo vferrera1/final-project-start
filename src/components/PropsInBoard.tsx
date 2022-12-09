@@ -29,7 +29,7 @@ function Prop({
     return (
         <div>
             <img
-                id={makeid(10).toString()}
+                id={plant.id.toString()}
                 src={plant.sideImage}
                 alt={plant.species}
                 style={{

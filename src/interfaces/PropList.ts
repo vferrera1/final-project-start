@@ -34,7 +34,8 @@ import AloeSV from "../images/SuccRSV.png";
 
 const Cactus: Plant = {
     id: 1,
-    species: "Cactus",
+    species: "Cactaceae",
+    nickname: "Cactus",
     topImage: cactusTD,
     sideImage: cactusSV,
     size: 8,
@@ -47,7 +48,8 @@ const Cactus: Plant = {
 };
 const Tomato: Plant = {
     id: 2,
-    species: "Tomato Plant",
+    species: "Solanum lycopersicum",
+    nickname: "Tomato",
     topImage: "",
     sideImage: tomatoSV,
     size: 5,
@@ -60,7 +62,8 @@ const Tomato: Plant = {
 };
 const RedRoses: Plant = {
     id: 3,
-    species: "Red Roses",
+    species: "Rosa",
+    nickname: "Red Roses",
     topImage: "",
     sideImage: redrosesSV,
     size: 12,
@@ -73,7 +76,8 @@ const RedRoses: Plant = {
 };
 const YellowRoses: Plant = {
     id: 4,
-    species: "Yellow Roses",
+    species: "Rosa hemisphaerica",
+    nickname: "Yellow Roses",
     topImage: "",
     sideImage: yellowrosesSV,
     size: 12,
@@ -86,7 +90,8 @@ const YellowRoses: Plant = {
 };
 const Sunflower: Plant = {
     id: 5,
-    species: "Sunflower",
+    species: "Helianthus",
+    nickname: "Sunflower",
     topImage: "",
     sideImage: sunflowerSV,
     size: 11,
@@ -99,7 +104,8 @@ const Sunflower: Plant = {
 };
 const Lilac: Plant = {
     id: 6,
-    species: "Lilac",
+    species: "Syringa",
+    nickname: "Lilac",
     topImage: lilacTD,
     sideImage: lilacSV,
     size: 9,
@@ -112,7 +118,8 @@ const Lilac: Plant = {
 };
 const Chrysanthemum: Plant = {
     id: 7,
-    species: "Chrysanthemum",
+    species: "Chrysanthemum indicum",
+    nickname: "Chrysanthemum",
     topImage: chrisTD,
     sideImage: chrisSV,
     size: 7,
@@ -125,7 +132,8 @@ const Chrysanthemum: Plant = {
 };
 const SiberianBugloss: Plant = {
     id: 8,
-    species: "Siberian Bugloss",
+    species: "Brunnera macrophylla",
+    nickname: "Siberian Bugloss",
     topImage: SBTD,
     sideImage: SBSV,
     size: 8,
@@ -138,7 +146,8 @@ const SiberianBugloss: Plant = {
 };
 const Bamboo: Plant = {
     id: 9,
-    species: "Bamboo",
+    species: "Bambusa",
+    nickname: "Bamboo",
     topImage: BambooTD,
     sideImage: BambooSV,
     size: 7,
@@ -151,7 +160,8 @@ const Bamboo: Plant = {
 };
 const Cabbage: Plant = {
     id: 10,
-    species: "Cabbage",
+    species: "Brassica oleracea",
+    nickname: "Cabbage",
     topImage: CabbageTD,
     sideImage: CabbageSV,
     size: 4,
@@ -164,7 +174,8 @@ const Cabbage: Plant = {
 };
 const Corn: Plant = {
     id: 11,
-    species: "Corn",
+    species: "Zea mays",
+    nickname: "Corn",
     topImage: CornTD,
     sideImage: CornSV,
     size: 8,
@@ -177,7 +188,8 @@ const Corn: Plant = {
 };
 const Potato: Plant = {
     id: 12,
-    species: "Potato Plant",
+    species: "Solanum tuberosum",
+    nickname: "Potato",
     topImage: PotatoTD,
     sideImage: PotatoSV,
     size: 4,
@@ -190,7 +202,8 @@ const Potato: Plant = {
 };
 const Aloe: Plant = {
     id: 13,
-    species: "Aloe",
+    species: "Aloe barbadensis miller",
+    nickname: "Aloe Vera",
     topImage: SuccTD,
     sideImage: SuccSV,
     size: 5,
@@ -203,7 +216,8 @@ const Aloe: Plant = {
 };
 const Succulent: Plant = {
     id: 14,
-    species: "Succulent",
+    species: "Crassula ovata",
+    nickname: "Succulent",
     topImage: AloeTD,
     sideImage: AloeSV,
     size: 4,
@@ -216,7 +230,8 @@ const Succulent: Plant = {
 };
 const LemonTree: Plant = {
     id: 27,
-    species: "Lemon Tree",
+    species: "Citrus limon",
+    nickname: "Lemon Tree",
     topImage: LemonTD,
     sideImage: LemonSV,
     size: 14,
@@ -229,7 +244,8 @@ const LemonTree: Plant = {
 };
 const RedMapleTree: Plant = {
     id: 28,
-    species: "Red Maple",
+    species: "Acer rubrum",
+    nickname: "Red Maple",
     topImage: RedMapleTD,
     sideImage: RedMapleSV,
     size: 20,
@@ -242,7 +258,8 @@ const RedMapleTree: Plant = {
 };
 const Bush: Plant = {
     id: 29,
-    species: "Bush",
+    species: "Betula",
+    nickname: "Bush",
     topImage: BushTD,
     sideImage: BushSV,
     size: 8,
@@ -256,6 +273,7 @@ const Bush: Plant = {
 const Path: Plant = {
     id: 30,
     species: "Path",
+    nickname: "Path",
     topImage: pathTD,
     sideImage: pathTD,
     size: 10,

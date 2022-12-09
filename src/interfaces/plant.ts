@@ -23,6 +23,7 @@ export type Category =
 export interface Plant {
     id: number;
     species: string;
+    nickname: string;
     topImage: string;
     sideImage: string;
     size: number;

@@ -57,19 +57,13 @@ function PropList({
     const [priceFilter, setPriceFilter] = useState<string>("All");
     const [categoryFilter, setCategoryFilter] = useState<string>("All");
 
-    console.log(
-        "In PropList.tsx...\nGarden Elements = ",
-        gardenElements,
-        "\nProp List = ",
-        propList
-    );
     function generateList(selectionList: Plant[]) {
         return selectionList.map((prop) => generateListElement(prop));
     }
     function generateListElement(prop: Plant): JSX.Element {
         return (
             <div key={prop.id} className="propcontainer">
-                <li>{prop.species}</li>
+                <li>{prop.nickname}</li>
                 <Prop
                     plant={prop}
                     selectElement={selectElement}
@@ -94,7 +88,7 @@ function PropList({
         const newPropList = deepCloneProps(propList);
         setPropList(
             newPropList.sort((a: Plant, b: Plant) =>
-                a.species < b.species ? -1 : 1
+                a.nickname < b.nickname ? -1 : 1
             )
         );
     }
@@ -102,7 +96,7 @@ function PropList({
         const newPropList = deepCloneProps(propList);
         setPropList(
             newPropList.sort((a: Plant, b: Plant) =>
-                a.species > b.species ? -1 : 1
+                a.nickname > b.nickname ? -1 : 1
             )
         );
     }

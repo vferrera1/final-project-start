@@ -46,12 +46,17 @@ function App(): JSX.Element {
         undefined
     );
 
+    const [gardenSize, setGardenSize] = useState<number>(800);
+    function updateGardenSize(event: React.ChangeEvent<HTMLInputElement>) {
+        setGardenSize(event.target.valueAsNumber);
+    }
+    const [boardprops, SetBoardProps] = useState<Plant[]>([]);
+
     function selectElement(id: number) {
         setSelectedElement(
             gardenElements.find((element: Plant): boolean => element.id === id)
         );
     }
-    // Updates the garden element list to account for a change in a plant/object's attributes
     function editGardenElement(id: number, newElement: Plant) {
         setGardenElements(
             gardenElements.map(
@@ -65,41 +70,34 @@ function App(): JSX.Element {
                     element.id === id ? newElement : element
             )
         );
-        // I don't know how to get the description box to directly update after an edit.
-        // This is to get the description box to close so that upon reopening, it's updated.
-        setSelectedElement(
-            gardenElements.find((element: Plant): boolean => element.id === id)
+        SetBoardProps(
+            boardprops.map(
+                (boardProp: Plant): Plant =>
+                    boardProp.species === newElement.species
+                        ? newElement
+                        : boardProp
+            )
         );
     }
-    // Updates the garden element list to account for a removal of a plant/object.
-    function removeGardenElement(id: number) {
+    function removeGardenElement(removedElement: Plant) {
         setGardenElements(
             gardenElements.filter(
-                (element: Plant): boolean => element.id !== id
+                (element: Plant): boolean => element.id !== removedElement.id
             )
         );
         setPropList(
-            propList.filter((element: Plant): boolean => element.id !== id)
+            propList.filter(
+                (element: Plant): boolean => element.id !== removedElement.id
+            )
+        );
+        SetBoardProps(
+            boardprops.filter(
+                (boardProp: Plant): boolean =>
+                    boardProp.species !== removedElement.species
+            )
         );
         setSelectedElement(undefined);
     }
-    /*
-    function addGardenElement(newGardenElement: Plant) {
-        const existing = gardenElements.find(
-            (gardenElement: Plant): boolean =>
-                gardenElement.id === newGardenElement.id
-        );
-        if (existing === undefined) {
-            setGardenElements([...gardenElements, newGardenElement]);
-            setPropList([...propList, newGardenElement]);
-        }
-    }
-    */
-    const [gardenSize, setGardenSize] = useState<number>(800);
-    function updateGardenSize(event: React.ChangeEvent<HTMLInputElement>) {
-        setGardenSize(event.target.valueAsNumber);
-    }
-    const [boardprops, SetBoardProps] = useState<Plant[]>([]);
 
     interface ITEM {
         type: string;
@@ -116,10 +114,16 @@ function App(): JSX.Element {
         })
     });
 
-    function addToBoardList(plant: Plant) {
-        const newPropList = deepCloneBoardProps(boardprops);
-        plant.id = Math.floor(Math.random() * 1000);
-        newPropList.push(plant);
+    function addToBoardList(newPlant: Plant) {
+        const oldPropList = deepCloneBoardProps(boardprops);
+        const newPropList = [
+            ...oldPropList,
+            {
+                ...newPlant,
+                id: Math.floor(Math.random() * 100),
+                shadeCondtions: newPlant.shadeConditions
+            }
+        ];
         return newPropList;
     }
 

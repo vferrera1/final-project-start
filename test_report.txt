@@ -94,7 +94,7 @@ Browserslist: caniuse-lite is outdated. Please run:
       at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
 
 FAIL src/tests/App.test.tsx
-  ✕ renders the course name somewhere (74 ms)
+  ✕ renders the course name somewhere (76 ms)
 
   ● renders the course name somewhere
 
@@ -169,10 +169,10 @@ All files            |    9.61 |        0 |     1.8 |    9.76 |
   BorderBoxUp.tsx    |   42.85 |      100 |       0 |   42.85 | 14-36             
   Garden.tsx         |       0 |      100 |       0 |       0 | 19-94             
   PlantDescriber.tsx |       0 |        0 |       0 |       0 | 19-91             
-  PlantEditor.tsx    |    6.52 |        0 |       0 |    6.52 | 37-318            
-  Prop.tsx           |       0 |        0 |       0 |       0 | 17-52             
+  PlantEditor.tsx    |    6.52 |        0 |       0 |    6.52 | 37-303            
+  Prop.tsx           |       0 |        0 |       0 |       0 | 14-49             
   PropList.tsx       |    2.07 |        0 |       0 |     2.1 | 55-474            
-  PropsInBoard.tsx   |       0 |      100 |       0 |       0 | 16-29             
+  PropsInBoard.tsx   |       0 |      100 |       0 |       0 | 15-28             
  src/interfaces      |     100 |      100 |     100 |     100 |                   
   PropList.ts        |     100 |      100 |     100 |     100 |                   
   garden.ts          |       0 |        0 |       0 |       0 |                   
@@ -186,5 +186,5 @@ All files            |    9.61 |        0 |     1.8 |    9.76 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.471 s
+Time:        5.302 s
 Ran all test suites.

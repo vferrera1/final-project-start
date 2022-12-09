@@ -83,6 +83,18 @@ function App(): JSX.Element {
         );
         setSelectedElement(undefined);
     }
+    /*
+    function addGardenElement(newGardenElement: Plant) {
+        const existing = gardenElements.find(
+            (gardenElement: Plant): boolean =>
+                gardenElement.id === newGardenElement.id
+        );
+        if (existing === undefined) {
+            setGardenElements([...gardenElements, newGardenElement]);
+            setPropList([...propList, newGardenElement]);
+        }
+    }
+    */
     const [gardenSize, setGardenSize] = useState<number>(800);
     function updateGardenSize(event: React.ChangeEvent<HTMLInputElement>) {
         setGardenSize(event.target.valueAsNumber);

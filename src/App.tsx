@@ -20,6 +20,8 @@ import { ItemTypes } from "./DnD-demo/constants";
 // import { ItemTypes } from "./DnD-demo/constants";
 import Trashcan from "./images/TrashCan.png";
 import { Form } from "react-bootstrap";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
 function App(): JSX.Element {
     const [size, setSize] = useState<number>(800);
     function updateSize(event: React.ChangeEvent<HTMLInputElement>) {
@@ -167,12 +169,22 @@ function App(): JSX.Element {
                         boardprops={boardprops}
                     ></PropList>
                     <BorderBox></BorderBox>
-                    <Garden
-                        selectElement={selectElement}
-                        boardprops={boardprops}
-                        drop={drop}
-                        scaleValue={size}
-                    ></Garden>
+                    <TransformWrapper
+                        initialScale={1}
+                        initialPositionX={100}
+                        initialPositionY={200}
+                        wheel={{ touchPadDisabled: true }}
+                        panning={{ activationKeys: ["Shift"] }}
+                    >
+                        <TransformComponent>
+                            <Garden
+                                selectElement={selectElement}
+                                boardprops={boardprops}
+                                drop={drop}
+                                scaleValue={size}
+                            ></Garden>
+                        </TransformComponent>
+                    </TransformWrapper>
                     <BorderBox></BorderBox>
                 </div>
                 <BorderBox></BorderBox>

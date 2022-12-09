@@ -5,7 +5,6 @@ import { useDrag } from "react-dnd";
 import { ItemTypes } from "../DnD-demo/constants";
 import { Plant } from "../interfaces/plant";
 import { PlantDescriber } from "./PlantDescriber";
-
 function Prop({
     plant,
     selectElement,
@@ -54,6 +53,8 @@ function Prop({
                 onClick={() => {
                     selectElement(plant.id);
                 }}
+                width={(plant.size / scaleValue) * 800}
+                height={(plant.size / scaleValue) * 800}
             />
         </div>
     );

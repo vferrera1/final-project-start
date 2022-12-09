@@ -13,7 +13,12 @@ export type Region =
 
 export type Price = "$" | "$$" | "$$$";
 
-type Misc = "Farmable" | "Tree" | "Flowers" | "Decorations" | "Cacti";
+export type Category =
+    | "Farmable"
+    | "Tree"
+    | "Flowers"
+    | "Decorations"
+    | "Cacti";
 
 export interface Plant {
     id: number;
@@ -26,7 +31,7 @@ export interface Plant {
     waterReq: number;
     region: Region;
     price: Price;
-    misc: Misc;
+    category: Category;
     /* COMMENTED OUT ATTRIBUTES OF PLANT: WILL ADD TO PLANT ONCE THEY BECOME MORE DEFINED
     soilRequirement: string; //Could also be called nutrient requirement
     temperatureRequirement: string;

@@ -43,7 +43,7 @@ const Cactus: Plant = {
     waterReq: 12,
     region: "Global",
     price: "$$",
-    misc: "Cacti"
+    category: "Cacti"
 };
 const Tomato: Plant = {
     id: 2,
@@ -56,7 +56,7 @@ const Tomato: Plant = {
     waterReq: 64,
     region: "South America",
     price: "$$",
-    misc: "Farmable"
+    category: "Farmable"
 };
 const RedRoses: Plant = {
     id: 3,
@@ -69,7 +69,7 @@ const RedRoses: Plant = {
     waterReq: 54,
     region: "Europe",
     price: "$$$",
-    misc: "Flowers"
+    category: "Flowers"
 };
 const YellowRoses: Plant = {
     id: 4,
@@ -82,7 +82,7 @@ const YellowRoses: Plant = {
     waterReq: 49,
     region: "Europe",
     price: "$$$",
-    misc: "Flowers"
+    category: "Flowers"
 };
 const Sunflower: Plant = {
     id: 5,
@@ -95,7 +95,7 @@ const Sunflower: Plant = {
     waterReq: 43,
     region: "North America",
     price: "$$$",
-    misc: "Flowers"
+    category: "Flowers"
 };
 const Lilac: Plant = {
     id: 6,
@@ -108,7 +108,7 @@ const Lilac: Plant = {
     waterReq: 39,
     region: "Europe",
     price: "$$",
-    misc: "Flowers"
+    category: "Flowers"
 };
 const Chrysanthemum: Plant = {
     id: 7,
@@ -121,7 +121,7 @@ const Chrysanthemum: Plant = {
     waterReq: 22,
     region: "Asia",
     price: "$$$",
-    misc: "Flowers"
+    category: "Flowers"
 };
 const SiberianBugloss: Plant = {
     id: 8,
@@ -134,7 +134,7 @@ const SiberianBugloss: Plant = {
     waterReq: 34,
     region: "Asia",
     price: "$$",
-    misc: "Flowers"
+    category: "Flowers"
 };
 const Bamboo: Plant = {
     id: 9,
@@ -147,7 +147,7 @@ const Bamboo: Plant = {
     waterReq: 27,
     region: "Asia",
     price: "$$",
-    misc: "Decorations"
+    category: "Decorations"
 };
 const Cabbage: Plant = {
     id: 10,
@@ -160,7 +160,7 @@ const Cabbage: Plant = {
     waterReq: 74,
     region: "Europe",
     price: "$",
-    misc: "Farmable"
+    category: "Farmable"
 };
 const Corn: Plant = {
     id: 11,
@@ -173,7 +173,7 @@ const Corn: Plant = {
     waterReq: 84,
     region: "South America",
     price: "$",
-    misc: "Farmable"
+    category: "Farmable"
 };
 const Potato: Plant = {
     id: 12,
@@ -186,7 +186,7 @@ const Potato: Plant = {
     waterReq: 54,
     region: "North America",
     price: "$",
-    misc: "Farmable"
+    category: "Farmable"
 };
 const Aloe: Plant = {
     id: 13,
@@ -199,7 +199,7 @@ const Aloe: Plant = {
     waterReq: 19,
     region: "Oceania",
     price: "$",
-    misc: "Cacti"
+    category: "Cacti"
 };
 const Succulent: Plant = {
     id: 14,
@@ -212,7 +212,7 @@ const Succulent: Plant = {
     waterReq: 4,
     region: "Global",
     price: "$",
-    misc: "Cacti"
+    category: "Cacti"
 };
 const LemonTree: Plant = {
     id: 27,
@@ -225,7 +225,7 @@ const LemonTree: Plant = {
     waterReq: 62,
     region: "Asia",
     price: "$$$",
-    misc: "Tree"
+    category: "Tree"
 };
 const RedMapleTree: Plant = {
     id: 28,
@@ -238,7 +238,7 @@ const RedMapleTree: Plant = {
     waterReq: 10,
     region: "North America",
     price: "$$$",
-    misc: "Tree"
+    category: "Tree"
 };
 const Bush: Plant = {
     id: 29,
@@ -251,7 +251,7 @@ const Bush: Plant = {
     waterReq: 15,
     region: "Global",
     price: "$$",
-    misc: "Decorations"
+    category: "Decorations"
 };
 const Path: Plant = {
     id: 30,
@@ -264,7 +264,7 @@ const Path: Plant = {
     waterReq: 0,
     region: "Global",
     price: "$$",
-    misc: "Decorations"
+    category: "Decorations"
 };
 export const PropListArr = [
     Cactus,

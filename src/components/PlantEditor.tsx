@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Container, Row, Col, Form } from "react-bootstrap";
-import { Plant, Region, Price } from "../interfaces/plant";
+import { Plant, Region, Price, Category } from "../interfaces/plant";
 // If we add more interfaces inside plant, we might need to make extra components
 import { shadeLevel } from "../interfaces/shadeLevel";
 
@@ -14,6 +14,13 @@ const REGIONS: Region[] = [
     "Global"
 ];
 const PRICES: Price[] = ["$", "$$", "$$$"];
+const CATEGORIES: Category[] = [
+    "Farmable",
+    "Tree",
+    "Flowers",
+    "Decorations",
+    "Cacti"
+];
 
 export function PlantEditor({
     plant,
@@ -38,6 +45,7 @@ export function PlantEditor({
     const [waterReq, setWaterReq] = useState<string>(plant.waterReq.toString());
     const [region, setRegion] = useState<Region>(plant.region);
     const [price, setPrice] = useState<Price>(plant.price);
+    const [category, setCategory] = useState<Category>(plant.category);
     // --------------------------------------------------------------------------------------------
     function updateShadeRequirements(
         event: React.ChangeEvent<HTMLInputElement>
@@ -71,6 +79,7 @@ export function PlantEditor({
                 : setShadeConditions([...shadeConditions, newShadeLevel]);
         }
     }
+    /*
     function createRegionOption(location: Region): JSX.Element {
         return (
             <option key={location} value={location}>
@@ -85,18 +94,39 @@ export function PlantEditor({
             </option>
         );
     }
+    */
+    function createOption(userOption: string): JSX.Element {
+        return (
+            <option key={userOption} value={userOption}>
+                {userOption}
+            </option>
+        );
+    }
     function changeRegion(event: React.ChangeEvent<HTMLSelectElement>) {
         const newRegion = REGIONS.find(
             (region: Region): boolean =>
                 region.toString() === event.target.value
         );
-        newRegion === undefined ? setRegion(region) : setRegion(newRegion);
+        if (newRegion !== undefined) {
+            setRegion(newRegion);
+        }
     }
     function changePrice(event: React.ChangeEvent<HTMLSelectElement>) {
         const newPrice = PRICES.find(
             (price: Price): boolean => price.toString() === event.target.value
         );
-        newPrice === undefined ? setPrice(price) : setPrice(newPrice);
+        if (newPrice !== undefined) {
+            setPrice(newPrice);
+        }
+    }
+    function changeCategory(event: React.ChangeEvent<HTMLSelectElement>) {
+        const newCategory = CATEGORIES.find(
+            (category: Category): boolean =>
+                category.toString() === event.target.value
+        );
+        if (newCategory !== undefined) {
+            setCategory(newCategory);
+        }
     }
     function saveChanges() {
         editElement(plant.id, {
@@ -107,7 +137,8 @@ export function PlantEditor({
             floweringPeriod: floweringPeriod,
             waterReq: parseInt(waterReq) || 0,
             region: region,
-            price: price
+            price: price,
+            category: category
         });
         changeEditMode();
     }
@@ -255,7 +286,7 @@ export function PlantEditor({
                                     onChange={changeRegion}
                                 >
                                     {REGIONS.map((region: Region) =>
-                                        createRegionOption(region)
+                                        createOption(region.toString())
                                     )}
                                 </Form.Select>
                             </Col>
@@ -269,7 +300,21 @@ export function PlantEditor({
                                     onChange={changePrice}
                                 >
                                     {PRICES.map((price: Price) =>
-                                        createPriceOption(price)
+                                        createOption(price.toString())
+                                    )}
+                                </Form.Select>
+                            </Col>
+                        </Form.Group>
+                        {/* Category */}
+                        <Form.Group controlId="formCategory" as={Row}>
+                            <Form.Label>Category:</Form.Label>
+                            <Col>
+                                <Form.Select
+                                    value={category}
+                                    onChange={changeCategory}
+                                >
+                                    {CATEGORIES.map((category: Category) =>
+                                        createOption(category.toString())
                                     )}
                                 </Form.Select>
                             </Col>

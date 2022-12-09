@@ -1,12 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+// Importing React elements
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 import { DndProvider, DropTargetMonitor, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 // Importing Styles
 import "./styles/App.css";
 import "./styles/globals.css";
-//import { Garden } from "./interfaces/garden";
-//import { PlantView } from "./components/PlantView";
 // Importing Components
 import Garden from "./components/Garden";
 import PropList from "./components/PropList";
@@ -17,30 +16,30 @@ import { PlantDescriber } from "./components/PlantDescriber";
 import { Plant } from "./interfaces/plant";
 import { PropListArr } from "./interfaces/PropList";
 import { ItemTypes } from "./DnD-demo/constants";
-// import { ItemTypes } from "./DnD-demo/constants";
 import Trashcan from "./images/TrashCan.png";
-import { Form } from "react-bootstrap";
+
 function App(): JSX.Element {
-    const [size, setSize] = useState<number>(800);
-    function updateSize(event: React.ChangeEvent<HTMLInputElement>) {
-        setSize(event.target.valueAsNumber);
+    function deepCloneBoardProps(gardenProps: Plant[]): Plant[] {
+        return gardenProps.map(
+            (prop: Plant): Plant => ({
+                ...prop,
+                shadeConditions: [...prop.shadeConditions]
+            })
+        );
     }
-    const GARDENELEMENTS = PropListArr.map(
-        (element: Plant): Plant => ({
-            ...element,
-            shadeConditions: [...element.shadeConditions]
-        })
-    );
 
     // Stores the universal state of the list of garden elements (plants, objects)
     // that is shared with the selection list (upon updating) and is referenced in the description box & plant editor.
     // DOES NOT LISTEN TO CHANGES MADE IN "propList"
-    const [gardenElements, setGardenElements] =
-        useState<Plant[]>(GARDENELEMENTS);
+    const [gardenElements, setGardenElements] = useState<Plant[]>(
+        deepCloneBoardProps(PropListArr)
+    );
 
     // Stores the list of garden elements (plants, objects) that will be displayed in the selection area.
     // WILL LISTEN TO CHANGES MADE IN "gardenElements" (SEE "editGardenElements")
-    const [propList, setPropList] = useState<Plant[]>(PropListArr);
+    const [propList, setPropList] = useState<Plant[]>(
+        deepCloneBoardProps(PropListArr)
+    );
 
     // Stores the state of the garden element selected to be displayed in the description box
     const [selectedElement, setSelectedElement] = useState<Plant | undefined>(
@@ -84,6 +83,22 @@ function App(): JSX.Element {
         );
         setSelectedElement(undefined);
     }
+    /*
+    function addGardenElement(newGardenElement: Plant) {
+        const existing = gardenElements.find(
+            (gardenElement: Plant): boolean =>
+                gardenElement.id === newGardenElement.id
+        );
+        if (existing === undefined) {
+            setGardenElements([...gardenElements, newGardenElement]);
+            setPropList([...propList, newGardenElement]);
+        }
+    }
+    */
+    const [gardenSize, setGardenSize] = useState<number>(800);
+    function updateGardenSize(event: React.ChangeEvent<HTMLInputElement>) {
+        setGardenSize(event.target.valueAsNumber);
+    }
     const [boardprops, SetBoardProps] = useState<Plant[]>([]);
 
     interface ITEM {
@@ -92,6 +107,7 @@ function App(): JSX.Element {
         data: Plant;
         name: string;
     }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [{ isOver }, drop] = useDrop({
         accept: ItemTypes.PROP,
         drop: (item: ITEM) => SetBoardProps(addToBoardList(item.data)),
@@ -100,14 +116,6 @@ function App(): JSX.Element {
         })
     });
 
-    function deepCloneBoardProps(gardenProps: Plant[]): Plant[] {
-        return gardenProps.map(
-            (prop: Plant): Plant => ({
-                ...prop
-            })
-        );
-    }
-
     function addToBoardList(plant: Plant) {
         const newPropList = deepCloneBoardProps(boardprops);
         plant.id = Math.floor(Math.random() * 1000);
@@ -115,6 +123,7 @@ function App(): JSX.Element {
         return newPropList;
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [{ isOver2 }, drop2] = useDrop({
         accept: ItemTypes.PROP,
         drop: (item: ITEM) => SetBoardProps(removeFromBoardList(item.data)),
@@ -152,8 +161,8 @@ function App(): JSX.Element {
                         <Form.Label>Size of Garden:</Form.Label>
                         <Form.Control
                             type="number"
-                            value={size}
-                            onChange={updateSize}
+                            value={gardenSize}
+                            onChange={updateGardenSize}
                         />
                     </Form.Group>
                 </div>
@@ -168,10 +177,9 @@ function App(): JSX.Element {
                     ></PropList>
                     <BorderBox></BorderBox>
                     <Garden
-                        selectElement={selectElement}
                         boardprops={boardprops}
                         drop={drop}
-                        scaleValue={size}
+                        scaleValue={gardenSize}
                     ></Garden>
                     <BorderBox></BorderBox>
                 </div>

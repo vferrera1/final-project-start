@@ -20,6 +20,12 @@ export function PlantDescriber({
     }
     // If a garden element (plant/object) is not selected for the description box,
     // Return a default message
+    console.log(
+        "Garden Elements:",
+        gardenElements,
+        "\nSelected Element:",
+        selectedElement
+    );
     if (selectedElement === undefined) {
         return (
             <div className="Plant-describer">
@@ -82,6 +88,9 @@ export function PlantDescriber({
                 </p>
                 <p className="Plant-attribute">
                     <b>Price</b>: {plant.price}
+                </p>
+                <p className="Plant-attribute">
+                    <b>Category</b>: {plant.category}
                 </p>
                 <Button onClick={() => setEditMode(!editMode)}>
                     Edit Plant

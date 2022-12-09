@@ -1,11 +1,43 @@
-/* eslint-disable no-extra-parens */
-import React from "react";
-import { Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Form } from "react-bootstrap";
 import { Plant } from "../interfaces/plant";
-//import { defaultProps, PropListArr } from "../interfaces/PropList";
 import Prop from "./Prop";
 
 import "../styles/PropList.css";
+
+const SORTINGMETHODS = [
+    "Original",
+    "A-Z",
+    "Z-A",
+    "Smallest-Largest",
+    "Largest-Smallest",
+    "Greatest Water Requirement",
+    "Least Water Requirement"
+];
+const REGIONS = [
+    "All",
+    "North America",
+    "South America",
+    "Europe",
+    "Asia",
+    "Africa",
+    "Oceania",
+    "Global"
+];
+const PRICES = ["All", "$", "$$", "$$$"];
+const CATEGORIES = [
+    "All",
+    "Farmable",
+    "Trees",
+    "Flowers",
+    "Decorations",
+    "Cacti"
+];
+
+interface methodReference {
+    name: string;
+    operation: () => void;
+}
 
 function PropList({
     gardenElements,
@@ -20,11 +52,23 @@ function PropList({
     selectElement: (id: number) => void;
     boardprops: Plant[];
 }) {
+    const [sortingMethod, setSortingMethod] = useState<string>("Original");
+    const [regionFilter, setRegionFilter] = useState<string>("All");
+    const [priceFilter, setPriceFilter] = useState<string>("All");
+    const [categoryFilter, setCategoryFilter] = useState<string>("All");
+
+    console.log(
+        "In PropList.tsx...\nGarden Elements = ",
+        gardenElements,
+        "\nProp List = ",
+        propList
+    );
     function generateList(selectionList: Plant[]) {
-        console.log(selectionList, "Generated");
-        // eslint-disable-next-line no-extra-parens
-        return selectionList.map((prop) => (
-            <div key={prop.species} className="propcontainer">
+        return selectionList.map((prop) => generateListElement(prop));
+    }
+    function generateListElement(prop: Plant): JSX.Element {
+        return (
+            <div key={prop.id} className="propcontainer">
                 <li>{prop.species}</li>
                 <Prop
                     plant={prop}
@@ -32,7 +76,7 @@ function PropList({
                     scaleValue={100}
                 />
             </div>
-        ));
+        );
     }
     function deepCloneProps(gardenProps: Plant[]): Plant[] {
         return gardenProps.map(
@@ -47,7 +91,6 @@ function PropList({
         setPropList(newPropList);
     }
     function alphabeticalOrder() {
-        //Might need to do a deep copy of the propList
         const newPropList = deepCloneProps(propList);
         setPropList(
             newPropList.sort((a: Plant, b: Plant) =>
@@ -85,75 +128,111 @@ function PropList({
     }
 
     function NA_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "North America"
         );
         setPropList(regionarr);
     }
     function SA_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "South America"
         );
         setPropList(regionarr);
     }
     function EU_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "Europe"
         );
         setPropList(regionarr);
     }
     function AF_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "Africa"
         );
         setPropList(regionarr);
     }
     function ASIA_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "Asia"
         );
         setPropList(regionarr);
     }
     function AUS_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "Oceania"
         );
         setPropList(regionarr);
     }
     function ALL_Region() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const regionarr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.region === "Global"
         );
         setPropList(regionarr);
     }
     function lowPrice() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const priceArr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.price === "$"
         );
         setPropList(priceArr);
     }
     function midPrice() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const priceArr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.price === "$$"
         );
         setPropList(priceArr);
     }
     function highPrice() {
-        const newPropList = deepCloneProps(propList);
+        const newPropList = deepCloneProps(gardenElements);
         const priceArr: Plant[] = newPropList.filter(
             (q: Plant): boolean => q.price === "$$$"
         );
         setPropList(priceArr);
     }
+    function filterFarmable() {
+        const newPropList = deepCloneProps(gardenElements);
+        const categoryArr: Plant[] = newPropList.filter(
+            (q: Plant): boolean => q.category === "Farmable"
+        );
+        setPropList(categoryArr);
+    }
+    function filterTrees() {
+        const newPropList = deepCloneProps(gardenElements);
+        const categoryArr: Plant[] = newPropList.filter(
+            (q: Plant): boolean => q.category === "Tree"
+        );
+        setPropList(categoryArr);
+    }
+    function filterFlowers() {
+        const newPropList = deepCloneProps(gardenElements);
+        const categoryArr: Plant[] = newPropList.filter(
+            (q: Plant): boolean => q.category === "Flowers"
+        );
+        setPropList(categoryArr);
+    }
+    function filterDecorations() {
+        const newPropList = deepCloneProps(gardenElements);
+        const categoryArr: Plant[] = newPropList.filter(
+            (q: Plant): boolean => q.category === "Decorations"
+        );
+        setPropList(categoryArr);
+    }
+    function filterCacti() {
+        const newPropList = deepCloneProps(gardenElements);
+        const categoryArr: Plant[] = newPropList.filter(
+            (q: Plant): boolean => q.category === "Cacti"
+        );
+        setPropList(categoryArr);
+    }
+
     function totals(list: Plant[]) {
         const newPropList = list;
         const NAarr: Plant[] = [];
@@ -217,27 +296,27 @@ function PropList({
             }
         });
         newPropList.map((q: Plant) => {
-            if (q.misc == "Farmable") {
+            if (q.category == "Farmable") {
                 farmarr.push(q);
             }
         });
         newPropList.map((q: Plant) => {
-            if (q.misc == "Decorations") {
+            if (q.category == "Decorations") {
                 decoarr.push(q);
             }
         });
         newPropList.map((q: Plant) => {
-            if (q.misc == "Cacti") {
+            if (q.category == "Cacti") {
                 cactiarr.push(q);
             }
         });
         newPropList.map((q: Plant) => {
-            if (q.misc == "Flowers") {
+            if (q.category == "Flowers") {
                 flowerarr.push(q);
             }
         });
         newPropList.map((q: Plant) => {
-            if (q.misc == "Tree") {
+            if (q.category == "Tree") {
                 treearr.push(q);
             }
         });
@@ -261,42 +340,147 @@ function PropList({
             </div>
         );
     }
-
+    function changeSortingMethod(event: React.ChangeEvent<HTMLSelectElement>) {
+        const sortingMethods: methodReference[] = [
+            { name: "Original", operation: resetlist },
+            { name: "A-Z", operation: alphabeticalOrder },
+            { name: "Z-A", operation: ReverseAlphabeticalOrder },
+            { name: "Smallest-Largest", operation: SortbySizeSmall },
+            { name: "Largest-Smallest", operation: SortbySizeBig },
+            {
+                name: "Greatest Water Requirement",
+                operation: SortbyWaterReqBig
+            },
+            {
+                name: "Least Water Requirement",
+                operation: SortbyWaterReqSmall
+            }
+        ];
+        const newSortingMethod = sortingMethods.find(
+            (sortMethod: methodReference): boolean =>
+                sortMethod.name === event.target.value
+        );
+        if (newSortingMethod !== undefined) {
+            setSortingMethod(newSortingMethod.name);
+            newSortingMethod.operation();
+        }
+    }
+    function changeRegionFilter(event: React.ChangeEvent<HTMLSelectElement>) {
+        const regionFilterers: methodReference[] = [
+            { name: "All", operation: resetlist },
+            { name: "North America", operation: NA_Region },
+            { name: "South America", operation: SA_Region },
+            { name: "Europe", operation: EU_Region },
+            { name: "Africa", operation: AF_Region },
+            { name: "Asia", operation: ASIA_Region },
+            { name: "Oceania", operation: AUS_Region },
+            { name: "Global", operation: ALL_Region }
+        ];
+        const newRegionFilter = regionFilterers.find(
+            (regionFilterer: methodReference): boolean =>
+                regionFilterer.name === event.target.value
+        );
+        if (newRegionFilter !== undefined) {
+            setRegionFilter(newRegionFilter.name);
+            setSortingMethod("Original");
+            setPriceFilter("None");
+            setCategoryFilter("All");
+            newRegionFilter.operation();
+        }
+    }
+    function changePriceFilter(event: React.ChangeEvent<HTMLSelectElement>) {
+        const priceFilterers: methodReference[] = [
+            { name: "All", operation: resetlist },
+            { name: "$", operation: lowPrice },
+            { name: "$$", operation: midPrice },
+            { name: "$$$", operation: highPrice }
+        ];
+        const newPriceFilter = priceFilterers.find(
+            (priceFilterer: methodReference): boolean =>
+                priceFilterer.name === event.target.value
+        );
+        if (newPriceFilter !== undefined) {
+            setPriceFilter(newPriceFilter.name);
+            setSortingMethod("Original");
+            setRegionFilter("None");
+            setCategoryFilter("All");
+            resetlist();
+            newPriceFilter.operation();
+        }
+    }
+    function changeCategoryFilter(event: React.ChangeEvent<HTMLSelectElement>) {
+        const categoryFilterers: methodReference[] = [
+            { name: "All", operation: resetlist },
+            { name: "Farmable", operation: filterFarmable },
+            { name: "Trees", operation: filterTrees },
+            { name: "Flowers", operation: filterFlowers },
+            { name: "Decorations", operation: filterDecorations },
+            { name: "Cacti", operation: filterCacti }
+        ];
+        const newCategoryFilter = categoryFilterers.find(
+            (categoryFilterer: methodReference): boolean =>
+                categoryFilterer.name === event.target.value
+        );
+        if (newCategoryFilter !== undefined) {
+            setCategoryFilter(newCategoryFilter.name);
+            setSortingMethod("Original");
+            setRegionFilter("All");
+            setPriceFilter("All");
+            resetlist();
+            newCategoryFilter.operation();
+        }
+    }
+    function createOption(userOption: string): JSX.Element {
+        return (
+            <option key={userOption} value={userOption}>
+                {userOption}
+            </option>
+        );
+    }
     return (
         <div>
             {totals(boardprops)}
             <Button onClick={() => resetlist()}>Reset List</Button>
             <strong>Prop List</strong>
             <ul className="scroll-bar">{generateList(propList)}</ul>
-            {/* There should be a better way to implement this...maybe use a drop-down? */}
             {/* Sort By */}
-            <Button onClick={() => alphabeticalOrder()}>
-                Alphabetical Order
-            </Button>
-            <Button onClick={() => ReverseAlphabeticalOrder()}>
-                Reverse Alphabetical Order
-            </Button>
-            <Button onClick={() => SortbySizeSmall()}>
-                Smallest to Largest
-            </Button>
-            <Button onClick={() => SortbySizeBig()}>Largest to Smallest</Button>
-            <Button onClick={() => SortbyWaterReqSmall()}>
-                Lowest Water Requirement
-            </Button>
-            <Button onClick={() => SortbyWaterReqBig()}>
-                Highest Water Requirement
-            </Button>
-            {/* Filter By */}
-            <Button onClick={() => NA_Region()}>North America</Button>
-            <Button onClick={() => SA_Region()}>South America</Button>
-            <Button onClick={() => EU_Region()}>Europe</Button>
-            <Button onClick={() => AF_Region()}>Africa</Button>
-            <Button onClick={() => ASIA_Region()}>Asia</Button>
-            <Button onClick={() => AUS_Region()}>Oceania</Button>
-            <Button onClick={() => ALL_Region()}>World</Button>
-            <Button onClick={() => lowPrice()}>Low Price</Button>
-            <Button onClick={() => midPrice()}>Medium Price</Button>
-            <Button onClick={() => highPrice()}>High Price</Button>
+            <Form.Group controlId="formSortSelectionList">
+                <Form.Label>Sort By:</Form.Label>
+                <Form.Select
+                    value={sortingMethod}
+                    onChange={changeSortingMethod}
+                >
+                    {SORTINGMETHODS.map((sortMethod: string) =>
+                        createOption(sortMethod)
+                    )}
+                </Form.Select>
+            </Form.Group>
+            {/* Filter By Region */}
+            <Form.Group controlId="formFilterbyRegion">
+                <Form.Label>Filter By Region:</Form.Label>
+                <Form.Select value={regionFilter} onChange={changeRegionFilter}>
+                    {REGIONS.map((region: string) => createOption(region))}
+                </Form.Select>
+            </Form.Group>
+            {/* Filter By Price */}
+            <Form.Group controlId="formFilterbyPrice">
+                <Form.Label>Filter By Price:</Form.Label>
+                <Form.Select value={priceFilter} onChange={changePriceFilter}>
+                    {PRICES.map((price: string) => createOption(price))}
+                </Form.Select>
+            </Form.Group>
+            {/* Filter by Category */}
+            <Form.Group controlId="formFilterbyCategory">
+                <Form.Label>Filter By Category:</Form.Label>
+                <Form.Select
+                    value={categoryFilter}
+                    onChange={changeCategoryFilter}
+                >
+                    {CATEGORIES.map((category: string) =>
+                        createOption(category)
+                    )}
+                </Form.Select>
+            </Form.Group>
         </div>
     );
 }

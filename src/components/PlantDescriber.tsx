@@ -13,19 +13,13 @@ export function PlantDescriber({
     gardenElements: Plant[];
     selectedElement: Plant | undefined;
     editElement: (id: number, newElement: Plant) => void;
-    removeElement: (id: number) => void;
+    removeElement: (plant: Plant) => void;
 }): JSX.Element {
     function changeEditMode() {
         setEditMode(!editMode);
     }
     // If a garden element (plant/object) is not selected for the description box,
     // Return a default message
-    console.log(
-        "Garden Elements:",
-        gardenElements,
-        "\nSelected Element:",
-        selectedElement
-    );
     if (selectedElement === undefined) {
         return (
             <div className="Plant-describer">
@@ -62,7 +56,9 @@ export function PlantDescriber({
     } else {
         return (
             <div className="Plant-describer">
-                <h6>{plant.species}</h6>
+                <h6>
+                    {plant.nickname} ({plant.species})
+                </h6>
                 <img
                     id={plant.id.toString()}
                     src={plant.sideImage}

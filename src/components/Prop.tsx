@@ -46,15 +46,13 @@ function Prop({
                 src={plant.sideImage}
                 alt={plant.species}
                 style={{
-                    border: isDragging ? "5px solid pink" : "0px",
-                    width: `${(plant.size / scaleValue) * 800}px`,
-                    height: `${(plant.size / scaleValue) * 800}px`
+                    border: isDragging ? "5px solid pink" : "0px"
                 }}
                 onClick={() => {
                     selectElement(plant.id);
                 }}
-                width={(plant.size / scaleValue) * 800}
-                height={(plant.size / scaleValue) * 800}
+                width={scaleValue}
+                height={scaleValue}
             />
         </div>
     );

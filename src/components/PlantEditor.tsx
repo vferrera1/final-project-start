@@ -31,10 +31,10 @@ export function PlantEditor({
     plant: Plant;
     changeEditMode: () => void;
     editElement: (id: number, newElement: Plant) => void;
-    removeElement: (id: number) => void;
+    removeElement: (plant: Plant) => void;
 }): JSX.Element {
     // Create local state variables that will update the plant if the editted info is saved:
-    const [species, setSpecies] = useState<string>(plant.species);
+    const [nickname, setNickname] = useState<string>(plant.nickname);
     const [size, setSize] = useState<string>(plant.size.toString());
     const [shadeConditions, setShadeConditions] = useState<shadeLevel[]>(
         plant.shadeConditions
@@ -79,22 +79,7 @@ export function PlantEditor({
                 : setShadeConditions([...shadeConditions, newShadeLevel]);
         }
     }
-    /*
-    function createRegionOption(location: Region): JSX.Element {
-        return (
-            <option key={location} value={location}>
-                {location}
-            </option>
-        );
-    }
-    function createPriceOption(cost: Price): JSX.Element {
-        return (
-            <option key={cost} value={cost}>
-                {cost}
-            </option>
-        );
-    }
-    */
+
     function createOption(userOption: string): JSX.Element {
         return (
             <option key={userOption} value={userOption}>
@@ -131,7 +116,7 @@ export function PlantEditor({
     function saveChanges() {
         editElement(plant.id, {
             ...plant,
-            species: species,
+            nickname: nickname,
             size: parseInt(size) || 0,
             shadeConditions: shadeConditions,
             floweringPeriod: floweringPeriod,
@@ -161,19 +146,21 @@ export function PlantEditor({
     return (
         <div>
             <h6>Plant Editor</h6>
-            <p>Here, you will edit {plant.species}</p>
+            <p>
+                Here, you will edit {plant.nickname} ({plant.species})
+            </p>
             <Container>
                 <Row>
                     <Col>
-                        {/* Species */}
-                        <Form.Group controlId="formPlantSpecies" as={Row}>
-                            <Form.Label>Species:</Form.Label>
+                        {/* Nickname */}
+                        <Form.Group controlId="formPlantNickname" as={Row}>
+                            <Form.Label>Nickname:</Form.Label>
                             <Col>
                                 <Form.Control
-                                    value={species}
+                                    value={nickname}
                                     onChange={(
                                         event: React.ChangeEvent<HTMLInputElement>
-                                    ) => setSpecies(event.target.value)}
+                                    ) => setNickname(event.target.value)}
                                 />
                             </Col>
                         </Form.Group>
@@ -328,7 +315,7 @@ export function PlantEditor({
                             Cancel
                         </Button>
                         <Button
-                            onClick={() => removeElement(plant.id)}
+                            onClick={() => removeElement(plant)}
                             variant="danger"
                         >
                             Delete Plant

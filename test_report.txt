@@ -21,7 +21,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         at useDragDropManager (/home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
         at useDropTargetMonitor (/home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
         at useDrop (/home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
-        at App (/home/runner/work/final-project-start/final-project-start/src/App.tsx:111:32)
+        at App (/home/runner/work/final-project-start/final-project-start/src/App.tsx:109:32)
         at renderWithHooks (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:14985:18)
         at mountIndeterminateComponent (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:17811:13)
         at beginWork (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:19049:16)
@@ -94,25 +94,25 @@ Browserslist: caniuse-lite is outdated. Please run:
       at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
 
 FAIL src/tests/App.test.tsx
-  ✕ renders the course name somewhere (72 ms)
+  ✕ renders the course name somewhere (74 ms)
 
   ● renders the course name somewhere
 
     Invariant Violation: Expected drag drop context
 
-      109 |     }
-      110 |     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    > 111 |     const [{ isOver }, drop] = useDrop({
+      107 |     }
+      108 |     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    > 109 |     const [{ isOver }, drop] = useDrop({
           |                                ^
-      112 |         accept: ItemTypes.PROP,
-      113 |         drop: (item: ITEM) => SetBoardProps(addToBoardList(item.data)),
-      114 |         collect: (monitor: DropTargetMonitor) => ({
+      110 |         accept: ItemTypes.PROP,
+      111 |         drop: (item: ITEM) => SetBoardProps(addToBoardList(item.data)),
+      112 |         collect: (monitor: DropTargetMonitor) => ({
 
       at invariant (node_modules/@react-dnd/invariant/src/index.ts:28:15)
       at useDragDropManager (node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
       at useDropTargetMonitor (node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
       at useDrop (node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
-      at App (src/App.tsx:111:32)
+      at App (src/App.tsx:109:32)
       at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
       at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
       at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19049:16)
@@ -149,9 +149,9 @@ FAIL src/tests/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |    9.56 |        0 |    1.81 |    9.72 |                   
- src                 |      20 |        0 |      15 |      20 |                   
-  App.tsx            |      20 |        0 |      15 |      20 | 50-84,100,113-149 
+All files            |    9.61 |        0 |     1.8 |    9.76 |                   
+ src                 |   19.51 |        0 |   14.28 |   19.51 |                   
+  App.tsx            |   19.51 |        0 |   14.28 |   19.51 | 51,56-99,111-153  
   global.d.ts        |       0 |        0 |       0 |       0 |                   
   index.d.ts         |       0 |        0 |       0 |       0 |                   
  src/DnD-demo        |    1.92 |        0 |       0 |    1.96 |                   
@@ -163,15 +163,15 @@ All files            |    9.56 |        0 |    1.81 |    9.72 |
   constants.ts       |     100 |      100 |     100 |     100 |                   
   demo-index.tsx     |       0 |      100 |       0 |       0 | 8-28              
   game.ts            |       0 |        0 |       0 |       0 | 1-26              
- src/components      |    3.97 |        0 |       0 |    4.04 |                   
+ src/components      |    4.01 |        0 |       0 |    4.08 |                   
   BoardProps.tsx     |       0 |      100 |       0 |       0 | 8-22              
   BorderBox.tsx      |   42.85 |      100 |       0 |   42.85 | 15-37             
   BorderBoxUp.tsx    |   42.85 |      100 |       0 |   42.85 | 14-36             
   Garden.tsx         |       0 |      100 |       0 |       0 | 19-94             
-  PlantDescriber.tsx |       0 |        0 |       0 |       0 | 19-95             
-  PlantEditor.tsx    |    6.52 |        0 |       0 |    6.52 | 37-331            
-  Prop.tsx           |       0 |        0 |       0 |       0 | 17-54             
-  PropList.tsx       |    2.06 |        0 |       0 |    2.09 | 55-480            
+  PlantDescriber.tsx |       0 |        0 |       0 |       0 | 19-91             
+  PlantEditor.tsx    |    6.52 |        0 |       0 |    6.52 | 37-318            
+  Prop.tsx           |       0 |        0 |       0 |       0 | 17-52             
+  PropList.tsx       |    2.07 |        0 |       0 |     2.1 | 55-474            
   PropsInBoard.tsx   |       0 |      100 |       0 |       0 | 16-29             
  src/interfaces      |     100 |      100 |     100 |     100 |                   
   PropList.ts        |     100 |      100 |     100 |     100 |                   
@@ -186,5 +186,5 @@ All files            |    9.56 |        0 |    1.81 |    9.72 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.418 s
+Time:        5.471 s
 Ran all test suites.

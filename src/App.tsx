@@ -18,6 +18,9 @@ import { PropListArr } from "./interfaces/PropList";
 import { ItemTypes } from "./DnD-demo/constants";
 import Trashcan from "./images/TrashCan.png";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { BorderBoxDown } from "./components/BorderBoxDown";
+import { BorderBoxLeft } from "./components/BorderBoxLeft";
+import { BorderBoxRight } from "./components/BorderBoxRight";
 
 function App(): JSX.Element {
     function deepCloneBoardProps(gardenProps: Plant[]): Plant[] {
@@ -173,14 +176,16 @@ function App(): JSX.Element {
                 </div>
                 <BorderBoxUp></BorderBoxUp>
                 <div /* ref={drop} */ className="boxcontainer">
-                    <PropList
-                        gardenElements={gardenElements}
-                        propList={propList}
-                        setPropList={setPropList}
-                        selectElement={selectElement}
-                        boardprops={boardprops}
-                    ></PropList>
-                    <BorderBox></BorderBox>
+                    <div className="proplistcontainer">
+                        <PropList
+                            gardenElements={gardenElements}
+                            propList={propList}
+                            setPropList={setPropList}
+                            selectElement={selectElement}
+                            boardprops={boardprops}
+                        ></PropList>
+                    </div>
+                    <BorderBoxLeft></BorderBoxLeft>
                     <TransformWrapper
                         initialScale={1}
                         initialPositionX={0}
@@ -207,9 +212,9 @@ function App(): JSX.Element {
                             </React.Fragment>
                         )}
                     </TransformWrapper>
-                    <BorderBox></BorderBox>
+                    <BorderBoxRight></BorderBoxRight>
                 </div>
-                <BorderBox></BorderBox>
+                <BorderBoxDown></BorderBoxDown>
             </div>
             <div ref={drop2}>
                 <img src={Trashcan} />

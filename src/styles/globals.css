@@ -139,3 +139,51 @@ body {
 .rem-position-fix {
     position: static !important;
 }
+
+.borderboxup {
+    height: 130px;
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 380px;
+}
+
+.borderboxdown {
+    height: 200px;
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 380px;
+    padding-top: 10px;
+}
+
+.borderboxleft {
+    height: 800px;
+    width: 200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.orienttextvertical {
+    width: 500px;
+    height: 50px;
+    transform: rotate(-90deg);
+    margin: auto;
+}
+
+.orienttextverticalright {
+    width: 500px;
+    height: 50px;
+    transform: rotate(90deg);
+    margin: auto;
+}
+
+.proplistcontainer {
+    display: flex;
+    align-self: flex-end;
+}

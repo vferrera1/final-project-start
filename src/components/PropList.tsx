@@ -263,8 +263,8 @@ function PropList({
     }
 
     return (
-        <div>
-            {totals(boardprops)}
+        <div className="proplistcontainer">
+            <div>{totals(boardprops)}</div>
             <Button onClick={() => resetlist()}>Reset List</Button>
             <strong>Prop List</strong>
             <ul className="scroll-bar">{generateList(propList)}</ul>

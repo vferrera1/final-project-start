@@ -6,7 +6,7 @@ import { ItemTypes } from "../DnD-demo/constants";
 import { Plant } from "../interfaces/plant";
 import { PlantDescriber } from "./PlantDescriber";
 
-function Prop({
+function PropsInBoard({
     plant,
     selectElement,
     scaleValue
@@ -46,4 +46,4 @@ function Prop({
     );
 }
 
-export default Prop;
+export default PropsInBoard;

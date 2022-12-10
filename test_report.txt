@@ -21,7 +21,7 @@ Browserslist: caniuse-lite is outdated. Please run:
         at useDragDropManager (/home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
         at useDropTargetMonitor (/home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
         at useDrop (/home/runner/work/final-project-start/final-project-start/node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
-        at App (/home/runner/work/final-project-start/final-project-start/src/App.tsx:112:32)
+        at App (/home/runner/work/final-project-start/final-project-start/src/App.tsx:111:32)
         at renderWithHooks (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:14985:18)
         at mountIndeterminateComponent (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:17811:13)
         at beginWork (/home/runner/work/final-project-start/final-project-start/node_modules/react-dom/cjs/react-dom.development.js:19049:16)
@@ -80,7 +80,7 @@ Browserslist: caniuse-lite is outdated. Please run:
   console.error
     The above error occurred in the <App> component:
     
-        at App (/home/runner/work/final-project-start/final-project-start/src/App.tsx:37:49)
+        at App (/home/runner/work/final-project-start/final-project-start/src/App.tsx:36:49)
     
     Consider adding an error boundary to your tree to customize error handling behavior.
     Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
@@ -94,25 +94,25 @@ Browserslist: caniuse-lite is outdated. Please run:
       at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
 
 FAIL src/tests/App.test.tsx
-  ✕ renders the course name somewhere (92 ms)
+  ✕ renders the course name somewhere (76 ms)
 
   ● renders the course name somewhere
 
     Invariant Violation: Expected drag drop context
 
-      110 |     }
-      111 |     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    > 112 |     const [{ isOver }, drop] = useDrop({
+      109 |     }
+      110 |     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    > 111 |     const [{ isOver }, drop] = useDrop({
           |                                ^
-      113 |         accept: ItemTypes.PROP,
-      114 |         drop: (item: ITEM) => SetBoardProps(addToBoardList(item.data)),
-      115 |         collect: (monitor: DropTargetMonitor) => ({
+      112 |         accept: ItemTypes.PROPINLIST,
+      113 |         drop: (item: ITEM) => SetBoardProps(addToBoardList(item.data)),
+      114 |         collect: (monitor: DropTargetMonitor) => ({
 
       at invariant (node_modules/@react-dnd/invariant/src/index.ts:28:15)
       at useDragDropManager (node_modules/react-dnd/dist/cjs/hooks/useDragDropManager.js:21:28)
       at useDropTargetMonitor (node_modules/react-dnd/dist/cjs/hooks/internal/drop.js:34:60)
       at useDrop (node_modules/react-dnd/dist/cjs/hooks/useDrop.js:39:62)
-      at App (src/App.tsx:112:32)
+      at App (src/App.tsx:111:32)
       at renderWithHooks (node_modules/react-dom/cjs/react-dom.development.js:14985:18)
       at mountIndeterminateComponent (node_modules/react-dom/cjs/react-dom.development.js:17811:13)
       at beginWork (node_modules/react-dom/cjs/react-dom.development.js:19049:16)
@@ -149,9 +149,9 @@ FAIL src/tests/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |   14.63 |        0 |    1.88 |   14.77 |                   
- src                 |   17.77 |        0 |      12 |   17.77 |                   
-  App.tsx            |   17.77 |        0 |      12 |   17.77 | 54,59-102,114-201 
+All files            |   14.77 |        0 |    1.93 |   14.92 |                   
+ src                 |   19.51 |        0 |   14.28 |   19.51 |                   
+  App.tsx            |   19.51 |        0 |   14.28 |   19.51 | 53,58-101,113-155 
   global.d.ts        |       0 |        0 |       0 |       0 |                   
   index.d.ts         |       0 |        0 |       0 |       0 |                   
  src/components      |    5.72 |        0 |       0 |    5.79 |                   
@@ -180,5 +180,5 @@ All files            |   14.63 |        0 |    1.88 |   14.77 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.601 s
+Time:        5.204 s
 Ran all test suites.

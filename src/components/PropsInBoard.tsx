@@ -1,8 +1,4 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState } from "react";
-import { useDrag } from "react-dnd";
-import { ItemTypes } from "../interfaces/constants";
+import React from "react";
 import { Plant } from "../interfaces/plant";
 
 function PropsInBoard({
@@ -12,19 +8,6 @@ function PropsInBoard({
     plant: Plant;
     scaleValue: number;
 }): JSX.Element {
-    const makeid = (length: number) => {
-        let result = "";
-        const characters =
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        const charactersLength = characters.length;
-        for (let i = 0; i < length; i++) {
-            result += characters.charAt(
-                Math.floor(Math.random() * charactersLength)
-            );
-        }
-        return result;
-    };
-
     return (
         <div>
             <img

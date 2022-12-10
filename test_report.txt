@@ -93,8 +93,8 @@ Browserslist: caniuse-lite is outdated. Please run:
       at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:23426:7)
       at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
 
-FAIL src/tests/App.test.tsx (6.506 s)
-  ✕ renders the course name somewhere (133 ms)
+FAIL src/tests/App.test.tsx
+  ✕ renders the course name somewhere (92 ms)
 
   ● renders the course name somewhere
 
@@ -149,12 +149,12 @@ FAIL src/tests/App.test.tsx (6.506 s)
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |   14.35 |        0 |    1.87 |   14.52 |                   
+All files            |   14.63 |        0 |    1.88 |   14.77 |                   
  src                 |   17.77 |        0 |      12 |   17.77 |                   
   App.tsx            |   17.77 |        0 |      12 |   17.77 | 54,59-102,114-201 
   global.d.ts        |       0 |        0 |       0 |       0 |                   
   index.d.ts         |       0 |        0 |       0 |       0 |                   
- src/components      |    5.58 |        0 |       0 |    5.67 |                   
+ src/components      |    5.72 |        0 |       0 |    5.79 |                   
   BorderBox.tsx      |       0 |      100 |       0 |       0 | 5-37              
   BorderBoxDown.tsx  |   42.85 |      100 |       0 |   42.85 | 13-32             
   BorderBoxLeft.tsx  |   42.85 |      100 |       0 |   42.85 | 13-39             
@@ -165,7 +165,7 @@ All files            |   14.35 |        0 |    1.87 |   14.52 |
   PlantEditor.tsx    |    6.52 |        0 |       0 |    6.52 | 37-303            
   Prop.tsx           |       0 |        0 |       0 |       0 | 14-49             
   PropList.tsx       |    2.07 |        0 |       0 |     2.1 | 55-474            
-  PropsInBoard.tsx   |       0 |      100 |       0 |       0 | 15-28             
+  PropsInBoard.tsx   |       0 |      100 |       0 |       0 | 11                
  src/interfaces      |     100 |      100 |     100 |     100 |                   
   PropList.ts        |     100 |      100 |     100 |     100 |                   
   constants.ts       |     100 |      100 |     100 |     100 |                   
@@ -180,5 +180,5 @@ All files            |   14.35 |        0 |    1.87 |   14.52 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        7.637 s
+Time:        5.601 s
 Ran all test suites.

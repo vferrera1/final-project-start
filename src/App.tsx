@@ -48,7 +48,6 @@ function App(): JSX.Element {
         undefined
     );
 
-
     const [gardenSize, setGardenSize] = useState<number>(70);
     function updateGardenSize(event: React.ChangeEvent<HTMLInputElement>) {
         setGardenSize(event.target.valueAsNumber);
@@ -110,7 +109,7 @@ function App(): JSX.Element {
     }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [{ isOver }, drop] = useDrop({
-        accept: ItemTypes.PROPINLIST,
+        accept: ItemTypes.PROP,
         drop: (item: ITEM) => SetBoardProps(addToBoardList(item.data)),
         collect: (monitor: DropTargetMonitor) => ({
             isOver: !!monitor.isOver()
@@ -132,7 +131,6 @@ function App(): JSX.Element {
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [{ isOver2 }, drop2] = useDrop({
-
         accept: ItemTypes.Board,
 
         drop: (item: ITEM) => SetBoardProps(removeFromBoardList(item.data)),

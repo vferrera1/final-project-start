@@ -1,3 +1,5 @@
 export const ItemTypes = {
-    PROP: "Prop"
+    PROP: "Prop",
+    PROPINLIST: "PropInList",
+    PROPINGARDEN: "PropInGarden"
 };

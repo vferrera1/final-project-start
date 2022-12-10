@@ -48,7 +48,8 @@ function App(): JSX.Element {
         undefined
     );
 
-    const [gardenSize, setGardenSize] = useState<number>(100);
+
+    const [gardenSize, setGardenSize] = useState<number>(70);
     function updateGardenSize(event: React.ChangeEvent<HTMLInputElement>) {
         setGardenSize(event.target.valueAsNumber);
     }
@@ -131,7 +132,9 @@ function App(): JSX.Element {
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [{ isOver2 }, drop2] = useDrop({
-        accept: ItemTypes.PROPINGARDEN,
+
+        accept: ItemTypes.Board,
+
         drop: (item: ITEM) => SetBoardProps(removeFromBoardList(item.data)),
         collect: (monitor: DropTargetMonitor) => ({
             isOver2: !!monitor.isOver()
@@ -172,6 +175,9 @@ function App(): JSX.Element {
                         />
                     </Form.Group>
                 </div>
+                <div ref={drop2}>
+                    <img src={Trashcan} />
+                </div>
                 <BorderBoxUp></BorderBoxUp>
                 <div /* ref={drop} */ className="boxcontainer">
                     <div className="proplistcontainer">
@@ -193,9 +199,6 @@ function App(): JSX.Element {
                     <BorderBoxRight></BorderBoxRight>
                 </div>
                 <BorderBoxDown></BorderBoxDown>
-            </div>
-            <div ref={drop2}>
-                <img src={Trashcan} />
             </div>
         </DndProvider>
     );

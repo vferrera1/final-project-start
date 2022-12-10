@@ -48,6 +48,7 @@ function App(): JSX.Element {
         undefined
     );
 
+
     const [gardenSize, setGardenSize] = useState<number>(70);
     function updateGardenSize(event: React.ChangeEvent<HTMLInputElement>) {
         setGardenSize(event.target.valueAsNumber);
@@ -109,7 +110,7 @@ function App(): JSX.Element {
     }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [{ isOver }, drop] = useDrop({
-        accept: ItemTypes.PROP,
+        accept: ItemTypes.PROPINLIST,
         drop: (item: ITEM) => SetBoardProps(addToBoardList(item.data)),
         collect: (monitor: DropTargetMonitor) => ({
             isOver: !!monitor.isOver()
@@ -131,7 +132,9 @@ function App(): JSX.Element {
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [{ isOver2 }, drop2] = useDrop({
+
         accept: ItemTypes.Board,
+
         drop: (item: ITEM) => SetBoardProps(removeFromBoardList(item.data)),
         collect: (monitor: DropTargetMonitor) => ({
             isOver2: !!monitor.isOver()
@@ -142,7 +145,7 @@ function App(): JSX.Element {
         const newPropList = deepCloneBoardProps(boardprops);
         let i = 0;
         newPropList.map((q: Plant) => {
-            if (q.id == plant.id) {
+            if (q.id === plant.id) {
                 newPropList.splice(i, 1);
                 return newPropList;
             } else {

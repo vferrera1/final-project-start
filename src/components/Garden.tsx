@@ -94,9 +94,9 @@ class Garden extends React.Component<{
                     {this.props.boardprops.map((prop) => {
                         return (
                             <Draggable
+                                key={prop.id}
                                 bounds="parent"
                                 {...dragHandlers}
-                                key={prop.id}
                             >
                                 <div className="box">
                                     <PropsInBoard

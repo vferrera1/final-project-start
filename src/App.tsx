@@ -14,7 +14,7 @@ import { PlantDescriber } from "./components/PlantDescriber";
 // Importing interfaces and constants
 import { Plant } from "./interfaces/plant";
 import { PropListArr } from "./interfaces/PropList";
-import { ItemTypes } from "./DnD-demo/constants";
+import { ItemTypes } from "./interfaces/constants";
 import Trashcan from "./images/TrashCan.png";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { BorderBoxDown } from "./components/BorderBoxDown";
@@ -207,6 +207,7 @@ function App(): JSX.Element {
                                         boardprops={boardprops}
                                         drop={drop}
                                         scaleValue={gardenSize}
+                                        selectElement={selectElement}
                                     ></Garden>
                                 </TransformComponent>
                             </React.Fragment>

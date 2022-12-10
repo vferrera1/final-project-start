@@ -25,7 +25,7 @@ function Prop({
     };
     const [{ isDragging }, drag] = useDrag({
         item: {
-            type: ItemTypes.PROPINLIST,
+            type: ItemTypes.PROP,
             id: makeid(10),
             data: plant,
             name: plant.species

@@ -93,8 +93,8 @@ Browserslist: caniuse-lite is outdated. Please run:
       at commitLayoutEffects (node_modules/react-dom/cjs/react-dom.development.js:23426:7)
       at HTMLUnknownElement.callCallback (node_modules/react-dom/cjs/react-dom.development.js:3945:14)
 
-FAIL src/tests/App.test.tsx
-  ✕ renders the course name somewhere (76 ms)
+FAIL src/tests/App.test.tsx (6.037 s)
+  ✕ renders the course name somewhere (109 ms)
 
   ● renders the course name somewhere
 
@@ -104,7 +104,7 @@ FAIL src/tests/App.test.tsx
       110 |     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     > 111 |     const [{ isOver }, drop] = useDrop({
           |                                ^
-      112 |         accept: ItemTypes.PROPINLIST,
+      112 |         accept: ItemTypes.PROP,
       113 |         drop: (item: ITEM) => SetBoardProps(addToBoardList(item.data)),
       114 |         collect: (monitor: DropTargetMonitor) => ({
 
@@ -149,12 +149,12 @@ FAIL src/tests/App.test.tsx
 ---------------------|---------|----------|---------|---------|-------------------
 File                 | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ---------------------|---------|----------|---------|---------|-------------------
-All files            |   14.77 |        0 |    1.93 |   14.92 |                   
+All files            |   14.42 |        0 |    1.91 |   14.59 |                   
  src                 |   19.51 |        0 |   14.28 |   19.51 |                   
-  App.tsx            |   19.51 |        0 |   14.28 |   19.51 | 53,58-101,113-155 
+  App.tsx            |   19.51 |        0 |   14.28 |   19.51 | 53,58-101,113-156 
   global.d.ts        |       0 |        0 |       0 |       0 |                   
   index.d.ts         |       0 |        0 |       0 |       0 |                   
- src/components      |    5.72 |        0 |       0 |    5.79 |                   
+ src/components      |    5.55 |        0 |       0 |    5.63 |                   
   BorderBox.tsx      |       0 |      100 |       0 |       0 | 5-37              
   BorderBoxDown.tsx  |   42.85 |      100 |       0 |   42.85 | 13-32             
   BorderBoxLeft.tsx  |   42.85 |      100 |       0 |   42.85 | 13-39             
@@ -165,7 +165,7 @@ All files            |   14.77 |        0 |    1.93 |   14.92 |
   PlantEditor.tsx    |    6.52 |        0 |       0 |    6.52 | 37-303            
   Prop.tsx           |       0 |        0 |       0 |       0 | 14-49             
   PropList.tsx       |    2.07 |        0 |       0 |     2.1 | 55-474            
-  PropsInBoard.tsx   |       0 |      100 |       0 |       0 | 11                
+  PropsInBoard.tsx   |       0 |        0 |       0 |       0 | 13-36             
  src/interfaces      |     100 |      100 |     100 |     100 |                   
   PropList.ts        |     100 |      100 |     100 |     100 |                   
   constants.ts       |     100 |      100 |     100 |     100 |                   
@@ -180,5 +180,5 @@ All files            |   14.77 |        0 |    1.93 |   14.92 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        5.204 s
+Time:        7.099 s
 Ran all test suites.

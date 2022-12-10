@@ -16,7 +16,6 @@ import { Plant } from "./interfaces/plant";
 import { PropListArr } from "./interfaces/PropList";
 import { ItemTypes } from "./interfaces/constants";
 import Trashcan from "./images/TrashCan.png";
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import { BorderBoxDown } from "./components/BorderBoxDown";
 import { BorderBoxLeft } from "./components/BorderBoxLeft";
 import { BorderBoxRight } from "./components/BorderBoxRight";
@@ -185,34 +184,12 @@ function App(): JSX.Element {
                         ></PropList>
                     </div>
                     <BorderBoxLeft></BorderBoxLeft>
-                    <TransformWrapper
-                        initialScale={1}
-                        initialPositionX={0}
-                        initialPositionY={0}
-                        wheel={{ touchPadDisabled: true }}
-                        panning={{ activationKeys: ["Shift"] }}
-                    >
-                        {/* eslint-disable-next-line @typescript-eslint/no-unused-vars*/}
-                        {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
-                            <React.Fragment>
-                                <div className="tools">
-                                    <button onClick={() => zoomIn()}>+</button>
-                                    <button onClick={() => zoomOut()}>-</button>
-                                    <button onClick={() => resetTransform()}>
-                                        x
-                                    </button>
-                                </div>
-                                <TransformComponent>
-                                    <Garden
-                                        boardprops={boardprops}
-                                        drop={drop}
-                                        scaleValue={gardenSize}
-                                        selectElement={selectElement}
-                                    ></Garden>
-                                </TransformComponent>
-                            </React.Fragment>
-                        )}
-                    </TransformWrapper>
+                    <Garden
+                        boardprops={boardprops}
+                        drop={drop}
+                        scaleValue={gardenSize}
+                        selectElement={selectElement}
+                    ></Garden>
                     <BorderBoxRight></BorderBoxRight>
                 </div>
                 <BorderBoxDown></BorderBoxDown>

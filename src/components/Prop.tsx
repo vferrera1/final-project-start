@@ -1,6 +1,6 @@
 import React from "react";
 import { useDrag } from "react-dnd";
-import { ItemTypes } from "../DnD-demo/constants";
+import { ItemTypes } from "../interfaces/constants";
 import { Plant } from "../interfaces/plant";
 function Prop({
     plant,
@@ -46,7 +46,6 @@ function Prop({
                     border: isDragging ? "5px solid pink" : "0px"
                 }}
                 onClick={() => {
-                    console.log(plant.id);
                     selectElement(plant.id);
                 }}
                 width={scaleValue}

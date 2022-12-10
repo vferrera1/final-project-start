@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from "react";
 import { useDrag } from "react-dnd";
-import { ItemTypes } from "../DnD-demo/constants";
+import { ItemTypes } from "../interfaces/constants";
 import { Plant } from "../interfaces/plant";
 
 function PropsInBoard({
@@ -48,7 +48,6 @@ function PropsInBoard({
                     width: `${(plant.size / scaleValue) * 800}px`,
                     height: `${(plant.size / scaleValue) * 800}px`
                 }}
-                onClick={() => console.log(plant.id)}
             />
         </div>
     );

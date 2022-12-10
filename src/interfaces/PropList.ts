@@ -31,6 +31,18 @@ import SuccTD from "../images/SuccTD.png";
 import SuccSV from "../images/SuccSV.png";
 import AloeTD from "../images/SuccRTD.png";
 import AloeSV from "../images/SuccRSV.png";
+import lily from "../images/lily.png";
+import tree from "../images/tree.png";
+import flowers from "../images/flowers2.png";
+import rock from "../images/rock.png";
+import crazy from "../images/crazy.png";
+import flowervase from "../images/flowervase.png";
+import flowerbush from "../images/flowerbush.png";
+import snakeplant from "../images/snakeplant.png";
+import shrub from "../images/shrub.png";
+import bushflowers from "../images/bushflowers.png";
+import flowersbush from "../images/flowersbush.png";
+import christmas from "../images/christmas.png";
 
 const Cactus: Plant = {
     id: 1,
@@ -228,6 +240,175 @@ const Succulent: Plant = {
     price: "$",
     category: "Cacti"
 };
+const Lily: Plant = {
+    id: 15,
+    species: "Lily",
+    nickname: "Lily",
+    topImage: lily,
+    sideImage: lily,
+    size: 4,
+    shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4,
+    region: "Global",
+    price: "$$",
+    category: "Cacti"
+};
+const flowersssbush: Plant = {
+    id: 16,
+    species: "Bush of Flowers",
+    nickname: "Bush of Flowers",
+    topImage: flowerbush,
+    sideImage: flowerbush,
+    size: 4,
+    shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4,
+    region: "Global",
+    price: "$",
+    category: "Cacti"
+};
+const flowerbushss: Plant = {
+    id: 17,
+    species: "Flower Bush",
+    nickname: "Flower Bush",
+    topImage: flowersbush,
+    sideImage: flowersbush,
+    size: 4,
+    shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4,
+    region: "Global",
+    price: "$",
+    category: "Cacti"
+};
+const Crazy: Plant = {
+    id: 18,
+    species: "Crazy Plant",
+    nickname: "Crazy",
+    topImage: crazy,
+    sideImage: crazy,
+    size: 4,
+    shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4,
+    region: "Global",
+    price: "$",
+    category: "Cacti"
+};
+const Vase: Plant = {
+    id: 19,
+    species: "Vase",
+    nickname: "Vase",
+    topImage: flowervase,
+    sideImage: flowervase,
+    size: 4,
+    shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4,
+    region: "Global",
+    price: "$",
+    category: "Cacti"
+};
+const SnakePlant: Plant = {
+    id: 20,
+    species: "Snake Plant",
+    nickname: "Snake",
+    topImage: snakeplant,
+    sideImage: snakeplant,
+    size: 4,
+    shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4,
+    region: "Global",
+    price: "$$",
+    category: "Cacti"
+};
+const shrubs: Plant = {
+    id: 21,
+    species: "Shrub",
+    nickname: "Shrub",
+    topImage: shrub,
+    sideImage: shrub,
+    size: 4,
+    shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4,
+    region: "Global",
+    price: "$$",
+    category: "Cacti"
+};
+const bushofflowers: Plant = {
+    id: 22,
+    species: "Bush Flowers",
+    nickname: "Flowers",
+    topImage: bushflowers,
+    sideImage: bushflowers,
+    size: 4,
+    shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4,
+    region: "Global",
+    price: "$$",
+    category: "Cacti"
+};
+const christmass: Plant = {
+    id: 23,
+    species: "Christmas",
+    nickname: "CMas",
+    topImage: christmas,
+    sideImage: christmas,
+    size: 4,
+    shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4,
+    region: "Global",
+    price: "$",
+    category: "Cacti"
+};
+const flowers2: Plant = {
+    id: 24,
+    species: "Flowers",
+    nickname: "Flowers",
+    topImage: flowers,
+    sideImage: flowers,
+    size: 4,
+    shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4,
+    region: "Global",
+    price: "$$",
+    category: "Cacti"
+};
+const Ctree: Plant = {
+    id: 25,
+    species: "Christmas Tree",
+    nickname: "Christmas",
+    topImage: tree,
+    sideImage: tree,
+    size: 4,
+    shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4,
+    region: "Global",
+    price: "$$$",
+    category: "Tree"
+};
+const Rock: Plant = {
+    id: 26,
+    species: "Rock",
+    nickname: "Rock",
+    topImage: rock,
+    sideImage: rock,
+    size: 4,
+    shadeConditions: [shadeLevel.None, shadeLevel.Light, shadeLevel.Partial],
+    floweringPeriod: "Mid-Spring",
+    waterReq: 4,
+    region: "Global",
+    price: "$$",
+    category: "Decorations"
+};
+
 const LemonTree: Plant = {
     id: 27,
     species: "Citrus limon",
@@ -299,6 +480,18 @@ export const PropListArr = [
     Potato,
     Aloe,
     Succulent,
+    Lily,
+    flowersssbush,
+    flowerbushss,
+    Crazy,
+    Vase,
+    SnakePlant,
+    shrubs,
+    bushofflowers,
+    christmass,
+    flowers2,
+    Ctree,
+    Rock,
     LemonTree,
     RedMapleTree,
     Bush,
@@ -320,6 +513,18 @@ export const defaultProps = [
     Potato,
     Aloe,
     Succulent,
+    Lily,
+    flowersssbush,
+    flowerbushss,
+    Crazy,
+    Vase,
+    SnakePlant,
+    shrubs,
+    bushofflowers,
+    christmass,
+    flowers2,
+    Ctree,
+    Rock,
     LemonTree,
     RedMapleTree,
     Bush,

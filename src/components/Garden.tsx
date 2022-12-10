@@ -1,20 +1,14 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react/jsx-key */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/no-direct-mutation-state */
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import { Container, Form } from "react-bootstrap";
-import Draggable from "react-draggable";
+import React from "react";
+import { ConnectDropTarget } from "react-dnd";
+import Draggable, { DraggableData } from "react-draggable";
 import { Plant } from "../interfaces/plant";
-import Prop from "./Prop";
 import PropsInBoard from "./PropsInBoard";
 
 class Garden extends React.Component<{
     boardprops: Plant[];
     scaleValue: number;
-    drop: any;
+    selectElement: (id: number) => void;
+    drop: ConnectDropTarget;
 }> {
     state = {
         activeDrags: 0,
@@ -32,7 +26,7 @@ class Garden extends React.Component<{
         size: "800"
     };
 
-    handleDrag = (e: any, ui: any) => {
+    handleDrag = (e: EventListener, ui: DraggableData) => {
         const { x, y } = this.state.deltaPosition;
         this.setState({
             deltaPosition: {
@@ -43,11 +37,13 @@ class Garden extends React.Component<{
     };
 
     onStart = () => {
-        this.setState({ activeDrags: ++this.state.activeDrags });
+        const state2 = this.state;
+        this.setState({ activeDrags: ++state2.activeDrags });
     };
 
     onStop = () => {
-        this.setState({ activeDrags: --this.state.activeDrags });
+        const state2 = this.state;
+        this.setState({ activeDrags: --state2.activeDrags });
     };
 
     // For controlled component
@@ -72,19 +68,24 @@ class Garden extends React.Component<{
         this.setState({ controlledPosition: { x, y: y - 10 } });
     };
 
-    onControlledDrag = (e: any, position: { x: any; y: any }) => {
+    onControlledDrag = (
+        e: EventListener,
+        position: { x: number; y: number }
+    ) => {
         const { x, y } = position;
         this.setState({ controlledPosition: { x, y } });
     };
 
-    onControlledDragStop = (e: any, position: { x: any; y: any }) => {
+    onControlledDragStop = (
+        e: EventListener,
+        position: { x: number; y: number }
+    ) => {
         this.onControlledDrag(e, position);
         this.onStop();
     };
 
     render() {
         const dragHandlers = { onStart: this.onStart, onStop: this.onStop };
-        const { deltaPosition, controlledPosition } = this.state;
         const { scaleValue } = this.props;
 
         return (

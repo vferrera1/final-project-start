@@ -24,17 +24,31 @@ function PropsInBoard({
         }
         return result;
     };
+    const [{ isDragging }, drag] = useDrag({
+        item: {
+            type: ItemTypes.PROPINGARDEN,
+            id: makeid(10),
+            data: plant,
+            name: plant.species
+        },
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging()
+        })
+    });
 
     return (
         <div>
             <img
                 id={plant.id.toString()}
+                ref={drag}
                 src={plant.sideImage}
                 alt={plant.species}
                 style={{
+                    border: isDragging ? "5px solid pink" : "0px",
                     width: `${(plant.size / scaleValue) * 800}px`,
                     height: `${(plant.size / scaleValue) * 800}px`
                 }}
+                onClick={() => console.log(plant.id)}
             />
         </div>
     );

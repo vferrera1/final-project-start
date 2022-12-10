@@ -25,7 +25,7 @@ function Prop({
     };
     const [{ isDragging }, drag] = useDrag({
         item: {
-            type: ItemTypes.PROP,
+            type: ItemTypes.PROPINLIST,
             id: makeid(10),
             data: plant,
             name: plant.species
@@ -46,6 +46,7 @@ function Prop({
                     border: isDragging ? "5px solid pink" : "0px"
                 }}
                 onClick={() => {
+                    console.log(plant.id);
                     selectElement(plant.id);
                 }}
                 width={scaleValue}
